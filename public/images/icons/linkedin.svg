@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="LinkedinLogo" clip-path="url(#clip0_0_62)">
+<g id="Vector">
+</g>
+<path id="Vector_2" d="M13.5 2H2.5C2.22386 2 2 2.22386 2 2.5V13.5C2 13.7761 2.22386 14 2.5 14H13.5C13.7761 14 14 13.7761 14 13.5V2.5C14 2.22386 13.7761 2 13.5 2Z" stroke="var(--stroke-0, #BBBBBB)" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M7.5 7V11" stroke="var(--stroke-0, #BBBBBB)" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M5.5 7V11" stroke="var(--stroke-0, #BBBBBB)" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M7.5 8.75C7.5 8.28587 7.68437 7.84075 8.01256 7.51256C8.34075 7.18437 8.78587 7 9.25 7C9.71413 7 10.1592 7.18437 10.4874 7.51256C10.8156 7.84075 11 8.28587 11 8.75V11" stroke="var(--stroke-0, #BBBBBB)" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" d="M5.5 5.875C5.84518 5.875 6.125 5.59518 6.125 5.25C6.125 4.90482 5.84518 4.625 5.5 4.625C5.15482 4.625 4.875 4.90482 4.875 5.25C4.875 5.59518 5.15482 5.875 5.5 5.875Z" fill="var(--fill-0, #BBBBBB)"/>
+</g>
+<defs>
+<clipPath id="clip0_0_62">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

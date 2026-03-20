@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="HouseSimple" clip-path="url(#clip0_0_122)">
+<g id="Vector">
+</g>
+<path id="Vector_2" d="M2.96875 16.0312H16.0312V8.90625C16.0313 8.82825 16.016 8.75101 15.9862 8.67893C15.9564 8.60685 15.9127 8.54135 15.8576 8.48617L9.92008 2.54867C9.86493 2.49347 9.79945 2.44967 9.72737 2.41979C9.65529 2.38991 9.57803 2.37453 9.5 2.37453C9.42197 2.37453 9.34471 2.38991 9.27263 2.41979C9.20055 2.44967 9.13506 2.49347 9.07992 2.54867L3.14242 8.48617C3.0873 8.54135 3.04359 8.60685 3.01379 8.67893C2.98399 8.75101 2.96869 8.82825 2.96875 8.90625V16.0312Z" stroke="var(--stroke-0, #B2AEAE)" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_0_122">
+<rect width="19" height="19" fill="white"/>
+</clipPath>
+</defs>
+</svg>

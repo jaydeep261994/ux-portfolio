@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="MapPin" clip-path="url(#clip0_0_5)">
+<g id="Vector">
+</g>
+<g id="Group 1">
+<path id="Vector_2" d="M6 6.32296C6.88365 6.32296 7.6 5.60661 7.6 4.72296C7.6 3.8393 6.88365 3.12296 6 3.12296C5.11634 3.12296 4.4 3.8393 4.4 4.72296C4.4 5.60661 5.11634 6.32296 6 6.32296Z" stroke="var(--stroke-0, #9E9E9E)" stroke-width="0.62069" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M10 4.72296C10 8.32296 6 11.123 6 11.123C6 11.123 2 8.32296 2 4.72296C2 3.6621 2.42143 2.64468 3.17157 1.89453C3.92172 1.14439 4.93913 0.722961 6 0.722961C7.06087 0.722961 8.07828 1.14439 8.82843 1.89453C9.57857 2.64468 10 3.6621 10 4.72296Z" stroke="var(--stroke-0, #9E9E9E)" stroke-width="0.62069" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_5">
+<rect width="12" height="12" fill="white"/>
+</clipPath>
+</defs>
+</svg>

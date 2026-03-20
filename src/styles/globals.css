@@ -1,6 +1,46 @@
 @import "tailwindcss";
 @import "./variables.css";
 
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/redhatdisplay/v19/8vIf7wUr0m80wwYfUQApzUGqJkHMfMF0hTvLYEA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/redhatdisplay/v19/8vIf7wUr0m80wwYfUQApzUGqJkHpfMF0hTvLYEA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/redhatdisplay/v19/8vIf7wUr0m80wwYfUQApzUGqJkG4fMF0hTvLYEA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/redhatdisplay/v19/8vIf7wUr0m80wwYfUQApzUGqJkGUe8F0hTvLYEA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/redhatdisplay/v19/8vIf7wUr0m80wwYfUQApzUGqJkHwe8F0hTvLYEA.woff2') format('woff2');
+}
+
 *,
 *::before,
 *::after {
@@ -29,9 +69,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-h1 { font-size: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
-h2 { font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem); }
-h3 { font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); }
+h1 { font-size: clamp(1.5rem, 1.2rem + 1.5vw, 1.625rem); }
+h2 { font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem); }
+h3 { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem); }
 
 a {
   color: inherit;
@@ -46,4 +86,18 @@ img {
 ::selection {
   background-color: var(--color-accent);
   color: var(--color-text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
 }
