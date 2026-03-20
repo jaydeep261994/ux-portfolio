@@ -5,12 +5,12 @@ import { SPRING_SLOW } from "../../constants/motion";
 export default function ExperienceList() {
   return (
     <motion.section
-      className="flex flex-col gap-[14px] px-4 md:px-0"
+      className="flex flex-col gap-[14px]"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ ...SPRING_SLOW, delay: 0.1 }}
     >
-      <p className="text-sm font-light text-[var(--color-text-muted)] tracking-[0.14px] leading-[18px]">
+      <p className="text-[16px] font-light text-[#8c8c8c] tracking-[0.16px] leading-[20px]">
         Experience
       </p>
 
@@ -18,30 +18,34 @@ export default function ExperienceList() {
         {experience.map((exp) => (
           <div
             key={exp.id}
-            className="flex items-center justify-between py-[13px] border-b border-[var(--color-border)]"
+            className="flex items-center justify-between py-4 border-b border-[#323131]"
           >
             <div className="flex items-center gap-[17px]">
               {exp.logo ? (
-                <img
-                  src={exp.logo}
-                  alt=""
-                  className="w-[15px] h-[15px] object-contain shrink-0"
-                />
+                <div className="w-[26px] h-[26px] shrink-0 flex items-center justify-center">
+                  <img
+                    src={exp.logo}
+                    alt=""
+                    className="max-w-[26px] max-h-[26px] object-contain"
+                  />
+                </div>
               ) : (
-                <div className="w-[15px] h-[15px] shrink-0" />
+                <div className="w-[26px] h-[26px] shrink-0" />
               )}
-              <div className="flex items-center gap-[9px] text-xs leading-[14px]">
-                <span className="text-[var(--color-text-secondary)]">
+              <div className="flex items-center gap-[9px] text-[16px] leading-[20px] whitespace-nowrap">
+                <span className="text-[#cecece]">
                   {exp.company}
                 </span>
-                <span className="text-[var(--color-text-dim)]">/</span>
-                <span className="text-[var(--color-text-dim)] hidden sm:inline">
+                <span className="text-[#5b5b5b]">/</span>
+                <span className="text-[#5b5b5b]">
                   {exp.role}
                 </span>
               </div>
             </div>
-            <span className="text-xs text-[var(--color-text-dim)] leading-[14px] text-right shrink-0 ml-4">
-              {exp.year}
+            <span className="text-[16px] text-[#5b5b5b] leading-[20px] text-right whitespace-nowrap shrink-0">
+              {exp.yearStart && exp.yearEnd
+                ? `${exp.yearStart} — ${exp.yearEnd}`
+                : exp.year}
             </span>
           </div>
         ))}

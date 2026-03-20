@@ -1,55 +1,62 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { SPRING_SLOW } from "../../constants/motion";
+import SignatureAnimation from "./SignatureAnimation";
+import LiveClock from "./LiveClock";
+
+const formatTime = () =>
+  new Date().toLocaleTimeString("en-IN", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
 
 export default function Hero() {
+  const [time, setTime] = useState(formatTime());
+
+  useEffect(() => {
+    const id = setInterval(() => setTime(formatTime()), 1000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <motion.section
-      className="flex flex-col gap-5 px-4 md:px-0"
+      className="flex flex-col gap-5"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={SPRING_SLOW}
     >
       {/* Greeting */}
-      <div className="flex items-center gap-3">
-        <span
-          className="text-[clamp(1.25rem,1rem+1.5vw,1.625rem)] text-white tracking-[-0.26px] leading-7"
-        >
+      <div className="flex items-center gap-2">
+        <span className="text-[26px] text-white tracking-[-0.26px] leading-7">
           hey, i&apos;m
         </span>
-        <img
-          src="/images/jaydeep-signature.png"
-          alt="Jaydeep"
-          className="h-7 w-auto"
-        />
+        <SignatureAnimation className="h-12 w-auto" />
       </div>
 
       {/* Title */}
-      <p className="text-xs text-[var(--color-text-dim)] leading-[14px]">
+      <p className="text-[16px] text-[#5b5b5b] leading-[20px]">
         Interaction Design Senior Analyst at Accenture
       </p>
 
       {/* Bio */}
-      <div className="text-sm font-light text-white leading-[18px]">
+      <div className="text-[16px] font-light text-white leading-[22px]">
         <p>I design and build digital products &amp; visual interfaces</p>
         <p>Welcome to my small corner of web.</p>
       </div>
 
       {/* Location & Time */}
       <div className="flex items-center gap-5">
-        <div className="flex items-center gap-1">
-          <img src="/images/icons/map-pin.svg" alt="" className="w-3 h-3" />
-          <span className="text-xs text-[var(--color-text-dimmer)] leading-[14px]">
+        <div className="flex items-center gap-1.5">
+          <img src="/images/icons/map-pin.svg" alt="" className="w-5 h-5" />
+          <span className="text-[16px] text-[#5e5e5e] leading-[20px]">
             Pune, India
           </span>
         </div>
-        <div className="flex items-center gap-1">
-          <img src="/images/icons/clock.svg" alt="" className="w-3 h-3" />
-          <span className="text-xs text-[var(--color-text-dimmer)] leading-[14px]">
-            {new Date().toLocaleTimeString("en-IN", {
-              hour: "numeric",
-              minute: "2-digit",
-              hour12: true,
-            })}
+        <div className="flex items-center gap-1.5">
+          <LiveClock className="w-5 h-5" />
+          <span className="text-[16px] text-[#5e5e5e] leading-[20px]">
+            {time}
           </span>
         </div>
       </div>
