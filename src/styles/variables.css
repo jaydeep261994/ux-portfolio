@@ -1,0 +1,18 @@
+:root {
+  /* Colors */
+  --color-bg: #0f0f0f;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #888888;
+  --color-accent: #6366f1; /* placeholder — pull from Figma later */
+
+  /* Typography — pull font family from Figma later */
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-heading: var(--font-body);
+
+  /* Layout */
+  --sidebar-width: 220px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+}
