@@ -3,14 +3,37 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NavLink, Link } from "react-router-dom";
 import { SPRING } from "../../constants/motion";
 import projects from "../../data/projects";
+import BandhanModal from "../CaseStudy/BandhanModal";
+
+const bandhanProject = projects.find((p) => p.id === "bandhan");
 
 const sidebarProjects = projects.map((p) => ({
   to: p.link,
   label: p.title,
+  passwordProtected: p.passwordProtected,
 }));
+
+const modalThumbnails = [
+  { id: "fedex", title: "FedEx", thumbnail: "/images/thumbnails/fedex.png", link: "/case-study/fedex" },
+  { id: "audi", title: "Audi", thumbnail: "/images/thumbnails/audi.png", link: "/case-study/audi" },
+  { id: "amns", title: "AM/NS India", thumbnail: "/images/thumbnails/amns.png", link: "/case-study/amns" },
+  { id: "claypond", title: "Claypond", thumbnail: "/images/thumbnails/claypond.png", link: "/case-study/claypond" },
+  { id: "tata-bolt", title: "TATA AIG", thumbnail: "/images/thumbnails/tata-bolt.png", link: "/case-study/tata-bolt" },
+  { id: "inspectify", title: "Inspectify", thumbnail: "/images/thumbnails/inspectify.png", link: "/case-study/tata-inspectify" },
+  { id: "cartier", title: "Cartier", thumbnail: "/images/thumbnails/cartier.png", link: "/case-study/cartier" },
+  { id: "stockmann", title: "Stockmann", thumbnail: "/images/thumbnails/stockmann.png", link: "/case-study/stockmann" },
+  { id: "bandhan", title: "Bandhan Bank", thumbnail: "/images/thumbnails/bandhan.png", link: "/case-study/bandhan" },
+  { id: "hiranandani", title: "Hiranandani", thumbnail: "/images/thumbnails/hiranandani.png", bg: "#6a1d39", contain: true },
+  { id: "oreo", title: "Oreo", thumbnail: "/images/thumbnails/oreo.png", bg: "#ffffff", contain: true },
+  { id: "atl", title: "ATL Money Transfer", thumbnail: "/images/thumbnails/atl.png" },
+  { id: "zoya", title: "Zoya", thumbnail: "/images/thumbnails/zoya.png" },
+  { id: "signature", title: "Signature Collection", thumbnail: "/images/thumbnails/signature.png" },
+];
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showProjectsModal, setShowProjectsModal] = useState(false);
+  const [showBandhanModal, setShowBandhanModal] = useState(false);
 
   const sidebarContent = (
     <div className="flex flex-col items-start w-full">
@@ -36,30 +59,53 @@ export default function Sidebar() {
           <span className="text-[14px] font-light text-[#8c8c8c] leading-[18px] tracking-[0.14px]">
             Projects
           </span>
-          <img
-            src="/images/icons/arrow-right.svg"
-            alt=""
-            className="w-3 h-3"
-          />
+          <button
+            onClick={() => setShowProjectsModal(true)}
+            className="relative group cursor-pointer p-1 hover:opacity-70 transition-opacity"
+            aria-label="View all projects"
+          >
+            <img
+              src="/images/icons/arrow-right.svg"
+              alt=""
+              className="w-3 h-3"
+            />
+            <span className="absolute left-1/2 -translate-x-1/2 top-full mt-1 px-2 py-1 text-[11px] text-white bg-[#333] rounded-[6px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              View more
+            </span>
+          </button>
         </div>
 
         {/* Nav items */}
         <nav className="flex flex-col items-start" aria-label="Projects">
-          {sidebarProjects.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `flex items-center w-[219px] rounded-[9px] text-[14px] leading-[14px] text-[#cecece] transition-colors ${
-                  isActive ? "bg-[#282828]" : "hover:bg-[#282828]"
-                }`
-              }
-              style={{ padding: "10px 12px" }}
-            >
-              {label}
-            </NavLink>
-          ))}
+          {sidebarProjects.map(({ to, label, passwordProtected }) =>
+            passwordProtected ? (
+              <button
+                key={to}
+                onClick={() => {
+                  setShowBandhanModal(true);
+                  setIsOpen(false);
+                }}
+                className="flex items-center w-[219px] rounded-[9px] text-[14px] leading-[14px] text-[#cecece] transition-colors hover:bg-[#282828] cursor-pointer text-left"
+                style={{ padding: "10px 12px" }}
+              >
+                {label}
+              </button>
+            ) : (
+              <NavLink
+                key={to}
+                to={to}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `flex items-center w-[219px] rounded-[9px] text-[14px] leading-[14px] text-[#cecece] transition-colors ${
+                    isActive ? "bg-[#282828]" : "hover:bg-[#282828]"
+                  }`
+                }
+                style={{ padding: "10px 12px" }}
+              >
+                {label}
+              </NavLink>
+            )
+          )}
         </nav>
 
         {/* Bottom divider */}
@@ -173,6 +219,85 @@ export default function Sidebar() {
       <aside className="hidden lg:flex fixed top-0 left-0 h-full w-[243px] z-40 flex-col bg-[#1d1d1d] border-r border-[#444] overflow-y-auto">
         {sidebarContent}
       </aside>
+
+      {/* Projects Modal */}
+      <AnimatePresence>
+        {showProjectsModal && (
+          <>
+            <motion.div
+              className="fixed inset-0 z-50 bg-black/60"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowProjectsModal(false)}
+            />
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowProjectsModal(false)}
+            >
+              <motion.div
+                className="bg-[rgba(40,39,39,0.77)] backdrop-blur-md rounded-[30px] p-[34px] max-w-[580px] w-full"
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <p className="text-[18px] text-white leading-[20px] tracking-[-0.18px] mb-[20px] font-['Poppins',sans-serif]">
+                  Projects
+                </p>
+                <div className="flex flex-wrap gap-[13px]">
+                  {modalThumbnails.map((item) => {
+                    const imgEl = (
+                      <img
+                        src={item.thumbnail}
+                        alt={item.title}
+                        className={`w-full h-full ${item.contain ? "object-contain p-[10px]" : "object-cover"}`}
+                      />
+                    );
+                    const style = item.bg ? { backgroundColor: item.bg } : undefined;
+
+                    return item.link ? (
+                      <Link
+                        key={item.id}
+                        to={item.link}
+                        onClick={() => {
+                          setShowProjectsModal(false);
+                          setIsOpen(false);
+                        }}
+                        className="w-[72px] h-[71px] rounded-[14px] overflow-hidden shrink-0 hover:ring-2 hover:ring-white/30 transition-all"
+                        style={style}
+                      >
+                        {imgEl}
+                      </Link>
+                    ) : (
+                      <div
+                        key={item.id}
+                        className="w-[72px] h-[71px] rounded-[14px] overflow-hidden shrink-0 hover:ring-2 hover:ring-white/30 transition-all"
+                        style={style}
+                      >
+                        {imgEl}
+                      </div>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Bandhan Password Modal */}
+      {bandhanProject && (
+        <BandhanModal
+          project={bandhanProject}
+          isOpen={showBandhanModal}
+          onClose={() => setShowBandhanModal(false)}
+        />
+      )}
     </>
   );
 }

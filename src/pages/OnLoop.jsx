@@ -13,7 +13,7 @@ export default function OnLoop() {
     : "";
 
   return (
-    <motion.div className="content-main relative" {...PAGE_TRANSITION}>
+    <motion.div className="flex flex-col relative" {...PAGE_TRANSITION}>
       <h1 className="text-[26px] text-white leading-[28px] tracking-[-0.26px] mb-[30px]">
         On Loop
       </h1>

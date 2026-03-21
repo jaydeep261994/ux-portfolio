@@ -47,7 +47,7 @@ export default function BandhanModal({ project, isOpen, onClose }) {
 
           {/* Modal */}
           <motion.div
-            className="relative w-full max-w-[1100px] bg-[#181818] mx-4 mb-4 overflow-hidden"
+            className="relative w-full max-w-[1100px] bg-[#181818] rounded-[30px] mx-4 mb-4 overflow-hidden"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
