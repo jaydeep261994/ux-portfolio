@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { SPRING } from "../../constants/motion";
 import projects from "../../data/projects";
 
@@ -15,7 +15,7 @@ export default function Sidebar() {
   const sidebarContent = (
     <div className="flex flex-col items-start w-full">
       {/* ── Profile ── */}
-      <div className="flex items-center gap-[11px] w-full" style={{ padding: "23px 24px" }}>
+      <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-[11px] w-full hover:opacity-80 transition-opacity" style={{ padding: "23px 24px" }}>
         <img
           src="/images/profile-avatar.png"
           alt="Jaydeep Das"
@@ -24,7 +24,7 @@ export default function Sidebar() {
         <span className="text-[14px] text-white tracking-[-0.14px] leading-5 whitespace-nowrap">
           Jaydeep Das
         </span>
-      </div>
+      </Link>
 
       {/* ── Projects section ── */}
       <div className="flex flex-col gap-4 items-center w-full">
@@ -71,7 +71,11 @@ export default function Sidebar() {
         <NavLink
           to="/on-loop"
           onClick={() => setIsOpen(false)}
-          className="flex items-center w-full rounded-[9px] text-[14px] leading-[14px] text-[#cecece] hover:bg-[#282828]"
+          className={({ isActive }) =>
+            `flex items-center w-full rounded-[9px] text-[14px] leading-[14px] text-[#cecece] transition-colors ${
+              isActive ? "bg-[#282828]" : "hover:bg-[#282828]"
+            }`
+          }
           style={{ padding: "10px 12px" }}
         >
           On Loop
@@ -79,7 +83,11 @@ export default function Sidebar() {
         <NavLink
           to="/exploration"
           onClick={() => setIsOpen(false)}
-          className="flex items-center w-full rounded-[9px] text-[14px] leading-[14px] text-[#cecece] hover:bg-[#282828]"
+          className={({ isActive }) =>
+            `flex items-center w-full rounded-[9px] text-[14px] leading-[14px] text-[#cecece] transition-colors ${
+              isActive ? "bg-[#282828]" : "hover:bg-[#282828]"
+            }`
+          }
           style={{ padding: "10px 12px" }}
         >
           Exploration

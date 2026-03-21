@@ -43,6 +43,7 @@ const projects = [
       "TATA AIG\u2019s agent portal was redesigned to create a unified digital experience that balances modern design aesthetics with ease of use for its promoters. The project focused on simplifying complex workflows, improving accessibility, and enhancing overall usability across the platform.",
     coverImage: "/images/covers/tata-bolt.png",
     logo: "/images/logos/tata-aig.png",
+    logoClass: "max-w-[280px] max-h-[100px]",
     link: "/case-study/tata-bolt",
   },
   {

@@ -10,6 +10,13 @@ export default function TopBar() {
   // Find the current project from the URL
   const currentProject = projects.find((p) => p.link === pathname);
 
+  // Page titles for non-project routes
+  const pageTitles = {
+    "/on-loop": "On Loop",
+    "/exploration": "Exploration",
+  };
+  const pageTitle = pageTitles[pathname];
+
   const handleCopy = () => {
     navigator.clipboard.writeText(window.location.href);
     setCopied(true);
@@ -33,11 +40,11 @@ export default function TopBar() {
             >
               Home
             </Link>
-            {currentProject && (
+            {(currentProject || pageTitle) && (
               <>
                 <span className="text-[13px] text-[#878787] leading-5">/</span>
                 <span className="text-[13px] text-[#878787] leading-5 tracking-[-0.13px]">
-                  {currentProject.title}
+                  {currentProject ? currentProject.title : pageTitle}
                 </span>
               </>
             )}
@@ -83,8 +90,8 @@ export default function TopBar() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
           >
-            <div className="flex items-center gap-[10px] bg-white rounded-full px-[10px] py-[6px] shadow-lg">
-              <div className="flex items-center justify-center w-[28px] h-[28px] bg-[#f2f1f1] rounded-[15px] shrink-0">
+            <div className="flex items-center gap-[8px] bg-white rounded-full pl-[4px] pr-[14px] py-[4px] shadow-lg">
+              <div className="flex items-center justify-center w-[28px] h-[28px] bg-[#f2f1f1] rounded-full shrink-0">
                 <svg
                   width="13"
                   height="13"
@@ -98,7 +105,7 @@ export default function TopBar() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <span className="text-[12px] text-[#5b5b5b] whitespace-nowrap pr-[5px]">
+              <span className="text-[12px] text-[#5b5b5b] whitespace-nowrap">
                 Link Copied
               </span>
             </div>
