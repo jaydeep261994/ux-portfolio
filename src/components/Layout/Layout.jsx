@@ -1,9 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import TopBar from "../TopBar/TopBar";
 
 
 export default function Layout() {
+  const location = useLocation();
+  const isCaseStudy = location.pathname.startsWith("/case-study/");
+
   return (
     <>
       <Sidebar />
@@ -19,7 +22,7 @@ export default function Layout() {
           }}
         />
         <TopBar />
-        <main className="content-main">
+        <main className={isCaseStudy ? "" : "content-main"}>
           <Outlet />
         </main>
       </div>

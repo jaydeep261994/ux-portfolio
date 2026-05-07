@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { MotionConfig, AnimatePresence } from "framer-motion";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
+import CaseStudy from "./pages/CaseStudy";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -11,6 +12,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="case-study/:projectId" element={<CaseStudy />} />
         </Route>
       </Routes>
     </AnimatePresence>

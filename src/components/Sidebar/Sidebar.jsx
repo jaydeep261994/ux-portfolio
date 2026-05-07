@@ -96,7 +96,7 @@ export default function Sidebar() {
       </div>
 
       {/* ── Contact section ── */}
-      <div className="flex flex-col gap-[13px] items-start w-full" style={{ padding: "17px 22px 17px 11px" }}>
+      <div className="flex flex-col gap-[13px] items-start w-full" style={{ padding: "17px 22px 0 11px" }}>
         <div className="flex items-center w-full" style={{ padding: "0 12px" }}>
           <span className="text-[14px] font-light text-[#8c8c8c] leading-[18px] tracking-[0.14px]">
             Contact

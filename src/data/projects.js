@@ -7,6 +7,33 @@ const projects = [
     coverImage: "/images/covers/fedex-bg.png",
     logo: "/images/logos/fedex-express.svg",
     link: "/case-study/fedex",
+    caseStudy: {
+      title: "FedEx - MWI",
+      hero: {
+        bg: "#EDEDED",
+        height: 507,
+        image: "/images/case-studies/fedex/hero.png",
+      },
+      summary:
+        "FedEx MWI (Mobile Work Interface) streamlines operational workflows for FedEx drivers and workshop managers, improving efficiency across deliveries, collections, and vehicle service coordination with enhanced mobile usability and performance.",
+      meta: {
+        timeline: "2025-2026",
+        role: "Design lead",
+        platform: "Android",
+        deliverables:
+          "Stakeholder Interview, Legacy system Audit, User Flow, Design System, Experience Design, Development Hand-off",
+        tools: "FIGMA",
+      },
+      blocks: [
+        { type: "image", src: "" },
+        {
+          type: "text",
+          body: "FedEx MWI (Mobile Work Interface) streamlines operational workflows for FedEx drivers and workshop managers, improving efficiency across deliveries, collections, and vehicle service coordination with enhanced mobile usability and performance.",
+        },
+        { type: "image", src: "" },
+        { type: "image", src: "" },
+      ],
+    },
   },
   {
     id: "audi",

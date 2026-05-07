@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import projects from "../../data/projects";
 
 export default function TopBar() {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
+  const isCaseStudy = pathname.startsWith("/case-study/");
 
   // Find the current project from the URL
   const currentProject = projects.find((p) => p.link === pathname);
@@ -33,7 +35,21 @@ export default function TopBar() {
         >
           {/* Breadcrumb */}
           <div className="flex items-center gap-[6px]">
-            <img src="/images/icons/house.svg" alt="" className="w-[19px] h-[19px]" />
+            {isCaseStudy ? (
+              <button
+                type="button"
+                onClick={() => navigate(-1)}
+                aria-label="Go back"
+                className="flex items-center justify-center w-[19px] h-[19px] text-[#878787] hover:text-white transition-colors cursor-pointer"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12 19 5 12 12 5" />
+                </svg>
+              </button>
+            ) : (
+              <img src="/images/icons/house.svg" alt="" className="w-[19px] h-[19px]" />
+            )}
             <Link
               to="/"
               className="text-[13px] text-[#878787] leading-5 tracking-[-0.13px] hover:text-white transition-colors"
