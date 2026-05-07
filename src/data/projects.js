@@ -18,6 +18,15 @@ const projects = [
     link: "/case-study/audi",
   },
   {
+    id: "general-motors",
+    title: "General Motors",
+    description:
+      "General Motors’ connected vehicle platform was reimagined to deliver a more intuitive in-car and companion app experience. The project focused on simplifying complex feature flows, improving information hierarchy across infotainment and mobile surfaces, and aligning the digital experience with GM’s next-generation vehicle ecosystem.",
+    coverImage: "/images/covers/general-motors.png",
+    logo: null,
+    link: "/case-study/general-motors",
+  },
+  {
     id: "amns",
     title: "AM/NS India",
     description:
@@ -25,16 +34,6 @@ const projects = [
     coverImage: "/images/covers/amns.png",
     logo: "/images/logos/amns.svg",
     link: "/case-study/amns",
-  },
-  {
-    id: "claypond",
-    title: "Claypond Capital",
-    description:
-      "Claypond Capital is a family investment firm under the Manipal Group, focused on long-term wealth preservation and strategic investments. The goal was to design a distinct digital presence that reflects the firm\u2019s discretion, legacy, and financial acumen.",
-    coverImage: "/images/covers/claypond.png",
-    logo: "/images/logos/claypond.svg",
-    logoClass: "max-w-[350px] max-h-[80px]",
-    link: "/case-study/claypond",
   },
   {
     id: "tata-bolt",
@@ -56,6 +55,15 @@ const projects = [
     link: "/case-study/tata-inspectify",
   },
   {
+    id: "jsw",
+    title: "The Inspire Institute of Sport - JSW Group",
+    description:
+      "Inspired by India’s growing Olympic ambitions, this concept pitch for Inspire Institute of Sport explored how a digital platform could reflect the intensity, precision, and aspiration of a world-class athletic ecosystem. The project focused on translating elite sports performance into a modern digital experience through bold visual storytelling, structured content architecture, and performance-driven design systems.",
+    coverImage: "/images/covers/jsw.png",
+    logo: null,
+    link: "/case-study/jsw",
+  },
+  {
     id: "cartier",
     title: "Cartier MyAtlas",
     description:
@@ -72,18 +80,6 @@ const projects = [
     coverImage: "/images/covers/stockmann.png",
     logo: "/images/logos/stockmann-text.svg",
     link: "/case-study/stockmann",
-  },
-  {
-    id: "bandhan",
-    title: "Bandhan Bank",
-    subtitle: "SALESFORCE UX DESIGN",
-    description:
-      "At Accenture, I was responsible for designing Salesforce UI experiences for Bandhan Bank\u2019s internal employee platform, focusing on usability and workflow efficiency. Due to NDA restrictions, the project is password-protected\u2014please request access to view.",
-    coverImage: "/images/covers/bandhan.png",
-    logo: "/images/logos/bandhan.png",
-    logoClass: "max-w-[500px] max-h-[160px]",
-    link: "/case-study/bandhan",
-    passwordProtected: true,
   },
 ];
 
