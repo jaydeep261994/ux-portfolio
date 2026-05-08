@@ -12,7 +12,7 @@ const projects = [
       hero: {
         bg: "#EDEDED",
         height: 507,
-        image: "/images/case-studies/fedex/hero.png",
+        image: "/images/case-studies/fedex/banner.png",
       },
       summary:
         "FedEx MWI (Mobile Work Interface) streamlines operational workflows for FedEx drivers and workshop managers, improving efficiency across deliveries, collections, and vehicle service coordination with enhanced mobile usability and performance.",
@@ -25,13 +25,104 @@ const projects = [
         tools: "FIGMA",
       },
       blocks: [
-        { type: "image", src: "" },
+        { type: "heading", text: "Overview" },
         {
-          type: "text",
-          body: "FedEx MWI (Mobile Work Interface) streamlines operational workflows for FedEx drivers and workshop managers, improving efficiency across deliveries, collections, and vehicle service coordination with enhanced mobile usability and performance.",
+          type: "paragraph",
+          size: "lg",
+          body: "FedEx's Mobile Worker In-Cab (MWI) application is the daily driver-facing tool used by field couriers across Italy to manage collections, deliveries, signatures, and route operations. The existing system ran on a Windows-based handheld and no longer reflected how modern field workers expect to interact with their devices.",
         },
-        { type: "image", src: "" },
-        { type: "image", src: "" },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "I led the redesign that took MWI from a legacy Windows handheld application to a modern Android experience now deployed across the FedEx Italy field operation.",
+        },
+        { type: "image", src: "/images/case-studies/fedex/overview.png", alt: "FedEx MWI overview" },
+
+        { type: "heading", text: "The Challenge" },
+        {
+          type: "paragraph",
+          body: "The legacy system had no documentation :\n\nThere was no architecture diagram, no business logic spec, no documented user flows. The application had grown organically over years and the institutional knowledge lived in the heads of a few stakeholders.",
+        },
+        {
+          type: "paragraph",
+          body: "The platform shift was a paradigm shift, not a form factor shift :\n\nDrivers were moving from a Windows-based handheld to a rugged Android handheld — same context, same in-cab use, but a fundamentally different interaction model. The legacy app was built around Windows handheld conventions: stylus input, hardware buttons, dense form-driven screens, and dropdown-heavy navigation. The new Android experience needed to be touch-first, gesture-aware, and aligned with patterns drivers would recognize from any modern mobile device.",
+        },
+        { type: "divider" },
+
+        { type: "heading", text: "My Role" },
+        {
+          type: "list",
+          intro: "I led the design effort end-to-end alongside a small dev team. My responsibilities included:",
+          items: [
+            "Reverse-engineering the legacy Windows handheld application to map its workflows and business logic",
+            "Running stakeholder interviews to fill gaps in undocumented behavior",
+            "Defining the new information architecture for Android",
+            "Owning the visual system, interaction patterns, and screen-level design decisions",
+            "Driving alignment with product, engineering, and FedEx Italy operations",
+          ],
+        },
+        { type: "image", src: "/images/case-studies/fedex/my-role.png", alt: "My Role" },
+        { type: "divider" },
+
+        { type: "heading", text: "Key Screens" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "In-Cab Login —\n\nModernized branding and a cleaner entry point that orients drivers immediately on device wake.",
+        },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-1-login.png", alt: "In-Cab Login screen" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Mobile Worker Device Registration-\n\nSimplified Registration with device setup folded into onboarding, removing a separate configuration step.",
+        },
+        { type: "image", src: "/images/case-studies/fedex/device-registration.png", alt: "Device Registration screen" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Mobile Worker Menu -\n\nDashboard-driven navigation replacing the legacy menu structure, with notifications surfaced where drivers actually look.",
+        },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-2-menu.png", alt: "Mobile Worker Menu screen" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Job Summary-\n\nTab-based separation of collections and deliveries, with clear visibility of what's outstanding versus completed.",
+        },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-3-job-summary.png", alt: "Job Summary screen" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Collection Flow-\n\nStreamlined operational data layout with a clearer CTA hierarchy for the actions drivers take most often.",
+        },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-4-collection.png", alt: "Collection Flow screen" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Delivery Flow-\n\nRestructured confirmation flow that made the primary action obvious and reduced steps to capture proof of delivery.",
+        },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-5-delivery.png", alt: "Delivery Flow screen" },
+
+        { type: "heading", text: "Outcome" },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "The redesigned MWI application was successfully rolled out across 3,000+ rugged Android devices used by FedEx drivers and field workers throughout Italy.\n\nThe rollout validated the core bet of the project: that a legacy Windows handheld workflow could be fully reimagined for modern Android without disrupting the operation. Drivers adopted the new application at scale in real-world delivery conditions.",
+        },
+        { type: "divider" },
+
+        { type: "heading", text: "Reflection" },
+        {
+          type: "paragraph",
+          size: "lg",
+          maxWidth: 1032,
+          body: "The hardest part of this project wasn't the visual design — it was working without a map. Reverse-engineering an undocumented Windows handheld system while simultaneously redesigning it for Android required holding two mental models at once: how the legacy device worked in drivers' hands, and how the new device should work for the same people doing the same job.\n\nThe lesson I took from MWI is that platform migrations are really interaction migrations. When the form factor stays roughly the same but the OS changes underneath it, the design challenge isn't translation — it's deciding which habits to honor and which to retire.",
+        },
       ],
     },
   },

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import projects from "../data/projects";
 import {
@@ -8,6 +8,11 @@ import {
   CaseStudyLead,
   CaseStudyMeta,
   CaseStudyImageBlock,
+  CaseStudySectionHeading,
+  CaseStudyParagraph,
+  CaseStudyDivider,
+  CaseStudyFooterNav,
+  CaseStudyList,
 } from "../components/CaseStudy/Template";
 
 const META_LABELS = {
@@ -22,6 +27,53 @@ function buildMetaItems(meta = {}) {
   return Object.entries(META_LABELS)
     .filter(([key]) => meta[key])
     .map(([key, label]) => ({ label, value: meta[key] }));
+}
+
+function renderBlock(block, i) {
+  switch (block.type) {
+    case "image":
+      return (
+        <CaseStudyImageBlock
+          key={i}
+          src={block.src}
+          alt={block.alt}
+          aspectRatio={block.aspectRatio}
+          bg={block.bg}
+        />
+      );
+    case "heading":
+      return <CaseStudySectionHeading key={i}>{block.text}</CaseStudySectionHeading>;
+    case "paragraph":
+      return (
+        <CaseStudyParagraph
+          key={i}
+          size={block.size}
+          weight={block.weight}
+          maxWidth={block.maxWidth}
+        >
+          {block.body}
+        </CaseStudyParagraph>
+      );
+    case "text":
+      return (
+        <CaseStudyLead key={i} maxWidth={block.maxWidth || 725}>
+          {block.body}
+        </CaseStudyLead>
+      );
+    case "divider":
+      return <CaseStudyDivider key={i} />;
+    case "list":
+      return (
+        <CaseStudyList
+          key={i}
+          intro={block.intro}
+          items={block.items}
+          maxWidth={block.maxWidth}
+        />
+      );
+    default:
+      return null;
+  }
 }
 
 export default function CaseStudy() {
@@ -40,6 +92,10 @@ export default function CaseStudy() {
   const blocks = cs.blocks || [];
   const metaItems = buildMetaItems(cs.meta);
 
+  // Find next project for footer nav
+  const idx = projects.findIndex((p) => p.id === projectId);
+  const nextProject = idx >= 0 ? projects[(idx + 1) % projects.length] : null;
+
   return (
     <motion.div
       key={project.id}
@@ -49,7 +105,6 @@ export default function CaseStudy() {
       transition={{ type: "spring", stiffness: 220, damping: 28 }}
       className="relative bg-[#181818] min-h-screen"
     >
-      {/* Hero — full bleed within the right column */}
       <CaseStudyHero
         bg={cs.hero?.bg || "#EDEDED"}
         height={cs.hero?.height || 507}
@@ -57,7 +112,6 @@ export default function CaseStudy() {
         alt={`${project.title} hero`}
       />
 
-      {/* Content column */}
       <div className="pt-[54px] pb-[120px] px-[64px]">
         <div className="flex flex-col gap-[36px]">
           <CaseStudyTitleRow
@@ -70,27 +124,7 @@ export default function CaseStudy() {
 
           {metaItems.length > 0 && <CaseStudyMeta items={metaItems} />}
 
-          {blocks.map((block, i) => {
-            if (block.type === "image") {
-              return (
-                <CaseStudyImageBlock
-                  key={i}
-                  src={block.src}
-                  alt={block.alt}
-                  height={block.height}
-                  bg={block.bg}
-                />
-              );
-            }
-            if (block.type === "text") {
-              return (
-                <CaseStudyLead key={i} maxWidth={block.maxWidth || 725}>
-                  {block.body}
-                </CaseStudyLead>
-              );
-            }
-            return null;
-          })}
+          {blocks.map(renderBlock)}
 
           {blocks.length === 0 && (
             <p className="text-[12px] text-[#5b5b5b] font-['Poppins',sans-serif]">
@@ -98,14 +132,9 @@ export default function CaseStudy() {
             </p>
           )}
 
-          <div className="pt-[24px]">
-            <Link
-              to="/"
-              className="inline-block text-[12px] text-[#D2D2D2] hover:text-white transition-colors font-['Poppins',sans-serif]"
-            >
-              ← Back to all projects
-            </Link>
-          </div>
+          {nextProject && (
+            <CaseStudyFooterNav next={{ title: nextProject.title.toUpperCase(), link: nextProject.link }} />
+          )}
         </div>
       </div>
     </motion.div>
