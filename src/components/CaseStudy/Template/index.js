@@ -3,6 +3,7 @@ export { default as CaseStudyTitleRow } from "./CaseStudyTitleRow";
 export { default as CaseStudyLead } from "./CaseStudyLead";
 export { default as CaseStudyMeta } from "./CaseStudyMeta";
 export { default as CaseStudyImageBlock } from "./CaseStudyImageBlock";
+export { default as CaseStudyVideoBlock } from "./CaseStudyVideoBlock";
 export { default as CaseStudySectionHeading } from "./CaseStudySectionHeading";
 export { default as CaseStudyParagraph } from "./CaseStudyParagraph";
 export { default as CaseStudyDivider } from "./CaseStudyDivider";

@@ -8,6 +8,7 @@ import {
   CaseStudyLead,
   CaseStudyMeta,
   CaseStudyImageBlock,
+  CaseStudyVideoBlock,
   CaseStudySectionHeading,
   CaseStudyParagraph,
   CaseStudyDivider,
@@ -37,6 +38,16 @@ function renderBlock(block, i) {
           key={i}
           src={block.src}
           alt={block.alt}
+          aspectRatio={block.aspectRatio}
+          bg={block.bg}
+        />
+      );
+    case "video":
+      return (
+        <CaseStudyVideoBlock
+          key={i}
+          src={block.src}
+          poster={block.poster}
           aspectRatio={block.aspectRatio}
           bg={block.bg}
         />
