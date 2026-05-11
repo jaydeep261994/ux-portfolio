@@ -5,7 +5,9 @@ export default function CaseStudyImageBlock({
   alt = "",
   aspectRatio = "1032 / 514",
   bg = "#FFFFFF",
+  fit = "contain",
 }) {
+  const objectClass = fit === "cover" ? "object-cover" : "object-contain";
   return (
     <motion.div
       className="w-full overflow-hidden flex items-center justify-center"
@@ -16,7 +18,7 @@ export default function CaseStudyImageBlock({
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
       {src ? (
-        <img src={src} alt={alt} className="w-full h-full object-contain" />
+        <img src={src} alt={alt} className={`w-full h-full ${objectClass}`} />
       ) : null}
     </motion.div>
   );

@@ -40,6 +40,7 @@ function renderBlock(block, i) {
           alt={block.alt}
           aspectRatio={block.aspectRatio}
           bg={block.bg}
+          fit={block.fit}
         />
       );
     case "video":
@@ -120,6 +121,9 @@ export default function CaseStudy() {
         bg={cs.hero?.bg || "#EDEDED"}
         height={cs.hero?.height || 507}
         image={cs.hero?.image || project.coverImage}
+        video={cs.hero?.video}
+        poster={cs.hero?.poster}
+        fit={cs.hero?.fit || "contain"}
         alt={`${project.title} hero`}
       />
 

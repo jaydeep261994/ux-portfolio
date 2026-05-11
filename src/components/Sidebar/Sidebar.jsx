@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NavLink, Link } from "react-router-dom";
 import { SPRING } from "../../constants/motion";
 import projects from "../../data/projects";
+import { playProjectClick } from "../../lib/sound";
 
 const sidebarProjects = projects.map((p) => ({
   to: p.link,
@@ -62,7 +63,10 @@ export default function Sidebar() {
             <NavLink
               key={to}
               to={to}
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                playProjectClick();
+                setIsOpen(false);
+              }}
               className={({ isActive }) =>
                 `flex items-center w-[219px] rounded-[9px] text-[14px] leading-[14px] text-[#cecece] transition-colors ${
                   isActive ? "bg-[#282828]" : "hover:bg-[#282828]"
@@ -220,6 +224,7 @@ export default function Sidebar() {
                         key={item.id}
                         to={item.link}
                         onClick={() => {
+                          playProjectClick();
                           setShowProjectsModal(false);
                           setIsOpen(false);
                         }}

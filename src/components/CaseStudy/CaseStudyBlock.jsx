@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { SPRING } from "../../constants/motion";
+import { playProjectClick } from "../../lib/sound";
 
 export default function CaseStudyBlock({ project, index, onPasswordClick }) {
   const coverContent = (
@@ -46,12 +47,15 @@ export default function CaseStudyBlock({ project, index, onPasswordClick }) {
         <button
           type="button"
           className="block group text-left w-full cursor-pointer"
-          onClick={() => onPasswordClick(project)}
+          onClick={() => {
+            playProjectClick();
+            onPasswordClick(project);
+          }}
         >
           {coverContent}
         </button>
       ) : (
-        <Link to={project.link} className="block group">
+        <Link to={project.link} className="block group" onClick={() => playProjectClick()}>
           {coverContent}
         </Link>
       )}
