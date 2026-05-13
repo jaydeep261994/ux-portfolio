@@ -454,6 +454,98 @@ const projects = [
     logo: "/images/logos/tata-aig.png",
     logoClass: "max-w-[280px] max-h-[100px]",
     link: "/case-study/tata-bolt",
+    caseStudy: {
+      title: "TATA AIG Bolt",
+      hero: {
+        bg: "#EDEDED",
+        height: 507,
+        image: "/images/case-studies/tata-bolt/hero.png",
+        fit: "cover",
+      },
+      summary:
+        "TATA AIG agents handle a lot. New policies, renewals, record-keeping, all while sitting across from a customer who just wants a straight answer. The existing process was slow and scattered. This platform was built to fix that \u2014 policy generation, renewals, and record management, unified into one workflow that finally moves as fast as the agents do.",
+      meta: {
+        timeline: "2024",
+        role: "Product Design",
+        platform: "Web",
+        deliverables: "UX Wireframing, UI Design, Interactive Prototype",
+        tools: "FIGMA, Illustrator",
+      },
+      blocks: [
+        { type: "heading", text: "Overview" },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "TATA AIG agents handle a lot. New policies, renewals, record-keeping, all while sitting across from a customer who just wants a straight answer.\n\nThe existing process was slow and scattered. This platform was built to fix that. Policy generation, renewals, and record management, unified into one workflow that finally moves as fast as the agents do.",
+        },
+        { type: "divider" },
+
+        { type: "heading", text: "The Challenge" },
+        {
+          type: "paragraph",
+          body: "Agents fell into three categories: high-yielding, medium-yielding, and low-yielding. Each had different needs, different comfort levels with technology, and different definitions of what \"easy\" meant.",
+        },
+        {
+          type: "paragraph",
+          body: "The design had to work for all three without being watered down for any of them. Less form-filling. Fewer screens. No dead ends.",
+        },
+        {
+          type: "carousel",
+          aspectRatio: "1542 / 863",
+          bg: "#EDEDED",
+          images: [
+            { src: "/images/case-studies/tata-bolt/challenge-1.png", alt: "Legacy flow — screen 1" },
+            { src: "/images/case-studies/tata-bolt/challenge-2.png", alt: "Legacy flow — screen 2" },
+            { src: "/images/case-studies/tata-bolt/challenge-3.png", alt: "Legacy flow — screen 3" },
+          ],
+        },
+        { type: "divider" },
+
+        { type: "heading", text: "Key Design Decisions" },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "Four moves that shaped the product.",
+        },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Simplified Form Flow \u2014\n\nThe biggest friction point was the policy generation form. Long, dense, and unforgiving. We restructured the journey to reduce input steps and surface only what was needed at each stage.",
+        },
+        { type: "video", src: "/videos/case-studies/tata-bolt/simplified-form.mp4", poster: "/images/case-studies/tata-bolt/decision-1-form.png", aspectRatio: "1030 / 538" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Stepper to Dropdown \u2014\n\nOn mobile, the traditional stepper was eating screen space and losing agents mid-flow. We moved to a dropdown-based approach that kept the current step visible, made it easy to jump back, and freed up room for the actual content.",
+        },
+        { type: "image", src: "/images/case-studies/tata-bolt/decision-2-stepper.png", alt: "Stepper to Dropdown", aspectRatio: "1031 / 538" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Service Discovery on Landing \u2014\n\nAll of TATA AIG's offerings were buried. A toggle on the landing banner now lets agents switch between product categories and see everything upfront, cutting the time spent searching for the right policy type.",
+        },
+        { type: "image", src: "/images/case-studies/tata-bolt/decision-3-discovery.png", alt: "Service Discovery on Landing" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Design System \u2014\n\nClean lines, bold colors, consistent components. Built to scale so future product additions don't require rebuilding from scratch every time.",
+        },
+        { type: "image", src: "/images/case-studies/tata-bolt/decision-4-design-system.png", alt: "Design System" },
+        { type: "divider" },
+
+        { type: "heading", text: "Outcome" },
+        {
+          type: "paragraph",
+          size: "lg",
+          maxWidth: 1032,
+          body: "Time given back to the conversation.\n\nA platform that reduced the time agents spent on process and gave it back to the conversation with the customer. Scalable by design, so the team could keep adding products without revisiting the foundations.",
+        },
+      ],
+    },
   },
   {
     id: "tata-inspectify",
@@ -461,8 +553,136 @@ const projects = [
     description:
       "Inspectify is a self-inspection platform developed for TATA AIG to simplify motor insurance renewals for vehicles with expired policies. The platform enables users to seamlessly record and submit vehicle condition videos through a guided digital experience.",
     coverImage: "/images/covers/tata-inspectify.png",
-    logo: null,
+    logo: "/images/case-studies/inspectify/logo-badge.png",
     link: "/case-study/tata-inspectify",
+    caseStudy: {
+      title: "TATA AIG INSPECTIFY",
+      hero: {
+        bg: "#CFDEF2",
+        height: 507,
+        image: "/images/case-studies/inspectify/hero.png",
+        fit: "cover",
+      },
+      summary:
+        "Inspectify is a self-inspection platform developed for Tata AIG to streamline motor insurance renewals for vehicles with expired policies. The platform enables users to seamlessly record and submit vehicle inspection videos through an intuitive, AI-assisted experience featuring real-time visual cues and voice-guided instructions. By digitizing the inspection process, Inspectify reduces manual intervention, accelerates policy renewals, and delivers a faster, more convenient experience for customers.",
+      meta: {
+        timeline: "2024",
+        role: "Product Design",
+        platform: "Android, iOS",
+        deliverables:
+          "Stakeholder Interview, Existing App Audit, User Flow, Wireframing, UI Experience",
+        tools: "FIGMA, Mid-journey, Photoshop",
+      },
+      blocks: [
+        { type: "heading", text: "Background" },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "Tata AIG Inspectify is a smart self-inspection platform designed to simplify the pre-inspection process for private, commercial, and goods-carrying vehicles in break-in insurance cases. The platform enables customers with expired motor insurance policies to easily assess and document their vehicle's condition by recording guided videos and photos directly from their device.\n\nPowered by AI-driven visual and voice assistance, Inspectify ensures a smooth and standardized inspection experience while helping insurers verify that no damage occurred during the policy break period. By digitizing the verification process, the platform accelerates policy renewals, reduces manual intervention, and delivers a faster, more convenient customer experience.",
+        },
+        { type: "divider" },
+
+        { type: "heading", text: "Objective & Goal" },
+        {
+          type: "paragraph",
+          body: "Design a scalable and future-ready product foundation capable of supporting diverse inspection use cases and evolving business requirements.",
+        },
+        {
+          type: "paragraph",
+          body: "The primary objective was to reduce the inspection error rate to below 40% while significantly minimizing the number of steps and user interactions required to complete the process. To enhance accuracy and usability, the platform provides real-time feedback, intelligent error detection, and AI-powered visual guidance to help users correctly identify and capture vehicle parts — especially areas that are typically difficult to locate or inspect.",
+        },
+        { type: "image", src: "/images/case-studies/inspectify/objective.png", alt: "Objective & Goal", aspectRatio: "1031 / 538" },
+        { type: "divider" },
+
+        { type: "heading", text: "Business Pains" },
+        {
+          type: "paragraph",
+          body: "The average time required to complete the inspection process was approximately 8 minutes, creating friction in the overall user experience.",
+        },
+        {
+          type: "paragraph",
+          body: "Additionally, nearly 40% of submissions were placed on hold due to two major issues — incomplete vehicle video captures and poor visual clarity — both of which resulted in failed validations during the pre-inspection process. The platform also experienced significant user drop-offs even before recording began, highlighting usability challenges and a lack of confidence or guidance during onboarding.",
+        },
+        { type: "image", src: "/images/case-studies/inspectify/business-pains.png", alt: "Business Pains", aspectRatio: "1031 / 538" },
+        { type: "divider" },
+
+        { type: "heading", text: "Insights from Users" },
+        {
+          type: "paragraph",
+          body: "Conducted both virtual and in-person user interviews to better understand user expectations, pain points, and real-world inspection challenges.",
+        },
+        {
+          type: "paragraph",
+          body: "Through extensive discussions with end users and on-ground sales teams, we uncovered several critical issues impacting the inspection experience. Users frequently struggled to locate essential vehicle details such as the chassis number, while poor network connectivity in remote or low-signal areas often caused delays, interrupted uploads, and incomplete submissions. These challenges significantly affected process completion rates and overall user confidence during self-inspection.",
+        },
+        { type: "image", src: "/images/case-studies/inspectify/insights.png", alt: "Insights from Users", aspectRatio: "1031 / 538" },
+        { type: "divider" },
+
+        { type: "heading", text: "Competitor Analysis" },
+        {
+          type: "paragraph",
+          body: "Conducted an in-depth competitor analysis for the Tata AIG self-inspection platform, benchmarking the experience against leading insurance providers across key parameters such as AI-powered guidance, visual and voice assistance, onboarding flow, walkthrough experience, and overall time efficiency.",
+        },
+        {
+          type: "paragraph",
+          body: "The analysis helped identify existing market gaps, usability shortcomings, and industry best practices, providing valuable insights to refine Tata AIG's inspection journey. These findings played a key role in improving the product's usability, reducing friction in the inspection flow, and creating a more intuitive and differentiated user experience.",
+        },
+        { type: "image", src: "/images/case-studies/inspectify/competitor.png", alt: "Competitor Analysis", aspectRatio: "1030 / 538" },
+        { type: "divider" },
+
+        { type: "heading", text: "New Recording Flow" },
+        {
+          type: "paragraph",
+          body: "Designed a custom camera interface with integrated visual and voice guidance to create a seamless inspection experience — even for first-time users.",
+        },
+        {
+          type: "paragraph",
+          body: "The interface provided users with real-time visual references alongside step-by-step video assistance, allowing them to follow guided instructions while simultaneously performing the vehicle inspection. This reduced confusion, improved capture accuracy, and minimized dependency on manual support.",
+        },
+        {
+          type: "paragraph",
+          body: "By transforming the inspection into a guided, synchronized experience, users were able to complete the entire process in an average of just 94 seconds — aligning almost exactly with the duration of the assistance video and significantly reducing overall completion time.",
+        },
+        { type: "image", src: "/images/case-studies/inspectify/recording-flow.png", alt: "New Recording Flow", aspectRatio: "2820 / 1528" },
+        { type: "divider" },
+
+        { type: "heading", text: "Strategic UI Design" },
+        {
+          type: "paragraph",
+          body: "Crafted a futuristic yet highly functional user experience by blending immersive visual aesthetics with usability-focused interaction design. The interface incorporated holographic-inspired visual elements to communicate guidance and system feedback more intuitively. These luminous highlights, set against a clean and minimal background, enhanced visual clarity, improved focus on critical actions, and created a distinctive contrast that elevated the overall product experience.",
+        },
+        {
+          type: "paragraph",
+          body: "The holographic visual language also reinforced one of the platform's core USPs — real-time AI-powered assistance — symbolizing intelligent guidance throughout the inspection journey. This helped users feel supported and confident while navigating the process. To ensure visual consistency and scalability, the design system was carefully curated and refined with the support of AI-assisted design tools, aligning seamlessly with the broader product ecosystem.",
+        },
+        {
+          type: "paragraph",
+          body: "A major design objective was also to sustain user engagement across the entire onboarding and inspection flow. Since substantial drop-offs were occurring even before users entered the core experience, the interface was strategically designed to feel more interactive, guided, and approachable from the very first screen, ultimately improving user retention and completion rates.",
+        },
+        { type: "image", src: "/images/case-studies/inspectify/strategic-ui.png", alt: "Strategic UI Design", aspectRatio: "1030 / 538" },
+        { type: "divider" },
+
+        { type: "heading", text: "Inspection History" },
+        {
+          type: "paragraph",
+          body: "Introduced a fallback upload system that allows users to return and upload their inspection recordings later in case of poor network connectivity.",
+        },
+        {
+          type: "paragraph",
+          body: "Inspection videos are securely cached for up to 24 hours, enabling users to resume uploads once they reach a stronger network area. The platform also provides real-time network feedback, guiding users toward a more stable connection for successful submission.",
+        },
+        { type: "image", src: "/images/case-studies/inspectify/inspection-history.png", alt: "Inspection History", aspectRatio: "1030 / 538" },
+        { type: "divider" },
+
+        { type: "heading", text: "Conclusion" },
+        {
+          type: "paragraph",
+          size: "lg",
+          maxWidth: 1032,
+          body: "Tata AIG Inspectify delivers a distinctive and engaging product experience through a thoughtfully crafted UI and intuitive UX that sets it apart from conventional self-inspection platforms. The platform combines a visually immersive interface with a seamless and predictable user journey, making the self-inspection process feel more approachable, intuitive, and effortless to navigate — even for first-time users.",
+        },
+      ],
+    },
   },
   {
     id: "jsw",

@@ -9,6 +9,7 @@ import {
   CaseStudyMeta,
   CaseStudyImageBlock,
   CaseStudyVideoBlock,
+  CaseStudyCarousel,
   CaseStudySectionHeading,
   CaseStudyParagraph,
   CaseStudyDivider,
@@ -49,6 +50,15 @@ function renderBlock(block, i) {
           key={i}
           src={block.src}
           poster={block.poster}
+          aspectRatio={block.aspectRatio}
+          bg={block.bg}
+        />
+      );
+    case "carousel":
+      return (
+        <CaseStudyCarousel
+          key={i}
+          images={block.images}
           aspectRatio={block.aspectRatio}
           bg={block.bg}
         />
@@ -133,6 +143,7 @@ export default function CaseStudy() {
             title={cs.title || project.title}
             logo={cs.logo || project.logo}
             logoAlt={`${project.title} logo`}
+            logoClass={cs.titleLogoClass}
           />
 
           {cs.summary && <CaseStudyLead maxWidth={663}>{cs.summary}</CaseStudyLead>}
