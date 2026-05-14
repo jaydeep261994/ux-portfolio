@@ -27,8 +27,11 @@ const modalThumbnails = [
   { id: "signature", title: "Signature Collection", thumbnail: "/images/thumbnails/signature.png" },
 ];
 
-export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp } = {}) {
+  const [internalIsOpen, internalSetIsOpen] = useState(false);
+  const isControlled = setIsOpenProp !== undefined;
+  const isOpen = isControlled ? isOpenProp : internalIsOpen;
+  const setIsOpen = isControlled ? setIsOpenProp : internalSetIsOpen;
   const [showProjectsModal, setShowProjectsModal] = useState(false);
 
   const sidebarContent = (
@@ -108,7 +111,7 @@ export default function Sidebar() {
         </div>
         <div className="flex flex-col items-start">
           <a
-            href="mailto:jaydeep@example.com"
+            href="mailto:jaydeepdas06@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-[10px] rounded-[9px] text-[14px] leading-[14px] text-[#cecece] hover:bg-[#282828]"
@@ -118,7 +121,7 @@ export default function Sidebar() {
             Email
           </a>
           <a
-            href="https://linkedin.com/in/jaydeep"
+            href="https://www.linkedin.com/in/jaydeep-das-8a1169143/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-[10px] rounded-[9px] text-[14px] leading-[14px] text-[#cecece] hover:bg-[#282828]"
@@ -134,18 +137,6 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Hamburger — visible below lg */}
-      <button
-        className="fixed top-4 left-4 z-50 lg:hidden flex flex-col gap-1.5 p-2"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label={isOpen ? "Close menu" : "Open menu"}
-        aria-expanded={isOpen}
-      >
-        <span className={`block w-6 h-0.5 bg-white transition-transform ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
-        <span className={`block w-6 h-0.5 bg-white transition-opacity ${isOpen ? "opacity-0" : ""}`} />
-        <span className={`block w-6 h-0.5 bg-white transition-transform ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-      </button>
-
       {/* Overlay */}
       <AnimatePresence>
         {isOpen && (

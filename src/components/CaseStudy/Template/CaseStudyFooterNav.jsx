@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function CaseStudyFooterNav({ next }) {
   return (
-    <div className="flex items-center justify-between pt-[40px]">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-[32px] sm:pt-[40px]">
       <Link
         to="/"
         className="flex items-center gap-[11px] text-[16px] text-[#D2D2D2] hover:text-white transition-colors font-['Poppins',sans-serif]"

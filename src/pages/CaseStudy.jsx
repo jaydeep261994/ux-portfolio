@@ -10,6 +10,7 @@ import {
   CaseStudyImageBlock,
   CaseStudyVideoBlock,
   CaseStudyCarousel,
+  CaseStudyEmbed,
   CaseStudySectionHeading,
   CaseStudyParagraph,
   CaseStudyDivider,
@@ -61,6 +62,17 @@ function renderBlock(block, i) {
           images={block.images}
           aspectRatio={block.aspectRatio}
           bg={block.bg}
+        />
+      );
+    case "embed":
+      return (
+        <CaseStudyEmbed
+          key={i}
+          src={block.src}
+          title={block.title}
+          aspectRatio={block.aspectRatio}
+          bg={block.bg}
+          allow={block.allow}
         />
       );
     case "heading":
@@ -137,8 +149,8 @@ export default function CaseStudy() {
         alt={`${project.title} hero`}
       />
 
-      <div className="pt-[54px] pb-[120px] px-[64px]">
-        <div className="flex flex-col gap-[36px]">
+      <div className="pt-[36px] sm:pt-[44px] lg:pt-[54px] pb-[80px] lg:pb-[120px] px-5 sm:px-8 lg:px-[64px]">
+        <div className="flex flex-col gap-[28px] sm:gap-[36px]">
           <CaseStudyTitleRow
             title={cs.title || project.title}
             logo={cs.logo || project.logo}

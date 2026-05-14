@@ -18,9 +18,9 @@ export default function ExperienceList() {
         {experience.map((exp) => (
           <div
             key={exp.id}
-            className="flex items-center justify-between py-4 border-b border-[#323131]"
+            className="flex items-center justify-between gap-3 py-4 border-b border-[#323131]"
           >
-            <div className="flex items-center gap-[17px]">
+            <div className="flex items-center gap-3 sm:gap-[17px] min-w-0">
               {exp.logo ? (
                 <div className="w-[26px] h-[26px] shrink-0 flex items-center justify-center">
                   <img
@@ -32,17 +32,13 @@ export default function ExperienceList() {
               ) : (
                 <div className="w-[26px] h-[26px] shrink-0" />
               )}
-              <div className="flex items-center gap-[9px] text-[16px] leading-[20px] whitespace-nowrap">
-                <span className="text-[#cecece]">
-                  {exp.company}
-                </span>
-                <span className="text-[#5b5b5b]">/</span>
-                <span className="text-[#5b5b5b]">
-                  {exp.role}
-                </span>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-[9px] text-[14px] sm:text-[16px] leading-[20px] min-w-0">
+                <span className="text-[#cecece] truncate">{exp.company}</span>
+                <span className="text-[#5b5b5b] hidden sm:inline">/</span>
+                <span className="text-[#5b5b5b] truncate">{exp.role}</span>
               </div>
             </div>
-            <span className="text-[16px] text-[#5b5b5b] leading-[20px] text-right whitespace-nowrap shrink-0">
+            <span className="text-[13px] sm:text-[16px] text-[#5b5b5b] leading-[20px] text-right whitespace-nowrap shrink-0">
               {exp.yearStart && exp.yearEnd
                 ? `${exp.yearStart} — ${exp.yearEnd}`
                 : exp.year}

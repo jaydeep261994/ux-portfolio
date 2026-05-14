@@ -27,26 +27,26 @@ export default function Hero() {
       transition={SPRING_SLOW}
     >
       {/* Greeting */}
-      <div className="flex items-center gap-2">
-        <span className="text-[26px] text-white tracking-[-0.26px] leading-7">
+      <div className="flex items-center gap-2 flex-wrap">
+        <span className="text-[22px] sm:text-[26px] text-white tracking-[-0.26px] leading-7">
           hey, i&apos;m
         </span>
-        <SignatureAnimation className="h-12 w-auto" />
+        <SignatureAnimation className="h-10 sm:h-12 w-auto" />
       </div>
 
       {/* Title */}
-      <p className="text-[16px] text-[#5b5b5b] leading-[20px]">
+      <p className="text-[14px] sm:text-[16px] text-[#5b5b5b] leading-[20px]">
         Interaction Design Senior Analyst at Accenture
       </p>
 
       {/* Bio */}
-      <div className="text-[16px] font-light text-white leading-[22px]">
+      <div className="text-[14px] sm:text-[16px] font-light text-white leading-[22px]">
         <p>I design and build digital products &amp; visual interfaces</p>
         <p>Welcome to my small corner of web.</p>
       </div>
 
       {/* Location & Time */}
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-4 sm:gap-5 flex-wrap">
         <div className="flex items-center gap-1.5">
           <img src="/images/icons/map-pin.svg" alt="" className="w-5 h-5" />
           <span className="text-[16px] text-[#5e5e5e] leading-[20px]">

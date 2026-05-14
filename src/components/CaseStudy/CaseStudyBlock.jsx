@@ -17,7 +17,7 @@ export default function CaseStudyBlock({ project, index, onPasswordClick }) {
           <img
             src={project.logo}
             alt={`${project.title} logo`}
-            className={`${project.logoClass || "max-w-[200px] max-h-[80px]"} object-contain drop-shadow-lg`}
+            className={`${project.logoClass || "max-w-[70px] max-h-[28px] sm:max-w-[120px] sm:max-h-[50px] lg:max-w-[200px] lg:max-h-[80px]"} object-contain drop-shadow-lg`}
           />
         </div>
       )}

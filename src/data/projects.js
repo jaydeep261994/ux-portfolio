@@ -452,7 +452,7 @@ const projects = [
       "TATA AIG\u2019s agent portal was redesigned to create a unified digital experience that balances modern design aesthetics with ease of use for its promoters. The project focused on simplifying complex workflows, improving accessibility, and enhancing overall usability across the platform.",
     coverImage: "/images/covers/tata-bolt.png",
     logo: "/images/logos/tata-aig.png",
-    logoClass: "max-w-[280px] max-h-[100px]",
+    logoClass: "max-w-[100px] max-h-[36px] sm:max-w-[180px] sm:max-h-[68px] lg:max-w-[280px] lg:max-h-[100px]",
     link: "/case-study/tata-bolt",
     caseStudy: {
       title: "TATA AIG Bolt",
@@ -553,10 +553,11 @@ const projects = [
     description:
       "Inspectify is a self-inspection platform developed for TATA AIG to simplify motor insurance renewals for vehicles with expired policies. The platform enables users to seamlessly record and submit vehicle condition videos through a guided digital experience.",
     coverImage: "/images/covers/tata-inspectify.png",
-    logo: "/images/case-studies/inspectify/logo-badge.png",
+    logo: null,
     link: "/case-study/tata-inspectify",
     caseStudy: {
       title: "TATA AIG INSPECTIFY",
+      logo: "/images/case-studies/inspectify/logo-badge.png",
       hero: {
         bg: "#CFDEF2",
         height: 507,
@@ -692,6 +693,48 @@ const projects = [
     coverImage: "/images/covers/jsw.png",
     logo: null,
     link: "/case-study/jsw",
+    caseStudy: {
+      title: "The Inspire Institute of Sport - JSW Group",
+      logo: "/images/case-studies/jsw/logo.png",
+      titleLogoClass: "max-h-[90px] max-w-[340px]",
+      hero: {
+        bg: "#181818",
+        height: 507,
+        video: "/videos/case-studies/jsw/banner.mp4",
+        poster: "/images/case-studies/jsw/hero.png",
+        fit: "cover",
+      },
+      summary:
+        "Inspired by India's growing Olympic ambitions, this concept pitch for Inspire Institute of Sport explored how a digital platform could reflect the intensity, precision, and aspiration of a world-class athletic ecosystem. The project focused on translating elite sports performance into a modern digital experience through bold visual storytelling, structured content architecture, and performance-driven design systems.",
+      meta: {
+        timeline: "2024",
+        role: "User Interface Designer",
+        platform: "Website",
+        deliverables: "Information Architecture, User Flow, Experience Design, Visual Design",
+        tools: "FIGMA, Photoshop",
+      },
+      blocks: [
+        { type: "heading", text: "The Homepage" },
+        {
+          type: "paragraph",
+          body: "IIS doesn't talk to one kind of person. It talks to athletes deciding where to train. To parents weighing a future. To corporate partners writing cheques. To donors looking for impact. To media chasing a story.",
+        },
+        {
+          type: "paragraph",
+          body: "Most institutional sites in this space pick one audience and bury the rest. A site that tried to serve all of them risked becoming a homepage that served none.",
+        },
+        {
+          type: "paragraph",
+          body: "The challenge was building a single experience that opened the right door for the right person within seconds — without flattening the brand or fragmenting the journey.",
+        },
+        {
+          type: "embed",
+          src: "https://embed.figma.com/proto/J5sDNG6kuhpg80TqKVDn36/JSW?node-id=0-527&viewport=574%2C228%2C0.05&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share",
+          title: "JSW IIS Figma prototype",
+          aspectRatio: "800 / 450",
+        },
+      ],
+    },
   },
   {
     id: "cartier",
@@ -701,6 +744,45 @@ const projects = [
     coverImage: "/images/covers/cartier.png",
     logo: "/images/logos/cartier.svg",
     link: "/case-study/cartier",
+    caseStudy: {
+      title: "Cartier MyAtlas",
+      hero: {
+        bg: "#181818",
+        height: 507,
+        image: "/images/case-studies/cartier/hero.png",
+        fit: "cover",
+      },
+      summary:
+        "Founded in France, Cartier is one of the world's most iconic luxury maisons, renowned for its exceptional craftsmanship in high-end watches, fine jewelry, and timeless fashion accessories. With a legacy of elegance and innovation, Cartier has established itself among the most prestigious design houses globally.",
+      meta: {
+        timeline: "2023",
+        role: "Product Design",
+        platform: "iOS",
+        deliverables: "UI testing for elements, navigation, CTAs, page designs, and layouts",
+        tools: "FIGMA, Photoshop",
+      },
+      blocks: [
+        { type: "heading", text: "Background" },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "myAtlas is an internal social media app designed specifically for employees to communicate and collaborate within an organization. It is similar to external social media platforms like Facebook or Twitter, but with features that are tailored to the needs and goals of the company.",
+        },
+        { type: "divider" },
+
+        { type: "heading", text: "Global Design System" },
+        { type: "image", src: "/images/case-studies/cartier/design-system-1.png", alt: "Global Design System", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/cartier/design-system-2.png", alt: "Global Design System", aspectRatio: "1031 / 538" },
+
+        { type: "heading", text: "Card" },
+        { type: "image", src: "/images/case-studies/cartier/card-1.png", alt: "Card design", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/cartier/card-2.png", alt: "Card design", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/cartier/card-3.png", alt: "Card design", aspectRatio: "1031 / 531" },
+
+        { type: "heading", text: "User Flow" },
+        { type: "image", src: "/images/case-studies/cartier/user-flow.png", alt: "User Flow", aspectRatio: "1031 / 531" },
+      ],
+    },
   },
   {
     id: "stockmann",
@@ -710,6 +792,33 @@ const projects = [
     coverImage: "/images/covers/stockmann.png",
     logo: "/images/logos/stockmann-text.svg",
     link: "/case-study/stockmann",
+    caseStudy: {
+      title: "My Stockmann",
+      logo: "/images/case-studies/stockmann/logo.png",
+      hero: {
+        bg: "#181818",
+        height: 507,
+        image: "/images/case-studies/stockmann/hero.png",
+        fit: "cover",
+      },
+      summary:
+        "The loyalty app concept \"Kanssasi aina\" goes beyond illustrations. In fact, it became the tagline for the entire programme's marketing campaign. The app renewal ended up comprising of its visual design and illustrations, a marketing concept that included key messages, a launch film and a brand guide for the visual language of the loyalty programme.",
+      meta: {
+        timeline: "2023",
+        role: "Product Design",
+        platform: "iOS, Android",
+        deliverables: "UI Design",
+        tools: "FIGMA",
+      },
+      blocks: [
+        { type: "heading", text: "Onboarding" },
+        { type: "image", src: "/images/case-studies/stockmann/onboarding.png", alt: "Onboarding screens", aspectRatio: "1031 / 538" },
+        { type: "divider" },
+
+        { type: "heading", text: "Dashboard" },
+        { type: "image", src: "/images/case-studies/stockmann/dashboard.png", alt: "Dashboard screens", aspectRatio: "1031 / 538" },
+      ],
+    },
   },
 ];
 

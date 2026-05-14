@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import projects from "../../data/projects";
 
-export default function TopBar() {
+export default function TopBar({ onMenuToggle, isMenuOpen }) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
@@ -30,11 +30,23 @@ export default function TopBar() {
       <header className="sticky top-0 z-20">
         {/* Nav row */}
         <div
-          className="flex items-center justify-between bg-[#1d1d1d]"
-          style={{ padding: "12px 20px" }}
+          className="flex items-center justify-between bg-[#1d1d1d] gap-3 px-3 sm:px-5 py-3"
         >
           {/* Breadcrumb */}
-          <div className="flex items-center gap-[6px]">
+          <div className="flex items-center gap-2 sm:gap-[6px] min-w-0">
+            {onMenuToggle && (
+              <button
+                type="button"
+                onClick={onMenuToggle}
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMenuOpen}
+                className="lg:hidden flex flex-col gap-1 p-1 rounded-md hover:bg-white/5 transition-colors mr-1"
+              >
+                <span className={`block w-4 h-0.5 bg-[#cecece] transition-transform ${isMenuOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
+                <span className={`block w-4 h-0.5 bg-[#cecece] transition-opacity ${isMenuOpen ? "opacity-0" : ""}`} />
+                <span className={`block w-4 h-0.5 bg-[#cecece] transition-transform ${isMenuOpen ? "-rotate-45 -translate-y-[5px]" : ""}`} />
+              </button>
+            )}
             {isCaseStudy ? (
               <button
                 type="button"
@@ -59,7 +71,7 @@ export default function TopBar() {
             {(currentProject || pageTitle) && (
               <>
                 <span className="text-[13px] text-[#878787] leading-5">/</span>
-                <span className="text-[13px] text-[#878787] leading-5 tracking-[-0.13px]">
+                <span className="text-[13px] text-[#878787] leading-5 tracking-[-0.13px] truncate min-w-0">
                   {currentProject ? currentProject.title : pageTitle}
                 </span>
               </>
@@ -67,12 +79,13 @@ export default function TopBar() {
           </div>
 
           <button
-            className="flex items-center gap-[6px] bg-[#2d2c2c] rounded-[6px] hover:bg-white/10 transition-colors"
+            className="flex items-center gap-[6px] bg-[#2d2c2c] rounded-[6px] hover:bg-white/10 transition-colors shrink-0"
             style={{ padding: "4px 10px" }}
             onClick={handleCopy}
+            aria-label="Copy link"
           >
             <img src="/images/icons/link.svg" alt="" className="w-[19px] h-[19px]" />
-            <span className="text-[13px] text-[#878787] leading-5 tracking-[-0.13px]">
+            <span className="text-[13px] text-[#878787] leading-5 tracking-[-0.13px] hidden sm:inline">
               Copy link
             </span>
           </button>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import TopBar from "../TopBar/TopBar";
@@ -6,10 +7,11 @@ import TopBar from "../TopBar/TopBar";
 export default function Layout() {
   const location = useLocation();
   const isCaseStudy = location.pathname.startsWith("/case-study/");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <>
-      <Sidebar />
+      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 
       {/* Main content — offset by sidebar width on desktop */}
       <div className="content-area min-h-screen relative">
@@ -21,7 +23,7 @@ export default function Layout() {
             backgroundSize: "24px 24px",
           }}
         />
-        <TopBar />
+        <TopBar onMenuToggle={() => setIsSidebarOpen((p) => !p)} isMenuOpen={isSidebarOpen} />
         <main className={isCaseStudy ? "" : "content-main"}>
           <Outlet />
         </main>

@@ -96,7 +96,7 @@
 }
 
 .content-main {
-  padding: 40px 20px;
+  padding: 32px 20px;
 }
 
 @media (min-width: 768px) {
@@ -111,6 +111,22 @@
   }
   .content-main {
     padding: 63px 55px;
+  }
+}
+
+/* Case study hero responsive height */
+.hero-frame {
+  height: 240px;
+  min-height: 200px;
+}
+@media (min-width: 640px) {
+  .hero-frame {
+    height: 320px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-frame {
+    height: var(--hero-h, 507px);
   }
 }
 

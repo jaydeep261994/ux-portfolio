@@ -3,6 +3,7 @@ import { MotionConfig, AnimatePresence } from "framer-motion";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
 import CaseStudy from "./pages/CaseStudy";
+import Exploration from "./pages/Exploration";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -12,6 +13,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="exploration" element={<Exploration />} />
           <Route path="case-study/:projectId" element={<CaseStudy />} />
         </Route>
       </Routes>

@@ -5,6 +5,7 @@ export { default as CaseStudyMeta } from "./CaseStudyMeta";
 export { default as CaseStudyImageBlock } from "./CaseStudyImageBlock";
 export { default as CaseStudyVideoBlock } from "./CaseStudyVideoBlock";
 export { default as CaseStudyCarousel } from "./CaseStudyCarousel";
+export { default as CaseStudyEmbed } from "./CaseStudyEmbed";
 export { default as CaseStudySectionHeading } from "./CaseStudySectionHeading";
 export { default as CaseStudyParagraph } from "./CaseStudyParagraph";
 export { default as CaseStudyDivider } from "./CaseStudyDivider";
