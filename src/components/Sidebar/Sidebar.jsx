@@ -35,14 +35,10 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
   const [showProjectsModal, setShowProjectsModal] = useState(false);
 
   const sidebarContent = (
-    <div className="flex flex-col items-start w-full">
+    <div className="flex flex-col items-start w-full min-h-full">
       {/* ── Profile ── */}
-      <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-[11px] w-full hover:opacity-80 transition-opacity" style={{ padding: "23px 24px" }}>
-        <img
-          src="/images/profile-avatar.png"
-          alt="Jaydeep Das"
-          className="w-[35px] h-[35px] rounded-full object-cover shrink-0"
-        />
+      <Link to="/" onClick={() => setIsOpen(false)} className="profile-link group flex items-center gap-[11px] w-full hover:opacity-80 transition-opacity" style={{ padding: "23px 24px" }}>
+        <span className="gradient-orb shrink-0" aria-hidden="true" />
         <span className="text-[14px] text-white tracking-[-0.14px] leading-5 whitespace-nowrap">
           Jaydeep Das
         </span>
@@ -131,6 +127,14 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
             Linkedin
           </a>
         </div>
+      </div>
+
+      {/* ── Credit footer ── */}
+      <div className="mt-auto w-full" style={{ padding: "20px 24px" }}>
+        <p className="text-[11px] leading-[14px] text-[#5b5b5b] tracking-[0.05px]">
+          Designed and developed by{" "}
+          <span className="text-[#8c8c8c]">Jaydeep</span>
+        </p>
       </div>
     </div>
   );
