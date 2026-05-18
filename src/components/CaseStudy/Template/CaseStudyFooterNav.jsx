@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { usePostHog } from "@posthog/react";
 
 export default function CaseStudyFooterNav({ next }) {
+  const posthog = usePostHog();
   return (
     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-[32px] sm:pt-[40px]">
       <Link
@@ -18,6 +20,7 @@ export default function CaseStudyFooterNav({ next }) {
         <Link
           to={next.link}
           className="flex items-center gap-[11px] text-[16px] text-[#D2D2D2] hover:text-white transition-colors font-['Poppins',sans-serif]"
+          onClick={() => posthog?.capture("next_project_clicked", { project_title: next.title })}
         >
           {next.title}
           <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

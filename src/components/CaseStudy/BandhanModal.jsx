@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePostHog } from "@posthog/react";
 
 const BANDHAN_PASSWORD = import.meta.env.VITE_BANDHAN_PASSWORD;
 
@@ -8,6 +9,7 @@ export default function BandhanModal({ project, isOpen, onClose }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+  const posthog = usePostHog();
 
   useEffect(() => {
     if (isOpen) {
@@ -21,9 +23,19 @@ export default function BandhanModal({ project, isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === BANDHAN_PASSWORD) {
+      posthog?.capture("password_submitted", {
+        project_id: project.id,
+        project_title: project.title,
+        outcome: "success",
+      });
       onClose();
       navigate(project.link);
     } else {
+      posthog?.capture("password_submitted", {
+        project_id: project.id,
+        project_title: project.title,
+        outcome: "failure",
+      });
       setError(true);
       setTimeout(() => setError(false), 1500);
     }

@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import projects from "../../data/projects";
+import { usePostHog } from "@posthog/react";
 
 export default function TopBar({ onMenuToggle, isMenuOpen }) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
+  const posthog = usePostHog();
   const isCaseStudy = pathname.startsWith("/case-study/");
 
   // Find the current project from the URL
@@ -21,6 +23,7 @@ export default function TopBar({ onMenuToggle, isMenuOpen }) {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(window.location.href);
+    posthog?.capture("link_copied", { page: pathname });
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import projects from "../data/projects";
+import { usePostHog } from "@posthog/react";
 import {
   CaseStudyHero,
   CaseStudyTitleRow,
@@ -113,10 +114,20 @@ function renderBlock(block, i) {
 export default function CaseStudy() {
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
+  const posthog = usePostHog();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [projectId]);
+
+  useEffect(() => {
+    if (project) {
+      posthog?.capture("case_study_viewed", {
+        project_id: project.id,
+        project_title: project.title,
+      });
+    }
+  }, [posthog, project]);
 
   if (!project) {
     return <Navigate to="/" replace />;

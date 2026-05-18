@@ -4,6 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { SPRING } from "../../constants/motion";
 import projects from "../../data/projects";
 import { playProjectClick } from "../../lib/sound";
+import { usePostHog } from "@posthog/react";
 
 const sidebarProjects = projects.map((p) => ({
   to: p.link,
@@ -32,6 +33,7 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
   const isOpen = isControlled ? isOpenProp : internalIsOpen;
   const setIsOpen = isControlled ? setIsOpenProp : internalSetIsOpen;
   const [showProjectsModal, setShowProjectsModal] = useState(false);
+  const posthog = usePostHog();
 
   const sidebarContent = (
     <div className="flex flex-col items-start w-full min-h-full">
@@ -63,6 +65,7 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
               to={to}
               onClick={() => {
                 playProjectClick();
+                posthog?.capture("sidebar_project_clicked", { project_title: label });
                 setIsOpen(false);
               }}
               className={({ isActive }) =>
@@ -111,6 +114,7 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
             rel="noopener noreferrer"
             className="flex items-center gap-[10px] rounded-[9px] text-[14px] leading-[14px] text-[#cecece] hover:bg-[#282828]"
             style={{ padding: "10px 12px" }}
+            onClick={() => posthog?.capture("contact_link_clicked", { channel: "email" })}
           >
             <img src="/images/icons/at.svg" alt="" className="w-4 h-4 shrink-0" />
             Email
@@ -121,6 +125,7 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
             rel="noopener noreferrer"
             className="flex items-center gap-[10px] rounded-[9px] text-[14px] leading-[14px] text-[#cecece] hover:bg-[#282828]"
             style={{ padding: "10px 12px" }}
+            onClick={() => posthog?.capture("contact_link_clicked", { channel: "linkedin" })}
           >
             <img src="/images/icons/linkedin.svg" alt="" className="w-4 h-4 shrink-0" />
             Linkedin

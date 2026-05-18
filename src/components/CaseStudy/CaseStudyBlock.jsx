@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { SPRING } from "../../constants/motion";
 import { playProjectClick } from "../../lib/sound";
+import { usePostHog } from "@posthog/react";
 
 export default function CaseStudyBlock({ project, index, onPasswordClick }) {
+  const posthog = usePostHog();
   const coverContent = (
     <div className="relative w-full aspect-[2/1] overflow-hidden">
       <img
@@ -49,13 +51,27 @@ export default function CaseStudyBlock({ project, index, onPasswordClick }) {
           className="block group text-left w-full cursor-pointer"
           onClick={() => {
             playProjectClick();
+            posthog?.capture("protected_project_clicked", {
+              project_id: project.id,
+              project_title: project.title,
+            });
             onPasswordClick(project);
           }}
         >
           {coverContent}
         </button>
       ) : (
-        <Link to={project.link} className="block group" onClick={() => playProjectClick()}>
+        <Link
+          to={project.link}
+          className="block group"
+          onClick={() => {
+            playProjectClick();
+            posthog?.capture("project_clicked", {
+              project_id: project.id,
+              project_title: project.title,
+            });
+          }}
+        >
           {coverContent}
         </Link>
       )}

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { MotionConfig, AnimatePresence } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
@@ -7,18 +6,9 @@ import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
 import CaseStudy from "./pages/CaseStudy";
 import Exploration from "./pages/Exploration";
-import { initPostHog, posthog } from "./lib/posthog";
 
 function AnimatedRoutes() {
   const location = useLocation();
-
-  useEffect(() => {
-    if (posthog && posthog.__loaded) {
-      posthog.capture("$pageview", {
-        $current_url: window.location.origin + location.pathname + location.search,
-      });
-    }
-  }, [location.pathname, location.search]);
 
   return (
     <AnimatePresence mode="wait">
@@ -34,10 +24,6 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
-  useEffect(() => {
-    initPostHog();
-  }, []);
-
   return (
     <MotionConfig reducedMotion="user">
       <BrowserRouter>
