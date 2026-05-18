@@ -90,22 +90,6 @@ export default function TopBar({ onMenuToggle, isMenuOpen }) {
             </span>
           </button>
         </div>
-
-        {/* Status badge row */}
-        <div
-          className="flex items-center justify-center bg-[#292929] h-[38px]"
-          style={{ padding: "7px 0" }}
-        >
-          <div
-            className="flex items-center gap-2 bg-[#353434] rounded-full"
-            style={{ padding: "5px 7px" }}
-          >
-            <img src="/images/icons/dot-green.svg" alt="" className="w-[6px] h-[6px]" />
-            <span className="text-[14px] text-[#979797] leading-[14px]">
-              looking for my next role
-            </span>
-          </div>
-        </div>
       </header>
 
       {/* Link Copied toast — fixed at bottom center of content area */}

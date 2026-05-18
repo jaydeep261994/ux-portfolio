@@ -13,7 +13,6 @@ const sidebarProjects = projects.map((p) => ({
 
 const modalThumbnails = [
   { id: "fedex", title: "FedEx", thumbnail: "/images/thumbnails/fedex.png", link: "/case-study/fedex" },
-  { id: "audi", title: "Audi", thumbnail: "/images/thumbnails/audi.png", link: "/case-study/audi" },
   { id: "amns", title: "AM/NS India", thumbnail: "/images/thumbnails/amns.png", link: "/case-study/amns" },
   { id: "claypond", title: "Claypond", thumbnail: "/images/thumbnails/claypond.png", link: "/case-study/claypond" },
   { id: "tata-bolt", title: "TATA AIG", thumbnail: "/images/thumbnails/tata-bolt.png", link: "/case-study/tata-bolt" },
