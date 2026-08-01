@@ -273,19 +273,28 @@ a.bento-card:focus-visible {
 }
 
 .playground-card__well {
+  position: relative;
   flex: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   overflow: hidden;
 }
 
+/* States are stacked and crossfaded, so the card never reflows as they swap. */
 .playground-card__well img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   width: 66%;
   height: auto;
+  transform: translateX(-50%);
   object-fit: contain;
+  opacity: 0;
+  transition: opacity 900ms var(--ease-out-expo);
   /* The phone renders with transparency, so it floats on the card tint. */
   filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.18));
+}
+
+.playground-card__well img[data-visible="true"] {
+  opacity: 1;
 }
 
 /* ── Theme switch ───────────────────────────────────────────────────── */

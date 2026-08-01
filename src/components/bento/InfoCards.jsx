@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import { skills, tools } from "../../data/bento";
+import { useReducedMotion } from "../../hooks/useReducedMotion";
+import { playgroundFrames, skills, tools } from "../../data/bento";
 
 const formatPuneTime = () =>
   new Date().toLocaleTimeString("en-GB", {
@@ -70,17 +71,40 @@ export function SkillsCard() {
   );
 }
 
-/** Explorations. Deliberately not a link — these have no case study behind them. */
+const PLAYGROUND_INTERVAL = 3800;
+
+/**
+ * Explorations. Deliberately not a link — these have no case study behind them.
+ * Crossfades between states on a timer, and holds on the first frame when the
+ * visitor has asked for reduced motion.
+ */
 export function PlaygroundCard() {
+  const prefersReduced = useReducedMotion();
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (prefersReduced || playgroundFrames.length < 2) return;
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % playgroundFrames.length),
+      PLAYGROUND_INTERVAL
+    );
+    return () => clearInterval(id);
+  }, [prefersReduced]);
+
   return (
     <Card className="info-card playground-card">
       <span className="info-card__label">Things i play around with</span>
       <div className="playground-card__well">
-        <img
-          src="/images/bento/playground.png"
-          alt="A conversational AI concept — How's it going, Bianca?"
-          loading="lazy"
-        />
+        {playgroundFrames.map((frame, i) => (
+          <img
+            key={frame.id}
+            src={frame.image}
+            alt={i === index ? frame.alt : ""}
+            aria-hidden={i === index ? undefined : "true"}
+            data-visible={i === index}
+            loading="lazy"
+          />
+        ))}
       </div>
     </Card>
   );

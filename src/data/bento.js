@@ -93,6 +93,24 @@ export const workRows = [
   { ratio: [0.605, 0.395], cards: [cards.jsw, cards.stockmann] },
 ];
 
+/**
+ * Playground states. The card crossfades between these on a timer; the phone is
+ * composited from Figma's screen node under its device bezel, so it floats on the
+ * card tint rather than carrying a baked-in plate.
+ */
+export const playgroundFrames = [
+  {
+    id: "idle",
+    image: "/images/bento/playground-idle.png",
+    alt: "A conversational AI concept at rest — How's it going, Bianca?",
+  },
+  {
+    id: "listening",
+    image: "/images/bento/playground-listening.png",
+    alt: "The same concept listening — Hey, I am listening. What do you need?",
+  },
+];
+
 /** Reduced from the 25 tags in the Figma — a long list reads as insecurity at lead level. */
 export const skills = [
   "Enterprise Product Design",
