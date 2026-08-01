@@ -187,6 +187,85 @@ a.bento-card:focus-visible {
   object-fit: cover;
 }
 
+/* ── Map location marker ────────────────────────────────────────────────
+   Figma 3627-75452: a 50px ring with a 6px tip triangle and dot, sitting at
+   (209, 49) in the 302 × 160 card. Positioned in percentages so it stays put
+   on the map as the card scales. */
+.pune-marker {
+  position: absolute;
+  left: 69.21%; /* 209 / 302 */
+  top: 30.63%; /* 49 / 160 */
+  width: 16.56%; /* 50 / 302 */
+  aspect-ratio: 50 / 61;
+  z-index: 1;
+}
+
+.pune-marker__ring,
+.pune-marker__pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.pune-marker__ring {
+  border: 1px solid #b4b4b4;
+}
+
+/* The accuracy pulse: expands from the centre and fades, twice per cycle. */
+.pune-marker__pulse {
+  background: #9a9a9a;
+  opacity: 0;
+  /* Linear, with the fade shaped by the keyframes. An eased curve collapses the
+     opacity in the first fraction of the cycle, leaving the pulse invisible. */
+  animation: pune-pulse 2600ms linear infinite;
+}
+
+.pune-marker__pulse--delayed {
+  animation-delay: 1300ms;
+}
+
+@keyframes pune-pulse {
+  0% {
+    transform: scale(0.14);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.5;
+  }
+  85% {
+    opacity: 0.04;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Tip triangle and dot — 6px each, at (22, 48) and (22, 55). */
+.pune-marker__tip,
+.pune-marker__dot {
+  position: absolute;
+  left: 44%; /* 22 / 50 */
+  width: 12%; /* 6 / 50 */
+}
+
+.pune-marker__tip {
+  top: 78.69%; /* 48 / 61 */
+  aspect-ratio: 1;
+  background: #b4b4b4;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.pune-marker__dot {
+  top: 90.16%; /* 55 / 61 */
+  aspect-ratio: 1;
+  background: #b4b4b4;
+  border-radius: 50%;
+}
+
 .pune-card__place,
 .pune-card__time {
   position: absolute;
@@ -544,5 +623,10 @@ a.bento-card:focus-visible {
 
   .theme-switch__thumb[data-side="right"] {
     transform: translateX(34px);
+  }
+
+  /* The location pulse is decorative — hold it still rather than looping. */
+  .pune-marker__pulse {
+    animation: none;
   }
 }

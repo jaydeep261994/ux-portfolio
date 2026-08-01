@@ -33,6 +33,16 @@ export function PuneCard() {
   return (
     <Card className="info-card pune-card">
       <img src="/images/bento/pune-map.png" alt="" aria-hidden="true" />
+
+      {/* Location marker from Figma 3627-75452, with an Apple-style accuracy pulse. */}
+      <span className="pune-marker" aria-hidden="true">
+        <span className="pune-marker__pulse" />
+        <span className="pune-marker__pulse pune-marker__pulse--delayed" />
+        <span className="pune-marker__ring" />
+        <span className="pune-marker__tip" />
+        <span className="pune-marker__dot" />
+      </span>
+
       <span className="pune-card__place">
         Pune
         <br />
