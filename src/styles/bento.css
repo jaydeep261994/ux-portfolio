@@ -210,8 +210,13 @@ a.bento-card:focus-visible {
   border-radius: 50%;
 }
 
+/* Figma fills the ring with a photo of the place — a map bubble, not an empty ring. */
 .pune-marker__ring {
   border: 1px solid #b4b4b4;
+  background-image: url("/images/bento/pune-marker.webp");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
 /* The accuracy pulse: expands from the centre and fades, twice per cycle. */
@@ -227,19 +232,21 @@ a.bento-card:focus-visible {
   animation-delay: 1300ms;
 }
 
+/* Radiates outward from behind the photo bubble — the bubble is opaque, so a pulse
+   scaled to the ring would never be seen. */
 @keyframes pune-pulse {
   0% {
-    transform: scale(0.14);
+    transform: scale(0.95);
     opacity: 0;
   }
-  12% {
-    opacity: 0.5;
+  10% {
+    opacity: 0.38;
   }
   85% {
-    opacity: 0.04;
+    opacity: 0.03;
   }
   100% {
-    transform: scale(1);
+    transform: scale(2.1);
     opacity: 0;
   }
 }
