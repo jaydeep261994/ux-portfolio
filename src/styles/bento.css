@@ -305,10 +305,11 @@ a.bento-card:focus-visible {
   gap: 16px;
 }
 
+/* Figma stacks 12 rows at a 31px pitch inside a 285 × 364 block. */
 .skills-card__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   list-style: none;
 }
 
@@ -335,12 +336,12 @@ a.bento-card:focus-visible {
 }
 
 .skills-card__list li {
-  padding: 6px 12px;
+  padding: 5px 11px;
   border-radius: var(--radius-chip);
   background: var(--bg-chip);
   color: var(--text-primary);
-  font-size: 0.75rem;
-  line-height: 1.4;
+  font-size: 0.75rem; /* Figma: 12px / 400 */
+  line-height: 1.25;
 }
 
 .theme-card {

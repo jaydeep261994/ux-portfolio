@@ -148,13 +148,32 @@ export const playgroundFrames = [
   },
 ];
 
-/** Reduced from the 25 tags in the Figma — a long list reads as insecurity at lead level. */
+/**
+ * Skills, in Figma reading order from 3627-75462. "Interaction Design" appears
+ * twice in the source; the repeat is dropped, leaving 22.
+ */
 export const skills = [
+  "Project management",
+  "Risk Mitigation",
+  "Strategic Planning",
+  "Emotional Intelligence",
   "Enterprise Product Design",
-  "Design Systems",
   "Interaction Design",
+  "Generative AI Experience",
+  "AI Product Strategy",
+  "Platform & Design Systems",
+  "Design Operations",
+  "Cross-functional Leadership",
+  "Product Design",
+  "Design System",
   "UX Strategy",
+  "Information Architecture",
+  "Usability Testing",
+  "Design Sprints",
   "Accessibility (WCAG)",
+  "AI Feature Ideation",
+  "Human-AI Interaction",
+  "Conversational UI",
   "Executive Stakeholder Management",
 ];
 
