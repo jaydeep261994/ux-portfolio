@@ -103,15 +103,17 @@ export const skills = [
   "Executive Stakeholder Management",
 ];
 
+/** Logo marks exported from Figma 3624-75318. Order matches the design's overlap. */
 export const tools = [
-  "Figma",
-  "After Effects",
-  "Photoshop",
-  "Illustrator",
-  "Framer",
-  "Cursor",
-  "Claude Code",
-  "Jira",
+  { name: "Figma", icon: "/images/tools/figma.png" },
+  { name: "After Effects", icon: "/images/tools/after-effects.png" },
+  { name: "Photoshop", icon: "/images/tools/photoshop.png" },
+  { name: "Illustrator", icon: "/images/tools/illustrator.png" },
+  { name: "Claude", icon: "/images/tools/claude.png" },
+  { name: "Framer", icon: "/images/tools/framer.png" },
+  { name: "Cursor", icon: "/images/tools/cursor.png" },
+  { name: "Claude Code", icon: "/images/tools/claude-code.png" },
+  { name: "Jira", icon: "/images/tools/jira.png" },
 ];
 
 export default cards;

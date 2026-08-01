@@ -210,7 +210,6 @@ a.bento-card:focus-visible {
   min-height: 160px;
 }
 
-.tools-card__list,
 .skills-card__list {
   display: flex;
   flex-wrap: wrap;
@@ -218,7 +217,28 @@ a.bento-card:focus-visible {
   list-style: none;
 }
 
-.tools-card__list li,
+/* Overlapping mark row — Figma packs 9 × 44px marks into a 276px strip. */
+.tools-card__list {
+  display: flex;
+  list-style: none;
+  padding-left: 8px;
+}
+
+.tools-card__list li {
+  margin-left: -8px;
+  transition: transform var(--duration-fast) var(--ease-out-expo);
+}
+
+.tools-card__list li:hover {
+  transform: translateY(-4px);
+  z-index: 1;
+}
+
+.tools-card__list img {
+  width: 44px;
+  height: 44px;
+}
+
 .skills-card__list li {
   padding: 6px 12px;
   border-radius: var(--radius-chip);

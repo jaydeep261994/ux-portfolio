@@ -48,7 +48,9 @@ export function ToolsCard() {
       <span className="info-card__label info-card__label--tint">I design and built websites with</span>
       <ul className="tools-card__list">
         {tools.map((tool) => (
-          <li key={tool}>{tool}</li>
+          <li key={tool.name}>
+            <img src={tool.icon} alt={tool.name} title={tool.name} width="44" height="44" />
+          </li>
         ))}
       </ul>
     </Card>
