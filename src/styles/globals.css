@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "./variables.css";
+@import "./tokens.css";
+@import "./bento.css";
 
 @font-face {
   font-family: 'Red Hat Display';
@@ -88,6 +90,13 @@
     background-color: var(--color-accent);
     color: var(--color-text-primary);
   }
+}
+
+/* The redesigned homepage carries its own light/dark surface. Case-study and
+   exploration routes still run on the older dark shell below. */
+.page-home {
+  min-height: 100vh;
+  background: var(--bg-page);
 }
 
 /* Layout */

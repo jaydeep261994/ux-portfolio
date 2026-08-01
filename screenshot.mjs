@@ -1,28 +1,22 @@
-import puppeteer from 'puppeteer';
-
-const browser = await puppeteer.launch({ headless: true });
-const page = await browser.newPage();
-await page.setViewport({ width: 1440, height: 900 });
-await page.goto('http://localhost:4173', { waitUntil: 'networkidle0', timeout: 15000 });
-await new Promise(r => setTimeout(r, 2000));
-
-// Check positions
-const layout = await page.evaluate(() => {
-  const sidebar = document.querySelector('aside');
-  const header = document.querySelector('header');
-  const contentDiv = header?.parentElement;
-  return {
-    sidebar: sidebar ? { left: sidebar.getBoundingClientRect().left, right: sidebar.getBoundingClientRect().right } : null,
-    header: header ? { left: header.getBoundingClientRect().left, right: header.getBoundingClientRect().right } : null,
-    contentDiv: contentDiv ? { left: contentDiv.getBoundingClientRect().left, marginLeft: getComputedStyle(contentDiv).marginLeft } : null,
-  };
-});
-console.log('Sidebar right edge:', layout.sidebar?.right);
-console.log('Header left edge:', layout.header?.left);
-console.log('Content marginLeft:', layout.contentDiv?.marginLeft);
-
-// Top area screenshot
-await page.screenshot({ path: 'layout-check.png', clip: { x: 0, y: 0, width: 1440, height: 120 } });
-console.log('Screenshot saved');
-
-await browser.close();
+import puppeteer from "puppeteer";
+const b = await puppeteer.launch({ executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" });
+const p = await b.newPage();
+const out = "/private/tmp/claude-501/-Users-jaydeep-Documents-Personal-Portfolio/b35a48c1-3be9-413e-8d6d-9e4f79157ac2/scratchpad";
+for (const [theme, w, name] of [["light",1440,"light-desktop"],["dark",1440,"dark-desktop"],["light",390,"light-mobile"]]) {
+  await p.setViewport({ width: w, height: 1000, deviceScaleFactor: 1 });
+  await p.goto("http://localhost:5174/", { waitUntil: "networkidle0" });
+  await p.evaluate((t) => { localStorage.setItem("theme", t); document.documentElement.dataset.theme = t; }, theme);
+  // Walk the page so lazy images actually load before the full-page capture.
+  await p.evaluate(async () => {
+    for (let y = 0; y < document.body.scrollHeight; y += 600) {
+      window.scrollTo(0, y);
+      await new Promise(r => setTimeout(r, 60));
+    }
+    window.scrollTo(0, 0);
+    await Promise.all([...document.images].filter(i => !i.complete).map(i => i.decode().catch(() => {})));
+  });
+  await new Promise(r => setTimeout(r, 700));
+  await p.screenshot({ path: `${out}/${name}.png`, fullPage: true });
+  console.log(name, "ok");
+}
+await b.close();

@@ -3,11 +3,20 @@ import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import TopBar from "../TopBar/TopBar";
 
-
 export default function Layout() {
   const location = useLocation();
+  const isHome = location.pathname === "/";
   const isCaseStudy = location.pathname.startsWith("/case-study/");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // The redesigned homepage is its own surface — no sidebar, no top bar, no overlay.
+  if (isHome) {
+    return (
+      <main className="page-home">
+        <Outlet />
+      </main>
+    );
+  }
 
   return (
     <>

@@ -1,20 +1,58 @@
 import { motion } from "framer-motion";
-import Hero from "../components/Hero/Hero";
-import ExperienceList from "../components/Experience/ExperienceList";
-import CaseStudyList from "../components/CaseStudy/CaseStudyList";
 import { PAGE_TRANSITION } from "../constants/motion";
+import { workRows } from "../data/bento";
+import HomeHero from "../components/bento/HomeHero";
+import ProjectCard from "../components/bento/ProjectCard";
+import ThemeToggle from "../components/bento/ThemeToggle";
+import {
+  PlaygroundCard,
+  PuneCard,
+  ResumeCard,
+  SkillsCard,
+  ToolsCard,
+} from "../components/bento/InfoCards";
 
 export default function Home() {
   return (
-    <motion.div className="flex flex-col gap-[52px]" {...PAGE_TRANSITION}>
-      {/* HERO SECTION */}
-      <Hero />
+    <motion.div className="bento" {...PAGE_TRANSITION}>
+      {/* Screen one — three columns, matching the Figma order. */}
+      <div className="bento__top">
+        <div className="bento__top-left">
+          <HomeHero />
+          <div className="bento__top-left-cards">
+            <ResumeCard />
+            <PuneCard />
+          </div>
+          <ToolsCard />
+        </div>
 
-      {/* EXPERIENCE SECTION */}
-      <ExperienceList />
+        <PlaygroundCard />
 
-      {/* CASE STUDIES SECTION */}
-      <CaseStudyList />
+        <div className="bento__top-right">
+          <ThemeToggle />
+          <SkillsCard />
+        </div>
+      </div>
+
+      {/* Work — every card carries its client and what changed. */}
+      <section className="bento__work" aria-label="Selected work">
+        {workRows.map((row, i) => (
+          <div
+            key={i}
+            className="bento__row"
+            style={{ "--ratio": row.ratio.map((r) => `${r}fr`).join(" ") }}
+          >
+            {row.cards.map((card) => (
+              <ProjectCard key={card.id} card={card} />
+            ))}
+          </div>
+        ))}
+      </section>
+
+      <footer className="bento__footer">
+        <span>© {new Date().getFullYear()} Jaydeep Das</span>
+        <span>Made with React, Cursor, Figma and Claude Code</span>
+      </footer>
     </motion.div>
   );
 }
