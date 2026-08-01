@@ -15,12 +15,16 @@ export default function ThemeToggle() {
         aria-label="Dark mode"
       >
         <span className="theme-switch__thumb" data-side={isDark ? "right" : "left"} />
-        <span className="theme-switch__icon" aria-hidden="true">
-          ☀
-        </span>
-        <span className="theme-switch__icon" aria-hidden="true">
-          ☾
-        </span>
+        <span
+          className="theme-switch__icon theme-switch__icon--sun"
+          data-active={!isDark}
+          aria-hidden="true"
+        />
+        <span
+          className="theme-switch__icon theme-switch__icon--moon"
+          data-active={isDark}
+          aria-hidden="true"
+        />
       </button>
     </Card>
   );

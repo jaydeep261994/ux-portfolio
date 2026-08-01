@@ -302,15 +302,35 @@ a.bento-card:focus-visible {
   cursor: pointer;
 }
 
+/* Figma ships these icons with hardcoded fills (black / #727272), which would go
+   invisible in dark mode. Masking lets them inherit the themed colour instead. */
 .theme-switch__icon {
   position: relative;
   z-index: 1;
   width: 30px;
   height: 30px;
-  display: grid;
-  place-items: center;
-  font-size: 15px;
-  color: var(--text-primary);
+  background-color: var(--text-dim);
+  -webkit-mask-size: 18px 18px;
+  mask-size: 18px 18px;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transition: background-color var(--duration-base) var(--ease-out-expo);
+}
+
+.theme-switch__icon[data-active="true"] {
+  background-color: var(--text-primary);
+}
+
+.theme-switch__icon--sun {
+  -webkit-mask-image: url("/images/icons/sun.svg");
+  mask-image: url("/images/icons/sun.svg");
+}
+
+.theme-switch__icon--moon {
+  -webkit-mask-image: url("/images/icons/moon.svg");
+  mask-image: url("/images/icons/moon.svg");
 }
 
 .theme-switch__thumb {
