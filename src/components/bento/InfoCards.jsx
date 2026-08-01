@@ -102,6 +102,7 @@ export function PlaygroundCard() {
             alt={i === index ? frame.alt : ""}
             aria-hidden={i === index ? undefined : "true"}
             data-visible={i === index}
+            data-kind={frame.kind}
             loading="lazy"
           />
         ))}

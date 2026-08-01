@@ -271,20 +271,34 @@ a.bento-card:focus-visible {
   overflow: hidden;
 }
 
-/* States are stacked and crossfaded, so the card never reflows as they swap. */
+/* States are stacked and crossfaded, so the card never reflows as they swap.
+   Two shapes share the slot: transparent device mockups that float on the tint,
+   and Pixel Shader artwork that sits as a plate. */
 .playground-card__well img {
   position: absolute;
-  /* Figma: 245px wide in a 383px card, sitting 31px off the bottom. */
-  bottom: 31px;
   left: 50%;
-  width: 64%;
   height: auto;
-  transform: translateX(-50%);
   object-fit: contain;
   opacity: 0;
   transition: opacity 900ms var(--ease-out-expo);
-  /* The phone renders with transparency, so it floats on the card tint. */
+}
+
+/* Figma: 245px wide in a 383px card, sitting 31px off the bottom. */
+.playground-card__well img[data-kind="device"] {
+  bottom: 31px;
+  width: 64%;
+  transform: translateX(-50%);
   filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.18));
+}
+
+/* Figma: 309 × 447 with a 7px radius. Centred rather than bottom-anchored, since
+   artwork has no device to stand on. */
+.playground-card__well img[data-kind="art"] {
+  top: 50%;
+  width: 81%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
 }
 
 .playground-card__well img[data-visible="true"] {

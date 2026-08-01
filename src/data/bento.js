@@ -106,13 +106,45 @@ export const workRows = [
 export const playgroundFrames = [
   {
     id: "idle",
+    kind: "device",
     image: "/images/bento/playground-idle.png",
     alt: "A conversational AI concept at rest — How's it going, Bianca?",
   },
   {
     id: "listening",
+    kind: "device",
     image: "/images/bento/playground-listening.png",
     alt: "The same concept listening — Hey, I am listening. What do you need?",
+  },
+  {
+    id: "dither",
+    kind: "art",
+    image: "/images/bento/play-dither.webp",
+    alt: "Pixel Shader — a hand dissolving into a dithered halftone",
+  },
+  {
+    id: "scanline",
+    kind: "art",
+    image: "/images/bento/play-scanline.webp",
+    alt: "Pixel Shader — a street scene smeared through a scanline effect",
+  },
+  {
+    id: "halftone",
+    kind: "art",
+    image: "/images/bento/play-halftone.webp",
+    alt: "Pixel Shader — a chair on a hillside rendered as halftone dots",
+  },
+  {
+    id: "pixel-art",
+    kind: "art",
+    image: "/images/bento/play-pixel-art.webp",
+    alt: "Pixel Shader — a portrait reduced to coarse pixel art",
+  },
+  {
+    id: "editor",
+    kind: "art",
+    image: "/images/bento/play-editor.webp",
+    alt: "Pixel Shader — the effect editor, with pixel size and palette controls",
   },
 ];
 
