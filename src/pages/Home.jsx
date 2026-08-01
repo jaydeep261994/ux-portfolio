@@ -40,7 +40,10 @@ export default function Home() {
           <div
             key={i}
             className="bento__row"
-            style={{ "--ratio": row.ratio.map((r) => `${r}fr`).join(" ") }}
+            style={{
+              "--cols": row.widths.map((w) => `${w}fr`).join(" "),
+              "--row-gap": `${row.gap}px`,
+            }}
           >
             {row.cards.map((card) => (
               <ProjectCard key={card.id} card={card} />

@@ -84,13 +84,18 @@ const cards = {
   },
 };
 
-/** Each row: measured Figma widths, converted to flex ratios. */
+/**
+ * Each row carries its measured Figma card widths and the gap between them. Widths
+ * become `fr` units so the row scales below the design width while keeping its
+ * proportions; every row sums to 1356 with its own gap, which a uniform gutter
+ * would miss by about a pixel per row.
+ */
 export const workRows = [
-  { ratio: [0.472, 0.528], cards: [cards.fedex, cards.genie] },
-  { ratio: [0.633, 0.367], cards: [cards.mfgDashboard, cards.tataBolt] },
-  { ratio: [1], cards: [cards.amns] },
-  { ratio: [0.474, 0.526], cards: [cards.inspectify, cards.cartier] },
-  { ratio: [0.605, 0.395], cards: [cards.jsw, cards.stockmann] },
+  { widths: [632, 706], gap: 18, cards: [cards.fedex, cards.genie] },
+  { widths: [844, 489], gap: 23, cards: [cards.mfgDashboard, cards.tataBolt] },
+  { widths: [1356], gap: 0, cards: [cards.amns] },
+  { widths: [632, 703], gap: 21, cards: [cards.inspectify, cards.cartier] },
+  { widths: [810, 528], gap: 18, cards: [cards.jsw, cards.stockmann] },
 ];
 
 /**
