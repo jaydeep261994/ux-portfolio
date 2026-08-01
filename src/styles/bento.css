@@ -604,21 +604,31 @@ a.bento-card:focus-visible {
   }
 
   /* Chips move below the visual on phones. Overlaid, they swallowed more than half
-     of a wide card like AM/NS once it got short. */
+     of a wide card like AM/NS once it got short.
+     The card splits into two stacked surfaces — the visual, then the pills — with
+     the page colour showing through the gap between them. */
   .project-card {
     aspect-ratio: auto;
     display: block;
+    background: var(--bg-page);
   }
 
   .project-card__well {
     aspect-ratio: var(--ar);
     height: auto;
+    border-radius: var(--radius-card);
+    /* The exported visuals carry their own rounded corners, which shrink with the
+       image; backing the well in the plate colour fills the corner slivers. */
+    background: #ededed;
   }
 
   .project-card__chips {
     position: static;
     max-width: none;
-    padding: 12px 16px 16px;
+    margin-top: 8px;
+    padding: 18px 20px 20px;
+    background: var(--bg-card);
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
   }
 
   .chip {
