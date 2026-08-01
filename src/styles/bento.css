@@ -141,14 +141,23 @@ a.bento-card:focus-visible {
   padding: 22px 24px;
 }
 
+/* Figma sets every card label at weight 700; only the size and colour vary. */
 .info-card__label {
-  font-size: 1.0625rem;
-  font-weight: 500;
+  font-size: 1rem; /* 16px — Dark mode, Resume, I'm good at */
+  font-weight: 700;
   color: var(--text-primary);
+}
+
+.info-card__label--lg {
+  font-size: 1.3125rem; /* 21px — tools and playground */
 }
 
 .info-card__label--tint {
   color: var(--text-on-tint);
+}
+
+.info-card__label--violet {
+  color: var(--text-on-violet);
 }
 
 .resume-card {
@@ -192,7 +201,8 @@ a.bento-card:focus-visible {
 .pune-card__place {
   top: 18px;
   left: 20px;
-  font-size: 1.3rem;
+  font-size: 1.75rem; /* Figma: 28px / 700 */
+  font-weight: 700;
   line-height: 1.1;
 }
 
@@ -257,12 +267,7 @@ a.bento-card:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background: color-mix(in oklab, var(--tint-cyan) 60%, var(--bg-card));
   padding-bottom: 0;
-}
-
-.playground-card .info-card__label {
-  color: var(--text-on-tint);
 }
 
 .playground-card__well {

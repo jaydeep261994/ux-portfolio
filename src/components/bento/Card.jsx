@@ -7,6 +7,7 @@ const TINTS = {
   alt: "var(--bg-card-alt)",
   green: "var(--tint-green)",
   cyan: "var(--tint-cyan)",
+  violet: "var(--tint-violet)",
 };
 
 export default function Card({

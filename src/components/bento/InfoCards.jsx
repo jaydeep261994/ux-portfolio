@@ -46,7 +46,9 @@ export function PuneCard() {
 export function ToolsCard() {
   return (
     <Card tint="green" className="info-card tools-card">
-      <span className="info-card__label info-card__label--tint">I design and built websites with</span>
+      <span className="info-card__label info-card__label--lg info-card__label--tint">
+        I design and built websites with
+      </span>
       <ul className="tools-card__list">
         {tools.map((tool) => (
           <li key={tool.name}>
@@ -61,7 +63,7 @@ export function ToolsCard() {
 export function SkillsCard() {
   return (
     <Card tint="cyan" className="info-card skills-card">
-      <span className="info-card__label info-card__label--tint">I&apos;m good at</span>
+      <span className="info-card__label">I&apos;m good at</span>
       <ul className="skills-card__list">
         {skills.map((skill) => (
           <li key={skill}>{skill}</li>
@@ -92,8 +94,10 @@ export function PlaygroundCard() {
   }, [prefersReduced]);
 
   return (
-    <Card className="info-card playground-card">
-      <span className="info-card__label">Things i play around with</span>
+    <Card tint="violet" className="info-card playground-card">
+      <span className="info-card__label info-card__label--lg info-card__label--violet">
+        Things i play around with
+      </span>
       <div className="playground-card__well">
         {playgroundFrames.map((frame, i) => (
           <img
