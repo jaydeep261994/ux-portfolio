@@ -375,10 +375,13 @@ a.bento-card:focus-visible {
   transition: opacity 900ms var(--ease-out-expo);
 }
 
-/* Figma: 245px wide in a 383px card, sitting 31px off the bottom. */
+/* Sized by the well's height rather than its width, so the media can never
+   overflow a short card. At the design size this resolves to Figma's 245 × 496. */
 .playground-card__well img[data-kind="device"] {
   bottom: 31px;
-  width: 64%;
+  height: 79%;
+  width: auto;
+  max-width: 88%;
   transform: translateX(-50%);
   filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.18));
 }
@@ -387,7 +390,9 @@ a.bento-card:focus-visible {
    artwork has no device to stand on. */
 .playground-card__well img[data-kind="art"] {
   top: 50%;
-  width: 81%;
+  height: 70%;
+  width: auto;
+  max-width: 88%;
   transform: translate(-50%, -50%);
   border-radius: 7px;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
@@ -477,8 +482,12 @@ a.bento-card:focus-visible {
   gap: var(--row-gap, var(--grid-gutter));
 }
 
+/* Each card keeps its Figma aspect ratio instead of a fixed height. At the design
+   width this resolves to exactly 583px; below it the card scales with its image, so
+   `cover` never has anything to crop. Both cards in a row derive from the same 583
+   height, so their computed heights always agree. */
 .project-card {
-  height: var(--card-height);
+  aspect-ratio: var(--ar);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -572,13 +581,9 @@ a.bento-card:focus-visible {
     min-height: 119px;
   }
 
-  .project-card {
-    height: auto;
-    min-height: 380px;
-  }
-
+  /* Media is sized off the well's height, so the card needs room for it to read. */
   .playground-card {
-    min-height: 420px;
+    min-height: 520px;
   }
 }
 
@@ -598,14 +603,22 @@ a.bento-card:focus-visible {
     margin-top: 32px;
   }
 
+  /* Chips move below the visual on phones. Overlaid, they swallowed more than half
+     of a wide card like AM/NS once it got short. */
   .project-card {
-    min-height: 300px;
+    aspect-ratio: auto;
+    display: block;
+  }
+
+  .project-card__well {
+    aspect-ratio: var(--ar);
+    height: auto;
   }
 
   .project-card__chips {
-    left: 16px;
-    bottom: 16px;
-    max-width: calc(100% - 32px);
+    position: static;
+    max-width: none;
+    padding: 12px 16px 16px;
   }
 
   .chip {

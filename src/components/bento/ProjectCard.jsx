@@ -7,11 +7,15 @@ import Card from "./Card";
  * readable by screen readers and searchable.
  */
 export default function ProjectCard({ card }) {
-  const { title, outcome, image, alt, link } = card;
+  const { title, outcome, image, alt, link, ar } = card;
   const linkProps = link ? { as: Link, to: link, "aria-label": `${title} — ${outcome}` } : {};
 
   return (
-    <Card {...linkProps} className={`project-card${link ? " project-card--link" : ""}`}>
+    <Card
+      {...linkProps}
+      className={`project-card${link ? " project-card--link" : ""}`}
+      style={{ "--ar": ar }}
+    >
       <div className="project-card__well">
         <img src={image} alt={alt} loading="lazy" />
       </div>

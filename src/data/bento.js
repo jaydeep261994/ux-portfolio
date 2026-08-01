@@ -12,6 +12,7 @@
 const cards = {
   fedex: {
     id: "fedex",
+    ar: "632 / 583",
     title: "FedEx",
     outcome: "Windows handheld → Android, live across FedEx Italy",
     image: "/images/bento/fedex.png",
@@ -20,6 +21,7 @@ const cards = {
   },
   genie: {
     id: "genie",
+    ar: "706 / 583",
     title: "Genie",
     outcome: "In-car climate and comfort controls",
     image: "/images/bento/genie.png",
@@ -28,6 +30,7 @@ const cards = {
   },
   mfgDashboard: {
     id: "mfg-dashboard",
+    ar: "844 / 583",
     title: "Manufacturing analytics",
     outcome: "EBIT variance and spend, one operating picture",
     image: "/images/bento/mfg-dashboard.png",
@@ -36,6 +39,7 @@ const cards = {
   },
   tataBolt: {
     id: "tata-bolt",
+    ar: "489 / 583",
     title: "TATA AIG",
     outcome: "Policies, renewals and records in one agent workflow",
     image: "/images/bento/tata-bolt.png",
@@ -44,6 +48,7 @@ const cards = {
   },
   amns: {
     id: "amns",
+    ar: "1356 / 583",
     title: "AM/NS India",
     outcome: "Homepage pitch for the ArcelorMittal–Nippon Steel JV",
     image: "/images/bento/amns.png",
@@ -52,6 +57,7 @@ const cards = {
   },
   inspectify: {
     id: "tata-inspectify",
+    ar: "632 / 583",
     title: "TATA AIG",
     outcome: "AI-guided self-inspection, built to cut errors below 40%",
     image: "/images/bento/tata-inspectify.png",
@@ -60,6 +66,7 @@ const cards = {
   },
   cartier: {
     id: "cartier",
+    ar: "703 / 583",
     title: "Cartier",
     outcome: "UI design and testing for the internal employee network",
     image: "/images/bento/cartier.png",
@@ -68,6 +75,7 @@ const cards = {
   },
   jsw: {
     id: "jsw",
+    ar: "810 / 583",
     title: "Inspire Institute of Sport",
     outcome: "Concept: one site for athletes, partners, donors, media",
     image: "/images/bento/jsw.png",
@@ -76,6 +84,7 @@ const cards = {
   },
   stockmann: {
     id: "stockmann",
+    ar: "528 / 583", // Figma has this one at 584; normalised so rows stay uniform
     title: "Stockmann",
     outcome: "Onboarding and dashboard redesign for the loyalty app",
     image: "/images/bento/stockmann.png",
