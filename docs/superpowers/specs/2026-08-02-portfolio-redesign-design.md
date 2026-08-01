@@ -30,6 +30,11 @@ not by homepage dwell time.
 - Case-study body copy. Text stays exactly as written in `src/data/projects.js`.
   Only layout, typography, colour, and navigation change.
 - New case studies or new photography.
+- **An experience/work-history section.** The Figma has none and the user has confirmed
+  it stays out. `Currently at Accenture` in the hero remains the only employment signal
+  on the page. Consequence: `src/components/Experience/ExperienceList.jsx` and
+  `src/data/experience.js` become unreferenced and are deleted rather than left dead.
+  A reader wanting work history is served by the résumé card.
 
 **Known risk, accepted by the user:** for senior/lead conversion the case-study writing
 is usually the dominant lever. This redesign deliberately does not touch it. If the
@@ -161,14 +166,7 @@ into any clean grid.
 | 4 | 632 / 703 | `0.474 / 0.526` |
 | 5 | 810 / 528 | `0.605 / 0.395` |
 
-### 6.3 Experience
-
-**Addition — not present in the Figma.** The seven roles in `src/data/experience.js`
-(Accenture through GunjaanApps) are rendered as a compact list above the footer.
-Recruiters look for this, and the data already exists. Flagged for confirmation; drop it
-if unwanted.
-
-### 6.4 Footer
+### 6.3 Footer
 
 `© 2026 Jaydeep Das` and `Made with React, Cursor, Figma and Claude Code`, separated by
 a hairline rule.
@@ -221,7 +219,7 @@ src/
 │   ├── theme/
 │   │   ├── ThemeToggle.jsx
 │   │   └── useTheme.js          localStorage + media query
-│   └── ...existing Hero, Experience, CaseStudy/Template
+│   └── ...existing Hero, CaseStudy/Template
 └── styles/
     ├── tokens.css               both themes
     └── ...
@@ -267,5 +265,6 @@ instead of clipping.
 ## 12. Open questions
 
 1. Are the drafted `outcome` values accurate? Every one needs the user's sign-off.
-2. Keep the experience section (§6.3), or drop it to stay faithful to the Figma?
-3. Which six skill tags, if not the six proposed in §6.1?
+2. Which six skill tags, if not the six proposed in §6.1?
+3. Does the résumé card link to a PDF that is current? It is now the only route to
+   full work history.
