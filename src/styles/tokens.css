@@ -13,6 +13,7 @@
 
   /* Ink */
   --text-primary: #000000;
+  --text-body: #2a2a2a; /* long-form copy — pure black is heavy at paragraph length */
   --text-dim: #666666;
   --text-on-tint: #174c20;
   --text-on-violet: #3f45a5;
@@ -47,6 +48,7 @@
   --tint-violet: #191b2e;
 
   --text-primary: #f5f5f5;
+  --text-body: #d6d6d6;
   --text-dim: #9a9a9a;
   --text-on-tint: #8fd79e;
   --text-on-violet: #a9aeec;

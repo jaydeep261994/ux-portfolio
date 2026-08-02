@@ -12,7 +12,7 @@ export default function CaseStudyParagraph({
   const weightClass = weight === "semibold" ? "font-semibold" : "font-normal";
   return (
     <p
-      className={`${sizeMap[size] || sizeMap.base} ${weightClass} text-[#D2D2D2] font-['Poppins',sans-serif] whitespace-pre-line`}
+      className={`${sizeMap[size] || sizeMap.base} ${weightClass} cs-text whitespace-pre-line`}
       style={{ maxWidth }}
     >
       {children}

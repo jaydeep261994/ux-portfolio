@@ -1,0 +1,187 @@
+/* Case study — same token system as the homepage bento, presented as a bottom sheet. */
+
+/* ── Typography primitives (replace the template's hardcoded dark values) ── */
+
+.cs-text {
+  color: var(--text-body);
+}
+
+.cs-heading {
+  color: var(--text-primary);
+}
+
+.cs-title {
+  color: var(--text-primary);
+}
+
+.cs-muted {
+  color: var(--text-dim);
+}
+
+.cs-rule {
+  background: var(--border-hairline);
+}
+
+.cs-link-hover:hover {
+  color: var(--text-primary);
+}
+
+/* ── Client logos ───────────────────────────────────────────────────────────
+   The originals are white-on-transparent from the old dark site; each has an
+   `-ink` twin. Only one is ever shown, so neither theme gets an invisible logo. */
+
+.cs-logo {
+  display: inline-block;
+}
+
+.cs-logo__on-dark {
+  display: none;
+}
+
+.cs-logo__on-light {
+  display: block;
+}
+
+[data-theme="dark"] .cs-logo__on-dark {
+  display: block;
+}
+
+[data-theme="dark"] .cs-logo__on-light {
+  display: none;
+}
+
+/* ── Sheet ──────────────────────────────────────────────────────────────── */
+
+.cs-sheet-root {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cs-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(2px);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Matches the page grid: 1356 centred, so the sheet sits in the same gutters as the
+   bento rather than running edge to edge. Flush on narrow screens, as a sheet should. */
+.cs-sheet {
+  position: relative;
+  width: min(var(--content-width), 100%);
+  margin-inline: auto;
+  height: calc(100dvh - 32px);
+  background: var(--bg-page);
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  box-shadow: 0 -18px 60px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Sticky bar so the grabber and close stay reachable while the body scrolls. */
+.cs-sheet__bar {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px 12px;
+  background: var(--bg-page);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-out-expo);
+}
+
+.cs-sheet__bar[data-scrolled="true"] {
+  border-bottom-color: var(--border-hairline);
+}
+
+.cs-sheet__grabber {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--border-hairline);
+}
+
+.cs-sheet__crumb {
+  font-size: 0.8125rem;
+  color: var(--text-dim);
+  padding-top: 6px;
+}
+
+.cs-sheet__close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--radius-chip);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out-expo);
+}
+
+.cs-sheet__close:hover {
+  background: var(--bg-chip);
+}
+
+.cs-sheet__close:focus-visible,
+.cs-backdrop:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+/* The sheet body scrolls, not the page behind it. */
+.cs-sheet__scroll {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cs-body {
+  padding: 36px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  color: var(--text-body);
+}
+
+@media (min-width: 640px) {
+  .cs-body {
+    padding: 44px 32px 96px;
+    gap: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cs-sheet {
+    height: calc(100dvh - 48px);
+  }
+
+  .cs-body {
+    padding: 54px 64px 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-sheet__bar {
+    transition: none;
+  }
+}

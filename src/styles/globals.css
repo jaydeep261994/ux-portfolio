@@ -2,6 +2,7 @@
 @import "./variables.css";
 @import "./tokens.css";
 @import "./bento.css";
+@import "./case-study.css";
 
 @font-face {
   font-family: 'Red Hat Display';

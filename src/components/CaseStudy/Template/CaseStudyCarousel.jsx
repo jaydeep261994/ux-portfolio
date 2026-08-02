@@ -47,7 +47,7 @@ export default function CaseStudyCarousel({
               type="button"
               aria-label="Previous"
               onClick={() => go(-1)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 cs-title text-xl flex items-center justify-center transition-colors"
             >
               ‹
             </button>
@@ -55,11 +55,11 @@ export default function CaseStudyCarousel({
               type="button"
               aria-label="Next"
               onClick={() => go(1)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 cs-title text-xl flex items-center justify-center transition-colors"
             >
               ›
             </button>
-            <div className="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-[12px] font-['Poppins',sans-serif]">
+            <div className="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/60 cs-title text-[12px]">
               {index + 1} / {count}
             </div>
           </>

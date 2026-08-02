@@ -45,7 +45,7 @@ export default function CaseStudyEmbed({
           >
             <FigmaMark className="w-10 h-auto" />
           </motion.div>
-          <span className="text-[12px] tracking-wide text-[#8c8c8c] font-['Poppins',sans-serif]">
+          <span className="text-[12px] tracking-wide text-[#8c8c8c]">
             Loading prototype…
           </span>
         </div>

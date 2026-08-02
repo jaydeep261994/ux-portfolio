@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import { useParams, Navigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import projects from "../data/projects";
 import { usePostHog } from "@posthog/react";
 import {
@@ -111,14 +109,10 @@ function renderBlock(block, i) {
   }
 }
 
-export default function CaseStudy() {
-  const { projectId } = useParams();
+/** Content only — the sheet in CaseStudySheet owns the surface and the scrolling. */
+export default function CaseStudy({ projectId, titleId }) {
   const project = projects.find((p) => p.id === projectId);
   const posthog = usePostHog();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [projectId]);
 
   useEffect(() => {
     if (project) {
@@ -129,9 +123,7 @@ export default function CaseStudy() {
     }
   }, [posthog, project]);
 
-  if (!project) {
-    return <Navigate to="/" replace />;
-  }
+  if (!project) return null;
 
   const cs = project.caseStudy || {};
   const blocks = cs.blocks || [];
@@ -142,14 +134,7 @@ export default function CaseStudy() {
   const nextProject = idx >= 0 ? projects[(idx + 1) % projects.length] : null;
 
   return (
-    <motion.div
-      key={project.id}
-      initial={{ y: "100%" }}
-      animate={{ y: 0 }}
-      exit={{ y: "100%" }}
-      transition={{ type: "spring", stiffness: 220, damping: 28 }}
-      className="relative bg-[#181818] min-h-screen"
-    >
+    <>
       <CaseStudyHero
         bg={cs.hero?.bg || "#EDEDED"}
         height={cs.hero?.height || 507}
@@ -160,9 +145,10 @@ export default function CaseStudy() {
         alt={`${project.title} hero`}
       />
 
-      <div className="pt-[36px] sm:pt-[44px] lg:pt-[54px] pb-[80px] lg:pb-[120px] px-5 sm:px-8 lg:px-[64px]">
+      <div className="cs-body">
         <div className="flex flex-col gap-[28px] sm:gap-[36px]">
           <CaseStudyTitleRow
+            titleId={titleId}
             title={cs.title || project.title}
             logo={cs.logo || project.logo}
             logoAlt={`${project.title} logo`}
@@ -176,7 +162,7 @@ export default function CaseStudy() {
           {blocks.map(renderBlock)}
 
           {blocks.length === 0 && (
-            <p className="text-[12px] text-[#5b5b5b] font-['Poppins',sans-serif]">
+            <p className="text-[12px] cs-muted">
               Detailed case study coming soon.
             </p>
           )}
@@ -186,6 +172,6 @@ export default function CaseStudy() {
           )}
         </div>
       </div>
-    </motion.div>
+    </>
   );
 }

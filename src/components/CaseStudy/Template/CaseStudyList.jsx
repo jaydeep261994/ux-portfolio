@@ -1,7 +1,7 @@
 export default function CaseStudyList({ intro, items = [], maxWidth = 808 }) {
   return (
     <div
-      className="flex flex-col gap-[12px] font-['Poppins',sans-serif] text-[#D2D2D2]"
+      className="flex flex-col gap-[12px] cs-text"
       style={{ maxWidth }}
     >
       {intro && (
