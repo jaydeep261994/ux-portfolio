@@ -95,11 +95,16 @@ a.bento-card:focus-visible {
   color: var(--text-dim);
 }
 
+/* Figma 3651-75512: a 127 × 30 pill, radius 29, padding 4/11, 4px gap. */
 .home-hero__employer {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 4px;
+  padding: 4px 11px;
+  border-radius: var(--radius-chip);
+  background: var(--bg-pill);
   color: var(--text-primary);
+  line-height: 1.29; /* the body's 1.6 would make the pill 35 tall instead of 30 */
 }
 
 .home-hero__employer img {
