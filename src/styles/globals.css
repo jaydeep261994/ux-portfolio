@@ -4,6 +4,34 @@
 @import "./bento.css";
 @import "./case-study.css";
 
+/* Google Sans — the typeface the Figma is drawn in. Supplied by the user; note it
+   is Google's proprietary brand font, not openly licensed for third-party sites.
+   Red Hat Display stays self-hosted below as the fallback. */
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/GoogleSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/GoogleSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/GoogleSans-Bold.woff2') format('woff2');
+}
+
 /* Self-hosted. The previous @font-face rules pointed at pinned gstatic file
    hashes, which now 404 — the site was silently falling back to system sans. */
 
