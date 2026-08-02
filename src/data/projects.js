@@ -127,6 +127,120 @@ const projects = [
     },
   },
   {
+    id: "audi",
+    title: "AUDI",
+    description:
+      "Audi Genie is a next-generation infotainment system designed to enhance the in-car digital experience for Audi users. The project focused on optimizing interaction flows to reduce cognitive load and improve driver efficiency across navigation, media, and vehicle controls.",
+    coverImage: "/images/covers/audi.png",
+    logo: "/images/logos/audi.svg",
+    link: "/case-study/audi",
+    caseStudy: {
+      title: "AUDI - Drive Genie",
+      hero: {
+        bg: "#EDEDED",
+        height: 507,
+        image: "/images/case-studies/audi/hero.png",
+      },
+      summary:
+        "Audi Genie is an in-car AI companion designed for Audi vehicles that learns how you drive, where you go, and how you like to feel inside the car, then quietly handles the details before you think to ask.",
+      meta: {
+        timeline: "2026",
+        role: "Product Design, Visual Design",
+        platform: "Automotive (In-Car Display + Voice)",
+        deliverables: "User Flow, Experience Design, Development Hand-off",
+        tools: "FIGMA",
+      },
+      blocks: [
+        { type: "heading", text: "Overview" },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "Most in-car assistants are reactive. You ask, they answer. Audi Genie was a different brief: build something that understands context well enough to act before the driver reaches for a button.",
+        },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "The concept centered on a core intelligence layer that sits beneath the car's existing CID. It watches. It learns. Over time, it connects the dots between your calendar, your habits, your usual routes, and your comfort preferences, and it starts making the right call without being asked.",
+        },
+        { type: "image", src: "/images/case-studies/audi/overview.png", alt: "Audi Drive Genie overview" },
+        { type: "divider" },
+
+        { type: "heading", text: "My Role" },
+        {
+          type: "list",
+          intro: "I led the experience design for Audi Genie end-to-end. My responsibilities included:",
+          items: [
+            "Mapping the requirement-to-scenario-to-flow structure for each feature, so nothing was designed in isolation from actual driver behavior",
+            "Running the interaction design for voice, CID cards, and adaptive UI states",
+            "Defining how the system communicates without being intrusive",
+            "Aligning the flows with engineering constraints on what the car's sensor and calendar data could actually support",
+          ],
+        },
+        { type: "divider" },
+
+        { type: "heading", text: "Capability Areas" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Learning Daily Routines —\n\nThe system records route, departure time, and destination passively over a period of days. Once a pattern solidifies, it surfaces a routine card on the home screen. Flows cover weekday detection, contextual nudges mid-route (a Tuesday coffee shop stop, for instance), and separate weekend pattern logic that doesn't bleed into weekday suggestions.",
+        },
+        { type: "video", src: "/videos/case-studies/audi/learning-routines.mp4", poster: "/images/case-studies/audi/cap-1-routines.png", aspectRatio: "2228 / 916" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Destination Suggestions —\n\nGenie combines two data sources: calendar events and learned routine history. A morning calendar meeting generates a navigation card with ETA. An evening routine triggers a grocery suggestion based on what the driver usually does after work on Thursdays. The third flow combines both signals for a Saturday gym suggestion that the system has observed consistently over several weekends.",
+        },
+        { type: "video", src: "/videos/case-studies/audi/destination-suggestions.mp4", poster: "/images/case-studies/audi/cap-2-destinations.png", aspectRatio: "2228 / 916" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Curated Playlists —\n\nMedia habits follow the same pattern as routes. Morning commute, evening wind-down, weekend errands each carry a distinct listening profile. Genie learns these and surfaces the right playlist before the driver has opened the media app. The flows cover routine-based morning curation, time-of-day evening relaxation, and mood-based weekend suggestions.",
+        },
+        { type: "video", src: "/videos/case-studies/audi/curated-playlists.mp4", poster: "/images/case-studies/audi/cap-3-playlists.png", aspectRatio: "2228 / 916" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "One-Click Comfort Settings —\n\nClimate, seat adjustment, and massage preferences are saved as presets tied to routine context. A morning commute preset differs from an evening one. Weekend driving gets its own profile. The fourth flow adds a quick-access comfort button to the home screen for moments when the driver wants to override the suggestion without digging into settings.",
+        },
+        { type: "video", src: "/videos/case-studies/audi/comfort-settings.mp4", poster: "/images/case-studies/audi/cap-4-comfort.png", aspectRatio: "2228 / 916" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Vehicle Data Alerts —\n\nFor EV drivers, the system monitors battery level against the day's planned destinations. A low battery alert fires before the driver leaves home. A calendar-aware charging reminder calculates whether current range covers the next meeting destination. The predictive weekend flow checks the usual Saturday route against expected range and suggests a charging stop proactively.",
+        },
+        { type: "video", src: "/videos/case-studies/audi/vehicle-data-alerts.mp4", poster: "/images/case-studies/audi/cap-5-vehicle-data.png", aspectRatio: "2228 / 916" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Voice Assistant —\n\nHands-free interaction across all capability areas. Navigation commands, playlist requests, comfort adjustments, and battery checks all work through natural language. The design constraint was hard: no screen tap required, and no visual confirmation blocking the driver's focus. Four flows covering each category, all resolved through voice confirmation and minimal CID feedback.",
+        },
+        { type: "video", src: "/videos/case-studies/audi/voice.mp4", poster: "/images/case-studies/audi/cap-6-voice.png", aspectRatio: "2228 / 916" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Adaptive UI —\n\nThe most complex capability. During a normal drive, the CID shows the full dashboard. As traffic complexity rises, Genie simplifies the interface automatically: fewer widgets, larger navigation elements, voice-only for secondary actions. When the driver enters a busy interchange, the screen shows only what they need. When conditions ease, the full UI restores without prompting.",
+        },
+        { type: "video", src: "/videos/case-studies/audi/adaptive-ui.mp4", poster: "/images/case-studies/audi/cap-7-adaptive.png", aspectRatio: "2228 / 916" },
+        { type: "divider" },
+
+        { type: "heading", text: "Reflection" },
+        {
+          type: "paragraph",
+          size: "lg",
+          maxWidth: 1032,
+          body: "The thing that kept coming up in every flow review was the question of when silence is the right answer. A proactive assistant that always offers something isn't helpful. It's exhausting. The design had to include logic for when Genie stays quiet: no suggestion if the driver just dismissed one, no playlist prompt if they're already playing music, no comfort preset offer if they haven't moved yet.\n\nDesigning restraint into an AI feature is harder than designing the feature itself. The flows that took the longest weren't the complex ones. They were the ones where the right answer was: do nothing.",
+        },
+      ],
+    },
+  },
+  {
     id: "general-motors",
     title: "General Motors",
     description:

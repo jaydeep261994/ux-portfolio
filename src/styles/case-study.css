@@ -30,10 +30,6 @@
    The originals are white-on-transparent from the old dark site; each has an
    `-ink` twin. Only one is ever shown, so neither theme gets an invisible logo. */
 
-.cs-logo {
-  display: inline-block;
-}
-
 .cs-logo__on-dark {
   display: none;
 }

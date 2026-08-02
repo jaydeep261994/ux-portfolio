@@ -18,20 +18,22 @@ export default function CaseStudyTitleRow({ title, logo, logoAlt, logoClass, tit
       >
         {title}
       </h1>
+      {/* Rendered as siblings, not wrapped: an img with only max-width/max-height
+          collapses to 0 inside a shrink-to-fit box. */}
       {logo && (
-        <span className="cs-logo shrink-0 self-start sm:self-auto">
+        <>
           <img
             src={logo}
             alt={logoAlt || `${title} logo`}
-            className={`${sizing} object-contain cs-logo__on-dark`}
+            className={`${sizing} object-contain shrink-0 self-start sm:self-auto cs-logo__on-dark`}
           />
           <img
             src={inkVariant(logo)}
             alt=""
             aria-hidden="true"
-            className={`${sizing} object-contain cs-logo__on-light`}
+            className={`${sizing} object-contain shrink-0 self-start sm:self-auto cs-logo__on-light`}
           />
-        </span>
+        </>
       )}
     </div>
   );

@@ -19,14 +19,14 @@ const cards = {
     alt: "FedEx MWI running on a Zebra handheld — dashboard and consignment screens",
     link: "/case-study/fedex",
   },
-  genie: {
-    id: "genie",
+  audi: {
+    id: "audi",
     ar: "706 / 583",
-    title: "Genie",
-    outcome: "In-car climate and comfort controls",
+    title: "Audi",
+    outcome: "Genie — an in-car AI companion that learns how you drive",
     image: "/images/bento/genie.png",
-    alt: "Genie automotive interface — climate, seat position and comfort controls",
-    link: null, // no case study written yet
+    alt: "Audi Genie — in-car climate, seat position and comfort controls",
+    link: "/case-study/audi",
   },
   generalMotors: {
     id: "general-motors",
@@ -100,7 +100,7 @@ const cards = {
  * would miss by about a pixel per row.
  */
 export const workRows = [
-  { widths: [632, 706], gap: 18, cards: [cards.fedex, cards.genie] },
+  { widths: [632, 706], gap: 18, cards: [cards.fedex, cards.audi] },
   { widths: [844, 489], gap: 23, cards: [cards.generalMotors, cards.tataBolt] },
   { widths: [1356], gap: 0, cards: [cards.amns] },
   { widths: [632, 703], gap: 21, cards: [cards.inspectify, cards.cartier] },
