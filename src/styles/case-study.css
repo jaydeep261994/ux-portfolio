@@ -82,59 +82,36 @@
   overflow: hidden;
 }
 
-/* Sticky bar so the grabber and close stay reachable while the body scrolls. */
-.cs-sheet__bar {
-  position: relative;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 20px 12px;
-  background: var(--bg-page);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--duration-base) var(--ease-out-expo);
-}
-
-.cs-sheet__bar[data-scrolled="true"] {
-  border-bottom-color: var(--border-hairline);
-}
-
-.cs-sheet__grabber {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 44px;
-  height: 4px;
-  border-radius: 999px;
-  background: var(--border-hairline);
-}
-
-.cs-sheet__crumb {
-  font-size: 0.8125rem;
-  color: var(--text-dim);
-  padding-top: 6px;
-}
-
+/* Figma 3651-76519: an 85 x 43 pill, radius 26, floating on the hero at top-right.
+   Anchored to the sheet, not the scroll region, so it survives scrolling. */
 .cs-sheet__close {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 4px;
-  padding: 8px 16px;
+  justify-content: center;
+  padding: 14px 27px;
   border: none;
-  border-radius: var(--radius-chip);
-  background: var(--bg-card);
+  border-radius: 26px;
+  background: var(--border-hairline);
   color: var(--text-primary);
-  font-size: 0.875rem;
+  font-size: 0.75rem; /* Figma: 12px */
+  line-height: 1.25;
   font-family: inherit;
   cursor: pointer;
-  transition: background var(--duration-fast) var(--ease-out-expo);
+  transition: background var(--duration-fast) var(--ease-out-expo),
+    box-shadow var(--duration-base) var(--ease-out-expo);
 }
 
 .cs-sheet__close:hover {
   background: var(--bg-chip);
+}
+
+/* Once the hero has scrolled away the pill needs its own separation. */
+.cs-sheet__close[data-scrolled="true"] {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
 }
 
 .cs-sheet__close:focus-visible,
@@ -172,12 +149,18 @@
   }
 
   .cs-body {
-    padding: 54px 64px 120px;
+    padding: 34px 50px 120px; /* Figma: title 34px below the hero, 50px margin */
+  }
+
+  /* Figma gives every project the same 603px hero, rather than the per-project
+     heights the old dark layout carried. */
+  .cs-sheet .hero-frame {
+    height: 603px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cs-sheet__bar {
+  .cs-sheet__close {
     transition: none;
   }
 }

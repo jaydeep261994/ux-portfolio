@@ -79,13 +79,17 @@ export default function CaseStudySheet({ projectId }) {
             : { type: "spring", stiffness: 260, damping: 32 }
         }
       >
-        <div className="cs-sheet__bar" data-scrolled={scrolled}>
-          <span className="cs-sheet__grabber" aria-hidden="true" />
-          <span className="cs-sheet__crumb">Case study</span>
-          <button type="button" className="cs-sheet__close" onClick={close} ref={closeRef}>
-            Close
-          </button>
-        </div>
+        {/* Figma floats Close on the hero. Anchored to the sheet rather than the
+            scroll region so it stays reachable once the reader is deep in the page. */}
+        <button
+          type="button"
+          className="cs-sheet__close"
+          data-scrolled={scrolled}
+          onClick={close}
+          ref={closeRef}
+        >
+          Close
+        </button>
 
         <div
           className="cs-sheet__scroll"

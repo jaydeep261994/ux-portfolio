@@ -6,9 +6,10 @@
 const inkVariant = (src) => src.replace(/(\.\w+)$/, "-ink$1");
 
 export default function CaseStudyTitleRow({ title, logo, logoAlt, logoClass, titleId }) {
+  // Figma 3651-76519 sets the title-row logo at 40px tall; it was rendering at 60.
   const sizing =
     logoClass ||
-    "max-h-[36px] sm:max-h-[48px] lg:max-h-[60px] max-w-[160px] sm:max-w-[220px] lg:max-w-[260px]";
+    "max-h-[26px] sm:max-h-[32px] lg:max-h-[40px] max-w-[160px] sm:max-w-[220px] lg:max-w-[260px]";
 
   return (
     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6">
