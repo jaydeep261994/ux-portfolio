@@ -35,8 +35,7 @@ const cards = {
     outcome: "Finance360 — variance and performance for GM finance teams",
     image: "/images/bento/mfg-dashboard.png",
     alt: "GM Finance360 — EBIT variance, MCPU efficiency and total manufacturing spend",
-    // The Finance360 case study was removed in 623fb07; restore it to link this card.
-    link: null,
+    link: "/case-study/general-motors",
   },
   tataBolt: {
     id: "tata-bolt",

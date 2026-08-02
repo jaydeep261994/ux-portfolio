@@ -127,6 +127,100 @@ const projects = [
     },
   },
   {
+    id: "general-motors",
+    title: "General Motors",
+    description:
+      "Finance360 is General Motors’ internal financial intelligence platform — the operating system for how GM’s finance teams track performance, surface variances, benchmark plants, and sign off on commentary across every region. The project focused on unifying fragmented reporting tools into a single experience that serves both executives reading a summary and analysts drilling into regional variances.",
+    coverImage: "/images/covers/general-motors.png",
+    logo: null,
+    link: "/case-study/general-motors",
+    caseStudy: {
+      title: "General Motors - FINANCE360",
+      hero: {
+        bg: "#EDEDED",
+        height: 507,
+        image: "/images/case-studies/gm/hero.png",
+        fit: "cover",
+      },
+      summary:
+        "Finance360 is GM's internal financial intelligence platform, built for finance teams to track performance, surface variances, and make faster decisions across every region and business unit.",
+      meta: {
+        timeline: "2026",
+        role: "Product Design",
+        platform: "Web (Internal Enterprise)",
+        deliverables: "User Flow, Experience Design",
+        tools: "FIGMA",
+      },
+      blocks: [
+        { type: "heading", text: "Overview" },
+        {
+          type: "paragraph",
+          size: "lg",
+          body: "Finance360 is General Motors' internal financial intelligence platform. Not a dashboard. The operating system for how GM's finance teams track performance, surface variances, benchmark plants, and sign off on commentary across every region the company runs.",
+        },
+        { type: "image", src: "/images/case-studies/gm/overview.png", alt: "Finance360 overview" },
+        { type: "divider" },
+
+        { type: "heading", text: "The Challenge" },
+        {
+          type: "paragraph",
+          body: "GM's finance teams worked across fragmented tools. Static reports, disconnected spreadsheets, manual sign-off. Decision-makers spent more time finding data than acting on it.",
+        },
+        {
+          type: "paragraph",
+          body: "The brief was one platform that could serve an executive reading a summary and an analyst drilling into regional variances, without either feeling like a compromise.",
+        },
+        { type: "divider" },
+
+        { type: "heading", text: "Key Screens" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Homepage —\n\nA personalised briefing, not a menu. AI-suggested prompts, top insights surfaced automatically, and a KPI dashboard pulled from the consoles each user tracks.",
+        },
+        { type: "video", src: "/videos/case-studies/gm/homepage.mp4", poster: "/images/case-studies/gm/homepage.png", aspectRatio: "1032 / 514" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Manufacturing Console —\n\nWhere analysts live. Multi-filter bar, modular data cards, waterfall chart, heatmap, competitive losses, commentary sign-off, all in one view.",
+        },
+        { type: "image", src: "/images/case-studies/gm/manufacturing-console.png", alt: "Manufacturing Console screen" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "L2 Drill-Down —\n\nEvery KPI card opens here. Current forecast vs budget vs prior year, a full year trend line, regional breakdown by GMNA, GMAP, GMSA, and an AI Insights panel on the right that does the first pass before the analyst starts reading.",
+        },
+        { type: "video", src: "/videos/case-studies/gm/l2-drilldown.mp4", poster: "/images/case-studies/gm/l2-drilldown.png", aspectRatio: "1032 / 514" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Plant Benchmarking —\n\nCompares Non-Scheduled Overtime across Arlington, Flint, and Fort Wayne against target. AI Insights call out the outliers directly. A comment thread below lets finance teams annotate with dollar context.",
+        },
+        { type: "video", src: "/videos/case-studies/gm/plant-benchmarking.mp4", poster: "/images/case-studies/gm/plant-benchmarking.png", aspectRatio: "1032 / 514" },
+        {
+          type: "paragraph",
+          weight: "semibold",
+          size: "lg",
+          body: "Report Hub —\n\nA library of purpose-built views across Financial, Commercial, Operational, and Risk domains. Personalised by recency, favorites, and AI recommendations.",
+        },
+        { type: "video", src: "/videos/case-studies/gm/report-hub.mp4", poster: "/images/case-studies/gm/report-hub.png", aspectRatio: "1032 / 514" },
+        { type: "divider" },
+
+        { type: "heading", text: "Reflection" },
+        {
+          type: "paragraph",
+          size: "lg",
+          maxWidth: 1032,
+          body: "The real design problem was hierarchy. Every team wanted their metric visible. Getting the right number as the headline, the right chart at full width, and the right AI insight surfaced, consistently across dozens of modules, was where most of the work lived.",
+        },
+      ],
+    },
+  },
+  {
     id: "amns",
     title: "AM/NS India",
     description:
