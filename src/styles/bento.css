@@ -273,29 +273,34 @@ a.bento-card:focus-visible {
   border-radius: 50%;
 }
 
-.pune-card__place,
-.pune-card__time {
+/* The map is a photographic still in both themes, so this text is intentionally
+   fixed-dark rather than theme-tokenised. */
+.pune-card__place {
   position: absolute;
   z-index: 1;
-  font-weight: 500;
-  /* The map is a photographic still in both themes, so this text is intentionally
-     fixed-dark rather than theme-tokenised. */
-  color: #111;
-  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.75);
-}
-
-.pune-card__place {
   top: 18px;
   left: 20px;
+  color: #111;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.75);
   font-size: 1.75rem; /* Figma: 28px / 700 */
   font-weight: 700;
   line-height: 1.1;
 }
 
+/* Figma 3651-75510: a 90 × 34 white chip, radius 7, sitting 22 from the left and
+   16 from the bottom. Sized by its padding so the clock can't outgrow it. */
 .pune-card__time {
-  bottom: 18px;
-  left: 20px;
+  position: absolute;
+  z-index: 1;
+  left: 22px;
+  bottom: 16px;
+  padding: 6px 12px;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #000000;
   font-size: 1.0625rem;
+  line-height: 1.29;
+  font-variant-numeric: tabular-nums;
 }
 
 .tools-card,
