@@ -6,6 +6,18 @@
   color: var(--text-body);
 }
 
+/* Every block sits on the same 36px gap, so section headings read as just another
+   paragraph. Pushing space above the heading and pulling it closer to the text it
+   introduces gives the page an actual sectional rhythm. */
+.cs-body h2 {
+  margin-top: 28px; /* 36 gap + 28 = 64 above a section */
+  margin-bottom: -12px; /* 36 gap - 12 = 24 below, tying it to its own copy */
+}
+
+.cs-body > div > *:first-child {
+  margin-top: 0;
+}
+
 /* Body copy: one readable size everywhere, with the measure capped so lines land in
    the 45-75 character range. The data's maxWidth acts as an upper bound only —
    several blocks ask for 808px or more, which runs past 100 characters at this size.
@@ -140,7 +152,7 @@
 }
 
 .cs-body {
-  padding: 36px 20px 80px;
+  padding: 36px 24px 80px;
   display: flex;
   flex-direction: column;
   gap: 28px;
