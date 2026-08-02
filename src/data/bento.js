@@ -28,14 +28,15 @@ const cards = {
     alt: "Genie automotive interface — climate, seat position and comfort controls",
     link: null, // no case study written yet
   },
-  mfgDashboard: {
-    id: "mfg-dashboard",
+  generalMotors: {
+    id: "general-motors",
     ar: "844 / 583",
-    title: "Manufacturing analytics",
-    outcome: "EBIT variance and spend, one operating picture",
+    title: "General Motors",
+    outcome: "Finance360 — variance and performance for GM finance teams",
     image: "/images/bento/mfg-dashboard.png",
-    alt: "Manufacturing analytics cards showing EBIT variance, MCPU efficiency and total spend",
-    link: null, // no case study written yet
+    alt: "GM Finance360 — EBIT variance, MCPU efficiency and total manufacturing spend",
+    // The Finance360 case study was removed in 623fb07; restore it to link this card.
+    link: null,
   },
   tataBolt: {
     id: "tata-bolt",
@@ -101,7 +102,7 @@ const cards = {
  */
 export const workRows = [
   { widths: [632, 706], gap: 18, cards: [cards.fedex, cards.genie] },
-  { widths: [844, 489], gap: 23, cards: [cards.mfgDashboard, cards.tataBolt] },
+  { widths: [844, 489], gap: 23, cards: [cards.generalMotors, cards.tataBolt] },
   { widths: [1356], gap: 0, cards: [cards.amns] },
   { widths: [632, 703], gap: 21, cards: [cards.inspectify, cards.cartier] },
   { widths: [810, 528], gap: 18, cards: [cards.jsw, cards.stockmann] },
