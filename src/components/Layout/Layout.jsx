@@ -12,7 +12,7 @@ export default function Layout() {
   // The redesigned homepage is its own surface — no sidebar, no top bar, no overlay.
   if (isHome) {
     return (
-      <main className="page-home">
+      <main id="main-content" className="page-home">
         <Outlet />
       </main>
     );
@@ -33,7 +33,7 @@ export default function Layout() {
           }}
         />
         <TopBar onMenuToggle={() => setIsSidebarOpen((p) => !p)} isMenuOpen={isSidebarOpen} />
-        <main className={isCaseStudy ? "" : "content-main"}>
+        <main id="main-content" className={isCaseStudy ? "" : "content-main"}>
           <Outlet />
         </main>
       </div>

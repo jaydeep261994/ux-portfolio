@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink, Link } from "react-router-dom";
 import { SPRING } from "../../constants/motion";
@@ -12,28 +12,22 @@ const sidebarProjects = projects.map((p) => ({
   passwordProtected: p.passwordProtected,
 }));
 
-const modalThumbnails = [
-  { id: "fedex", title: "FedEx", thumbnail: "/images/thumbnails/fedex.png", link: "/case-study/fedex" },
-  { id: "amns", title: "AM/NS India", thumbnail: "/images/thumbnails/amns.png", link: "/case-study/amns" },
-  { id: "claypond", title: "Claypond", thumbnail: "/images/thumbnails/claypond.png", link: "/case-study/claypond" },
-  { id: "tata-bolt", title: "TATA AIG", thumbnail: "/images/thumbnails/tata-bolt.png", link: "/case-study/tata-bolt" },
-  { id: "inspectify", title: "Inspectify", thumbnail: "/images/thumbnails/inspectify.png", link: "/case-study/tata-inspectify" },
-  { id: "cartier", title: "Cartier", thumbnail: "/images/thumbnails/cartier.png", link: "/case-study/cartier" },
-  { id: "stockmann", title: "Stockmann", thumbnail: "/images/thumbnails/stockmann.png", link: "/case-study/stockmann" },
-  { id: "hiranandani", title: "Hiranandani", thumbnail: "/images/thumbnails/hiranandani.png", bg: "#6a1d39", contain: true },
-  { id: "oreo", title: "Oreo", thumbnail: "/images/thumbnails/oreo.png", bg: "#ffffff", contain: true },
-  { id: "atl", title: "ATL Money Transfer", thumbnail: "/images/thumbnails/atl.png" },
-  { id: "zoya", title: "Zoya", thumbnail: "/images/thumbnails/zoya.png" },
-  { id: "signature", title: "Signature Collection", thumbnail: "/images/thumbnails/signature.png" },
-];
-
 export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp } = {}) {
   const [internalIsOpen, internalSetIsOpen] = useState(false);
   const isControlled = setIsOpenProp !== undefined;
   const isOpen = isControlled ? isOpenProp : internalIsOpen;
   const setIsOpen = isControlled ? setIsOpenProp : internalSetIsOpen;
-  const [showProjectsModal, setShowProjectsModal] = useState(false);
   const posthog = usePostHog();
+
+  // Escape closes the mobile drawer, matching the overlay.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen, setIsOpen]);
 
   const sidebarContent = (
     <div className="flex flex-col items-start w-full min-h-full">
@@ -148,7 +142,9 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
       {/* Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <motion.button
+            type="button"
+            aria-label="Close menu"
             className="fixed inset-0 bg-black/60 z-30 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -162,7 +158,7 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
       <AnimatePresence>
         {isOpen && (
           <motion.aside
-            className="fixed top-0 left-0 h-full w-[243px] z-40 flex flex-col bg-[#1d1d1d] border-r border-[#444] overflow-y-auto lg:hidden"
+            className="fixed top-0 left-0 h-full w-[243px] z-40 flex flex-col bg-[#1d1d1d] border-r border-[#444] overflow-y-auto overscroll-contain lg:hidden"
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
@@ -178,76 +174,6 @@ export default function Sidebar({ isOpen: isOpenProp, setIsOpen: setIsOpenProp }
         {sidebarContent}
       </aside>
 
-      {/* Projects Modal */}
-      <AnimatePresence>
-        {showProjectsModal && (
-          <>
-            <motion.div
-              className="fixed inset-0 z-50 bg-black/60"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setShowProjectsModal(false)}
-            />
-            <motion.div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setShowProjectsModal(false)}
-            >
-              <motion.div
-                className="bg-[rgba(40,39,39,0.77)] backdrop-blur-md rounded-[30px] p-[34px] max-w-[580px] w-full"
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.95, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <p className="text-[18px] text-white leading-[20px] tracking-[-0.18px] mb-[20px] font-['Poppins',sans-serif]">
-                  Projects
-                </p>
-                <div className="flex flex-wrap gap-[13px]">
-                  {modalThumbnails.map((item) => {
-                    const imgEl = (
-                      <img
-                        src={item.thumbnail}
-                        alt={item.title}
-                        className={`w-full h-full ${item.contain ? "object-contain p-[10px]" : "object-cover"}`}
-                      />
-                    );
-                    const style = item.bg ? { backgroundColor: item.bg } : undefined;
-
-                    return item.link ? (
-                      <Link
-                        key={item.id}
-                        to={item.link}
-                        onClick={() => {
-                          playProjectClick();
-                          setShowProjectsModal(false);
-                          setIsOpen(false);
-                        }}
-                        className="w-[72px] h-[71px] rounded-[14px] overflow-hidden shrink-0 hover:ring-2 hover:ring-white/30 transition-all"
-                        style={style}
-                      >
-                        {imgEl}
-                      </Link>
-                    ) : (
-                      <div
-                        key={item.id}
-                        className="w-[72px] h-[71px] rounded-[14px] overflow-hidden shrink-0 hover:ring-2 hover:ring-white/30 transition-all"
-                        style={style}
-                      >
-                        {imgEl}
-                      </div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </>
   );
 }

@@ -15,6 +15,10 @@ export default function useTheme() {
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
+    // Browser chrome (address bar, PWA shell) matches the page surface.
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", theme === "dark" ? "#0f0f0f" : "#f4f4f4");
   }, [theme]);
 
   // Follow the OS only while the user has made no explicit choice.

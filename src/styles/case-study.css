@@ -116,7 +116,7 @@
 .cs-sheet__close {
   position: absolute;
   top: 20px;
-  right: 26px;
+  right: max(26px, env(safe-area-inset-right));
   z-index: 2;
   display: inline-flex;
   align-items: center;
@@ -157,9 +157,11 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* The sheet runs flush to the bottom edge on phones — keep the last block clear
+   of the home indicator. */
 .cs-body {
   --cs-pad: 24px;
-  padding: 36px var(--cs-pad) 80px;
+  padding: 36px var(--cs-pad) calc(80px + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   gap: 28px;

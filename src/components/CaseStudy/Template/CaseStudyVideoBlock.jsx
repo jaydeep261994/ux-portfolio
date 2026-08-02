@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useReducedMotion } from "../../../hooks/useReducedMotion";
 
 export default function CaseStudyVideoBlock({
   src,
@@ -6,6 +7,8 @@ export default function CaseStudyVideoBlock({
   aspectRatio = "1032 / 514",
   bg = "#FFFFFF",
 }) {
+  const prefersReduced = useReducedMotion();
+
   return (
     <motion.div
       className="cs-full w-full overflow-hidden flex items-center justify-center"
@@ -15,11 +18,14 @@ export default function CaseStudyVideoBlock({
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
+      {/* Reduced motion holds the poster frame, but controls are handed over so the
+          clip stays watchable on demand rather than simply being lost. */}
       {src ? (
         <video
           src={src}
           poster={poster}
-          autoPlay
+          autoPlay={!prefersReduced}
+          controls={prefersReduced}
           loop
           muted
           playsInline

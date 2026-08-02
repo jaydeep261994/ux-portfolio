@@ -7,7 +7,7 @@ import { usePostHog } from "@posthog/react";
 export default function TopBar({ onMenuToggle, isMenuOpen }) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState("");
   const posthog = usePostHog();
   const isCaseStudy = pathname.startsWith("/case-study/");
 
@@ -21,11 +21,18 @@ export default function TopBar({ onMenuToggle, isMenuOpen }) {
   };
   const pageTitle = pageTitles[pathname];
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(window.location.href);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+    } catch {
+      // Denied permission or an insecure origin — say so rather than claiming success.
+      setStatus("Couldn't copy — copy the address bar instead");
+      setTimeout(() => setStatus(""), 4000);
+      return;
+    }
     posthog?.capture("link_copied", { page: pathname });
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setStatus("Link Copied");
+    setTimeout(() => setStatus(""), 2000);
   };
 
   return (
@@ -82,6 +89,7 @@ export default function TopBar({ onMenuToggle, isMenuOpen }) {
           </div>
 
           <button
+            type="button"
             className="flex items-center gap-[6px] bg-[#2d2c2c] rounded-[6px] hover:bg-white/10 transition-colors shrink-0"
             style={{ padding: "4px 10px" }}
             onClick={handleCopy}
@@ -95,10 +103,12 @@ export default function TopBar({ onMenuToggle, isMenuOpen }) {
         </div>
       </header>
 
-      {/* Link Copied toast — fixed at bottom center of content area */}
+      {/* Copy result toast — fixed at bottom center of content area */}
       <AnimatePresence>
-        {copied && (
+        {status && (
           <motion.div
+            role="status"
+            aria-live="polite"
             className="fixed z-50 left-0 lg:left-[243px] right-0 flex justify-center pointer-events-none"
             style={{ bottom: 50 }}
             initial={{ opacity: 0, y: 20 }}
@@ -121,9 +131,7 @@ export default function TopBar({ onMenuToggle, isMenuOpen }) {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <span className="text-[12px] text-[#5b5b5b] whitespace-nowrap">
-                Link Copied
-              </span>
+              <span className="text-[12px] text-[#5b5b5b]">{status}</span>
             </div>
           </motion.div>
         )}

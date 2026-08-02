@@ -74,7 +74,7 @@ export default function CaseStudyCarousel({
               type="button"
               aria-label={`Slide ${i + 1}`}
               onClick={() => setIndex(i)}
-              className={`h-1.5 rounded-full transition-all ${
+              className={`h-1.5 rounded-full transition-[width,background-color] duration-300 ${
                 i === index ? "w-6 bg-white" : "w-1.5 bg-white/40"
               }`}
             />

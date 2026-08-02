@@ -43,10 +43,17 @@ export default function CaseStudySheet({ projectId }) {
   }, []);
 
   // Move focus into the sheet, and hand it back to whatever opened it on close.
+  // `inert` keeps Tab and the screen reader inside the sheet while it's open —
+  // the page behind is a live document otherwise, aria-modal alone doesn't stop it.
   useEffect(() => {
     restoreFocusRef.current = document.activeElement;
     closeRef.current?.focus();
-    return () => restoreFocusRef.current?.focus?.();
+    const behind = document.getElementById("main-content");
+    if (behind) behind.inert = true;
+    return () => {
+      if (behind) behind.inert = false;
+      restoreFocusRef.current?.focus?.();
+    };
   }, []);
 
   // Each project starts at the top of its own scroll region, not the page.

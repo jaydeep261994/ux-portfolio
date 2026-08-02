@@ -40,6 +40,9 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <BrowserRouter>
+        <a className="skip-link" href="#main-content">
+          Skip to Content
+        </a>
         <AnimatedRoutes />
         <Analytics />
         <SpeedInsights />

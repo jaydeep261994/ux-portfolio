@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f4f4" />
     <title>Jaydeep Das — Portfolio</title>
+
+    <!-- Book is the only weight above the fold; Medium/Bold load on demand. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/ITCAvantGarde-Book.woff2"
+      crossorigin
+    />
     <meta name="description" content="Interaction Design Senior Analyst at Accenture. I design and build digital products & visual interfaces." />
 
     <!-- Open Graph -->
@@ -40,6 +50,9 @@
             stored === "dark" ||
             (!stored && matchMedia("(prefers-color-scheme: dark)").matches);
           document.documentElement.dataset.theme = dark ? "dark" : "light";
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute("content", dark ? "#0f0f0f" : "#f4f4f4");
         } catch (e) {
           document.documentElement.dataset.theme = "light";
         }

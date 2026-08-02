@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useReducedMotion } from "../../../hooks/useReducedMotion";
 
 export default function CaseStudyHero({
   bg = "#EDEDED",
@@ -11,21 +12,28 @@ export default function CaseStudyHero({
   children,
 }) {
   const videoRef = useRef(null);
+  const prefersReduced = useReducedMotion();
   const isCover = fit === "cover";
   const mediaClass = isCover
     ? "w-full h-full object-cover"
     : "max-h-full w-auto object-contain";
 
+  // A looping hero is motion the visitor didn't ask for; when they've asked for less,
+  // it holds on the poster frame instead.
   useEffect(() => {
     const el = videoRef.current;
     if (!el) return;
+    if (prefersReduced) {
+      el.pause();
+      return;
+    }
     el.muted = true;
     el.defaultMuted = true;
     const result = el.play();
     if (result && typeof result.catch === "function") {
       result.catch(() => {});
     }
-  }, [video]);
+  }, [video, prefersReduced]);
 
   return (
     <div
@@ -37,7 +45,7 @@ export default function CaseStudyHero({
           ref={videoRef}
           src={video}
           poster={poster || image}
-          autoPlay
+          autoPlay={!prefersReduced}
           loop
           muted
           playsInline
@@ -45,7 +53,7 @@ export default function CaseStudyHero({
           className={mediaClass}
         />
       ) : image ? (
-        <img src={image} alt={alt} className={mediaClass} />
+        <img src={image} alt={alt} fetchPriority="high" className={mediaClass} />
       ) : (
         children
       )}
