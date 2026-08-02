@@ -4,32 +4,48 @@
 @import "./bento.css";
 @import "./case-study.css";
 
-/* Google Sans — the typeface the Figma is drawn in. Supplied by the user; note it
-   is Google's proprietary brand font, not openly licensed for third-party sites.
+/* Barned — supplied by the user. Four weights ship, so the design's 500 is mapped
+   to Semibold rather than falling back to Regular and losing its heading contrast.
    Red Hat Display stays self-hosted below as the fallback. */
 
 @font-face {
-  font-family: 'Google Sans';
+  font-family: 'Barned';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/BarnedLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Barned';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/GoogleSans-Regular.woff2') format('woff2');
+  src: url('/fonts/BarnedRegular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Google Sans';
+  font-family: 'Barned';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/GoogleSans-Medium.woff2') format('woff2');
+  src: url('/fonts/BarnedSemibold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Google Sans';
+  font-family: 'Barned';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/BarnedSemibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Barned';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/GoogleSans-Bold.woff2') format('woff2');
+  src: url('/fonts/BarnedBold.woff2') format('woff2');
 }
 
 /* Self-hosted. The previous @font-face rules pointed at pinned gstatic file
