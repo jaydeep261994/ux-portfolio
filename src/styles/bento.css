@@ -283,13 +283,13 @@ a.bento-card:focus-visible {
 .pune-card__place {
   position: absolute;
   z-index: 1;
-  top: 18px;
-  left: 20px;
+  top: 23px;
+  left: 22px; /* aligns with the time chip below */
   color: #111;
   text-shadow: 0 1px 6px rgba(255, 255, 255, 0.75);
   font-size: 1.75rem; /* Figma: 28px / 700 */
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 0.93; /* Figma sets 26px on a 28px face — tight, two lines in 52px */
 }
 
 /* Figma 3651-75510: a 90 × 34 white chip, radius 7, sitting 22 from the left and
