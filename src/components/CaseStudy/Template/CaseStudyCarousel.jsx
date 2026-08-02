@@ -18,7 +18,7 @@ export default function CaseStudyCarousel({
 
   return (
     <motion.div
-      className="w-full"
+      className="cs-full w-full"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}

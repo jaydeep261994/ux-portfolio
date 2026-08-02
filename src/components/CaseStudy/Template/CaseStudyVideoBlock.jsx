@@ -8,7 +8,7 @@ export default function CaseStudyVideoBlock({
 }) {
   return (
     <motion.div
-      className="w-full overflow-hidden flex items-center justify-center"
+      className="cs-full w-full overflow-hidden flex items-center justify-center"
       style={{ aspectRatio, backgroundColor: bg }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}

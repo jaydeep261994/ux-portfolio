@@ -30,7 +30,7 @@ export default function CaseStudyEmbed({
   if (!src) return null;
   return (
     <motion.div
-      className="relative w-full overflow-hidden"
+      className="cs-full relative w-full overflow-hidden"
       style={{ aspectRatio, backgroundColor: bg }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}

@@ -6,6 +6,14 @@
   color: var(--text-body);
 }
 
+/* Media runs edge to edge, matching the hero — the body's own padding is cancelled
+   out rather than removed, so copy keeps its margin. */
+.cs-full {
+  width: calc(100% + var(--cs-pad) * 2);
+  margin-inline: calc(var(--cs-pad) * -1);
+  max-width: none;
+}
+
 /* Every block sits on the same 36px gap, so section headings read as just another
    paragraph. Pushing space above the heading and pulling it closer to the text it
    introduces gives the page an actual sectional rhythm. */
@@ -18,15 +26,13 @@
   margin-top: 0;
 }
 
-/* Body copy: one readable size everywhere, with the measure capped so lines land in
-   the 45-75 character range. The data's maxWidth acts as an upper bound only —
-   several blocks ask for 808px or more, which runs past 100 characters at this size.
-   48ch measures ~70 characters in Red Hat Display — `ch` is the width of "0", which
-   is wider than the average glyph, so the cap is well below the character target. */
+/* Body copy: one size everywhere, running the full content width. The readable
+   measure cap was removed deliberately — lines run long, which is the trade for
+   edge-to-edge copy. */
 .cs-copy {
   font-size: 1rem;
   line-height: 1.6;
-  max-width: min(var(--measure, 808px), 48ch);
+  max-width: 100%;
 }
 
 .cs-heading {
@@ -152,7 +158,8 @@
 }
 
 .cs-body {
-  padding: 36px 24px 80px;
+  --cs-pad: 24px;
+  padding: 36px var(--cs-pad) 80px;
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -161,7 +168,8 @@
 
 @media (min-width: 640px) {
   .cs-body {
-    padding: 44px 32px 96px;
+    --cs-pad: 32px;
+    padding: 44px var(--cs-pad) 96px;
     gap: 36px;
   }
 }
@@ -172,7 +180,8 @@
   }
 
   .cs-body {
-    padding: 34px 50px 120px; /* Figma: title 34px below the hero, 50px margin */
+    --cs-pad: 50px;
+    padding: 34px var(--cs-pad) 120px; /* Figma: title 34px below the hero */
   }
 
   /* The Close pill is anchored to the sheet, so the title row keeps clear of its
