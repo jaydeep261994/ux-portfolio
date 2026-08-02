@@ -17,7 +17,7 @@ export default function HomeHero() {
       </p>
 
       <a className="home-hero__cta" href="mailto:jaydeepdas06@gmail.com">
-        <img src="/images/icons/arrow-right.svg" alt="" aria-hidden="true" />
+        <span className="home-hero__cta-arrow" aria-hidden="true" />
         Get in touch
       </a>
     </header>

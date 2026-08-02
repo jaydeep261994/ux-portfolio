@@ -38,17 +38,24 @@ a.bento-card:focus-visible {
 
 /* Figma: columns 617 / 383 / 322 inside 1356 — a 17px gap makes those land exactly.
    All three columns are 703 tall so they finish together on y=735. */
+/* A minimum, not a fixed height: below the 1356 design width the columns narrow but
+   the skills tags still need their rows, and a hard height silently clipped them
+   (bento-card is overflow:hidden). The grid stretches all three columns together,
+   so they still finish level. */
 .bento__top {
   display: grid;
   grid-template-columns: 617fr 383fr 322fr;
   gap: 17px;
-  height: 703px;
+  min-height: 703px;
 }
 
-/* Rows: hero fills, then the 160px card pair, then the 160px tools strip. */
+/* Rows: hero, then the 160px card pair, then the 160px tools strip. When a taller
+   right-hand column stretches this one, the slack is spread across the three gaps
+   rather than pooling into a single void under the hero. */
 .bento__top-left {
   display: grid;
-  grid-template-rows: 1fr 160px 160px;
+  grid-template-rows: auto 160px 160px;
+  align-content: space-between;
   gap: 12px;
 }
 
@@ -60,7 +67,7 @@ a.bento-card:focus-visible {
 
 .bento__top-right {
   display: grid;
-  grid-template-rows: 119px 573px;
+  grid-template-rows: 119px minmax(573px, auto);
   gap: 11px;
 }
 
@@ -112,32 +119,43 @@ a.bento-card:focus-visible {
   height: 21px;
 }
 
+/* Figma 3660-77115: 172 × 46, padding 13/28, 10px gap, radius 25 (a pill at this
+   height). Avant Garde sets wider than the Google Sans the frame is drawn in, so the
+   width lands a few px over 172 — the padding and height are what's held. */
 .home-hero__cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   align-self: flex-start;
-  padding: 13px 22px;
+  padding: 13px 28px;
   border-radius: var(--radius-chip);
   background: var(--text-primary);
   color: var(--bg-page);
   font-size: 1rem;
+  line-height: 1.272; /* Figma: 20.352 on 16px — the body's 1.6 made the pill 52 tall */
   transition: transform var(--duration-fast) var(--ease-out-expo);
 }
 
-.home-hero__cta img {
+/* The arrow ships stroked #8C8C8C; inverting it produced a grey arrow on a black
+   pill rather than Figma's white. Masked instead, so it takes the button's own
+   colour and stays correct in both themes — same approach as the theme switch. */
+.home-hero__cta-arrow {
   width: 16px;
   height: 16px;
-  /* The arrow ships as a dark SVG; flip it to sit on the inverted button. */
-  filter: invert(1);
-}
-
-[data-theme="dark"] .home-hero__cta img {
-  filter: none;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask: url("/images/icons/arrow-right.svg") center / 16px 16px no-repeat;
+  mask: url("/images/icons/arrow-right.svg") center / 16px 16px no-repeat;
 }
 
 .home-hero__cta:hover {
   transform: translateX(3px);
+}
+
+.home-hero__cta:focus-visible,
+.pune-card a:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
 }
 
 /* ── Info cards ─────────────────────────────────────────────────────── */
@@ -171,11 +189,17 @@ a.bento-card:focus-visible {
   justify-content: space-between;
 }
 
+/* Figma 3662-77121: a 5px #f4f4f4 stroke, aligned OUTSIDE. That colour is the page
+   token rather than a one-off, so it's taken from the variable and follows the theme
+   — a fixed light ring would glow on the dark card. box-shadow keeps it outside the
+   96px circle without touching layout, matching OUTSIDE alignment. */
 .resume-card__disc {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: var(--bg-page);
+  object-fit: cover;
+  background: var(--bg-page); /* holds the circle while the image decodes */
+  box-shadow: 0 0 0 5px var(--bg-page);
   flex-shrink: 0;
   margin-top: 4px;
 }
@@ -316,13 +340,20 @@ a.bento-card:focus-visible {
 }
 
 /* Figma stacks 12 rows at a 31px pitch inside a 285 × 364 block. Avant Garde sets
-   wider than the Figma face, so padding and gap are tightened to keep tags pairing
-   up two per row — otherwise 22 tags need 18 rows and overflow the 573px card. */
+   wider than the Figma face, so most of these 22 tags take a row each rather than
+   pairing up — the card grows to hold them instead of cropping the last few. */
 .skills-card__list {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   list-style: none;
+}
+
+/* A tag longer than its column wraps to two lines rather than pushing the card
+   wider or spilling out of it. */
+.skills-card__list li {
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 /* Overlapping mark row — Figma packs 9 × 44px marks into a 276px strip. */

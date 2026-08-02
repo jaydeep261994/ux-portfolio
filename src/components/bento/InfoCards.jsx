@@ -15,9 +15,24 @@ const formatPuneTime = () =>
 /** Résumé — the only route to full work history now that the experience list is gone. */
 export function ResumeCard() {
   return (
-    <Card as="a" href="/resume.pdf" target="_blank" rel="noopener" className="info-card resume-card">
+    <Card
+      as="a"
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener"
+      aria-label="Resume (opens in a new tab)"
+      className="info-card resume-card"
+    >
       <span className="info-card__label">Resume</span>
-      <span className="resume-card__disc" aria-hidden="true" />
+      {/* Figma 3665-77127 fills the disc with the portrait. Decorative here — the
+          card's own label is what names the link. */}
+      <img
+        className="resume-card__disc"
+        src="/images/bento/portrait.webp"
+        alt=""
+        width="96"
+        height="96"
+      />
     </Card>
   );
 }
@@ -48,7 +63,9 @@ export function PuneCard() {
         <br />
         India
       </span>
-      <time className="pune-card__time">{time}</time>
+      <time className="pune-card__time" dateTime={time}>
+        {time}
+      </time>
     </Card>
   );
 }
@@ -108,6 +125,7 @@ export function PlaygroundCard() {
       <span className="info-card__label info-card__label--lg info-card__label--violet">
         Things i play around with
       </span>
+      {/* The first frame is above the fold — lazy-loading it would delay LCP. */}
       <div className="playground-card__well">
         {playgroundFrames.map((frame, i) => (
           <img
@@ -117,7 +135,8 @@ export function PlaygroundCard() {
             aria-hidden={i === index ? undefined : "true"}
             data-visible={i === index}
             data-kind={frame.kind}
-            loading="lazy"
+            loading={i === 0 ? "eager" : "lazy"}
+            fetchPriority={i === 0 ? "high" : "low"}
           />
         ))}
       </div>
