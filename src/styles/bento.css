@@ -91,7 +91,7 @@ a.bento-card:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   color: var(--text-dim);
 }
 
@@ -104,7 +104,7 @@ a.bento-card:focus-visible {
   border-radius: var(--radius-chip);
   background: var(--bg-pill);
   color: var(--text-primary);
-  line-height: 1.29; /* the body's 1.6 would make the pill 35 tall instead of 30 */
+  line-height: 1.375; /* holds the pill at Figma's 30 tall now the text is 16px */
 }
 
 .home-hero__employer img {
@@ -303,8 +303,8 @@ a.bento-card:focus-visible {
   border-radius: 7px;
   background: #ffffff;
   color: #000000;
-  font-size: 1.0625rem;
-  line-height: 1.29;
+  font-size: 1rem;
+  line-height: 1.375; /* holds the chip at Figma's 34 tall */
   font-variant-numeric: tabular-nums;
 }
 
@@ -315,11 +315,13 @@ a.bento-card:focus-visible {
   gap: 16px;
 }
 
-/* Figma stacks 12 rows at a 31px pitch inside a 285 × 364 block. */
+/* Figma stacks 12 rows at a 31px pitch inside a 285 × 364 block. Avant Garde sets
+   wider than the Figma face, so padding and gap are tightened to keep tags pairing
+   up two per row — otherwise 22 tags need 18 rows and overflow the 573px card. */
 .skills-card__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
   list-style: none;
 }
 
@@ -346,7 +348,7 @@ a.bento-card:focus-visible {
 }
 
 .skills-card__list li {
-  padding: 5px 11px;
+  padding: 5px 9px;
   border-radius: var(--radius-chip);
   background: var(--bg-chip);
   color: var(--text-primary);
@@ -541,7 +543,7 @@ a.bento-card:focus-visible {
   border-radius: 8px;
   background: #ffffff;
   color: #111111;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.3;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }

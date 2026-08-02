@@ -4,93 +4,33 @@
 @import "./bento.css";
 @import "./case-study.css";
 
-/* Barned — supplied by the user. Four weights ship, so the design's 500 is mapped
-   to Semibold rather than falling back to Regular and losing its heading contrast.
-   Red Hat Display stays self-hosted below as the fallback. */
+/* ITC Avant Garde Gothic Pro — supplied by the user, converted from OTF to woff2.
+   Book covers 300-400, Medium 500-600, Bold 700, so every weight the design uses
+   resolves to a real face rather than a synthesised one. */
 
 @font-face {
-  font-family: 'Barned';
+  font-family: 'ITC Avant Garde';
   font-style: normal;
-  font-weight: 300;
+  font-weight: 300 400;
   font-display: swap;
-  src: url('/fonts/BarnedLight.woff2') format('woff2');
+  src: url('/fonts/ITCAvantGarde-Book.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Barned';
+  font-family: 'ITC Avant Garde';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500 600;
   font-display: swap;
-  src: url('/fonts/BarnedRegular.woff2') format('woff2');
+  src: url('/fonts/ITCAvantGarde-Medium.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Barned';
+  font-family: 'ITC Avant Garde';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700 900;
   font-display: swap;
-  src: url('/fonts/BarnedSemibold.woff2') format('woff2');
+  src: url('/fonts/ITCAvantGarde-Bold.woff2') format('woff2');
 }
-
-@font-face {
-  font-family: 'Barned';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/BarnedSemibold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barned';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/BarnedBold.woff2') format('woff2');
-}
-
-/* Self-hosted. The previous @font-face rules pointed at pinned gstatic file
-   hashes, which now 404 — the site was silently falling back to system sans. */
-
-@font-face {
-  font-family: 'Red Hat Display';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('/fonts/red-hat-display-300.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Red Hat Display';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/red-hat-display-400.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Red Hat Display';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/fonts/red-hat-display-500.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Red Hat Display';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/red-hat-display-600.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Red Hat Display';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/red-hat-display-700.woff2') format('woff2');
-}
-
 
 @layer base {
   *,

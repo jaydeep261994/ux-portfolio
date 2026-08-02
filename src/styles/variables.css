@@ -17,9 +17,9 @@
   --color-border-sidebar: #444444;
   --color-accent: #6366f1; /* placeholder — update if Figma specifies */
 
-  /* Typography — Red Hat Display (user override from Poppins) */
-  --font-body: 'Barned', 'Red Hat Display', sans-serif;
-  --font-heading: 'Barned', 'Red Hat Display', sans-serif;
+  /* Typography — ITC Avant Garde Gothic Pro */
+  --font-body: 'ITC Avant Garde', sans-serif;
+  --font-heading: 'ITC Avant Garde', sans-serif;
 
   /* Layout */
   --sidebar-width: 243px;
