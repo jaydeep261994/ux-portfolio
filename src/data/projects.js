@@ -345,7 +345,7 @@ const projects = [
     caseStudy: {
       title: "AM/NS India",
       hero: {
-        bg: "#181818",
+        bg: "#EDEDED",
         height: 507,
         video: "/videos/case-studies/amns/banner.mp4",
         poster: "/images/case-studies/amns/hero.png",
@@ -698,7 +698,7 @@ const projects = [
       logo: "/images/case-studies/jsw/logo.png",
       titleLogoClass: "max-h-[90px] max-w-[340px]",
       hero: {
-        bg: "#181818",
+        bg: "#EDEDED",
         height: 507,
         video: "/videos/case-studies/jsw/banner.mp4",
         poster: "/images/case-studies/jsw/hero.png",
@@ -747,7 +747,7 @@ const projects = [
     caseStudy: {
       title: "Cartier MyAtlas",
       hero: {
-        bg: "#181818",
+        bg: "#EDEDED",
         height: 507,
         image: "/images/case-studies/cartier/hero.png",
         fit: "cover",
@@ -796,7 +796,7 @@ const projects = [
       title: "My Stockmann",
       logo: "/images/case-studies/stockmann/logo.png",
       hero: {
-        bg: "#181818",
+        bg: "#EDEDED",
         height: 507,
         image: "/images/case-studies/stockmann/hero.png",
         fit: "cover",

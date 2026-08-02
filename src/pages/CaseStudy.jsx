@@ -141,7 +141,7 @@ export default function CaseStudy({ projectId, titleId }) {
         image={cs.hero?.image || project.coverImage}
         video={cs.hero?.video}
         poster={cs.hero?.poster}
-        fit={cs.hero?.fit || "contain"}
+        fit={cs.hero?.fit || "cover"}
         alt={`${project.title} hero`}
       />
 

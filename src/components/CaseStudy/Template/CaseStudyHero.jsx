@@ -7,7 +7,7 @@ export default function CaseStudyHero({
   video,
   poster,
   alt = "",
-  fit = "contain",
+  fit = "cover",
   children,
 }) {
   const videoRef = useRef(null);
@@ -29,7 +29,7 @@ export default function CaseStudyHero({
 
   return (
     <div
-      className="w-full flex items-end justify-center overflow-hidden hero-frame"
+      className="w-full flex items-stretch justify-center overflow-hidden hero-frame"
       style={{ backgroundColor: bg, "--hero-h": `${height}px` }}
     >
       {video ? (
