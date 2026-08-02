@@ -1,9 +1,6 @@
 export default function CaseStudyLead({ children, maxWidth = 725 }) {
   return (
-    <p
-      className="text-[12px] leading-[1.55] cs-text"
-      style={{ maxWidth }}
-    >
+    <p className="cs-copy cs-text" style={{ "--measure": `${maxWidth}px` }}>
       {children}
     </p>
   );

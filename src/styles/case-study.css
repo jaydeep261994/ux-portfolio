@@ -6,6 +6,17 @@
   color: var(--text-body);
 }
 
+/* Body copy: one readable size everywhere, with the measure capped so lines land in
+   the 45-75 character range. The data's maxWidth acts as an upper bound only —
+   several blocks ask for 808px or more, which runs past 100 characters at this size.
+   48ch measures ~70 characters in Red Hat Display — `ch` is the width of "0", which
+   is wider than the average glyph, so the cap is well below the character target. */
+.cs-copy {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: min(var(--measure, 808px), 48ch);
+}
+
 .cs-heading {
   color: var(--text-primary);
 }
@@ -150,6 +161,12 @@
 
   .cs-body {
     padding: 34px 50px 120px; /* Figma: title 34px below the hero, 50px margin */
+  }
+
+  /* The Close pill is anchored to the sheet, so the title row keeps clear of its
+     column — otherwise the client logo scrolls underneath it. */
+  .cs-title-row {
+    padding-right: 72px;
   }
 
   /* Figma gives every project the same 603px hero, rather than the per-project

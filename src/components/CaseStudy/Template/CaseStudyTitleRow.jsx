@@ -12,7 +12,7 @@ export default function CaseStudyTitleRow({ title, logo, logoAlt, logoClass, tit
     "max-h-[26px] sm:max-h-[32px] lg:max-h-[40px] max-w-[160px] sm:max-w-[220px] lg:max-w-[260px]";
 
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6">
+    <div className="cs-title-row flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6">
       <h1
         id={titleId}
         className="text-[20px] sm:text-[22px] lg:text-[24px] leading-tight font-normal cs-title m-0 break-words"

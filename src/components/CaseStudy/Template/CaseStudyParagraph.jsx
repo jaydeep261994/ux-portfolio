@@ -1,26 +1,23 @@
 /**
- * Sizes read from Figma 3651-76519: body copy is 12px, `lg` blocks are 14px, and the
- * semibold callouts ("My Role") are 16px.
+ * One size for all body copy. Figma sets 12/14/16px depending on the block, but at
+ * paragraph length 12px is too small to read comfortably, and three sizes make the
+ * page feel unsettled. Weight still distinguishes the callouts.
+ *
+ * `maxWidth` from the data becomes an upper bound only — the measure is also capped
+ * so lines stay inside a readable character count.
  */
-const SIZES = {
-  sm: "text-[12px] leading-[1.55]",
-  base: "text-[12px] leading-[1.55]",
-  lg: "text-[14px] leading-[1.55]",
-};
-
 export default function CaseStudyParagraph({
   children,
-  size = "base",
+  size, // eslint-disable-line no-unused-vars -- kept so existing block data stays valid
   weight = "normal",
   maxWidth = 808,
 }) {
   const isSemibold = weight === "semibold";
-  const sizeClass = isSemibold ? "text-[16px] leading-[1.55]" : SIZES[size] || SIZES.base;
 
   return (
     <p
-      className={`${sizeClass} ${isSemibold ? "font-semibold" : "font-normal"} cs-text whitespace-pre-line`}
-      style={{ maxWidth }}
+      className={`cs-copy ${isSemibold ? "font-semibold" : "font-normal"} cs-text whitespace-pre-line`}
+      style={{ "--measure": `${maxWidth}px` }}
     >
       {children}
     </p>
