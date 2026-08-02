@@ -74,14 +74,14 @@ a.bento-card:focus-visible {
 }
 
 .home-hero__name {
-  font-size: clamp(2rem, 1.4rem + 2vw, 2.7rem);
-  font-weight: 500;
+  font-size: clamp(2rem, 1.4rem + 2vw, 2.7rem); /* Figma: 43.1px */
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.15;
 }
 
 .home-hero__pitch {
-  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5625rem);
+  font-size: clamp(1.125rem, 1rem + 0.64vw, 1.5688rem); /* Figma: 25.1px */
   line-height: 1.32;
   max-width: 535px; /* Figma measures the pitch block at 535px wide */
   text-wrap: balance;
