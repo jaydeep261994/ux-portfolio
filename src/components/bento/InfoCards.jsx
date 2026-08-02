@@ -12,12 +12,16 @@ const formatPuneTime = () =>
     hour12: false,
   });
 
-/** Résumé — the only route to full work history now that the experience list is gone. */
+/**
+ * Résumé — the only route to full work history now that the experience list is gone.
+ * Served under its full name rather than resume.pdf: the link opens in a tab, so
+ * whatever the reader saves keeps a filename that identifies it.
+ */
 export function ResumeCard() {
   return (
     <Card
       as="a"
-      href="/resume.pdf"
+      href="/Jaydeep_Das_Product_Designer_2026.pdf"
       target="_blank"
       rel="noopener"
       aria-label="Resume (opens in a new tab)"
