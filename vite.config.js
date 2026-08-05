@@ -23,7 +23,10 @@ function apiRoutes() {
 
       server.middlewares.use('/api/chat', async (req, res) => {
         try {
-          const { default: handler } = await server.ssrLoadModule('/api/chat.js')
+          // Matches how Vercel resolves it: the Web signature is the `fetch`
+          // property of the default export, not the default export itself.
+          const mod = await server.ssrLoadModule('/api/chat.js')
+          const handler = mod.default.fetch
 
           const body = await new Promise((resolve) => {
             const chunks = []

@@ -3,7 +3,8 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 process.env.OPENROUTER_API_KEY = "test-key";
-const { default: handler } = await import("./chat.js");
+const { default: mod } = await import("../api/chat.js");
+const handler = mod.fetch;   // the Web-signature export Vercel invokes
 
 /** Builds an SSE body shaped like OpenRouter's, including the frames that trip parsers. */
 function sseStream(chunks) {

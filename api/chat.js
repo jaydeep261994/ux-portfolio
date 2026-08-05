@@ -78,7 +78,7 @@ function json(body, status) {
   });
 }
 
-export default async function handler(request) {
+async function handler(request) {
   if (request.method !== "POST") return json({ error: "Method not allowed" }, 405);
 
   const key = process.env.OPENROUTER_API_KEY;
@@ -193,3 +193,11 @@ export default async function handler(request) {
     },
   });
 }
+
+/**
+ * Exported as a `fetch` object, not a bare function. Vercel reads a bare default
+ * export as the legacy Node (req, res) handler and calls it with an
+ * IncomingMessage — `request.headers.get` is then not a function, and the
+ * function dies on invocation. The object form is what selects the Web signature.
+ */
+export default { fetch: handler };
