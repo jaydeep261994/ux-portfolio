@@ -21,8 +21,11 @@
   --chat-bubble-border: #c5c5c5;
 
   /* Panel size lives here so the surface and its contents can share it — the
-     contents hold this width while the box grows, so nothing reflows mid-morph. */
-  --chat-w: 294px;
+     contents hold this width while the box grows, so nothing reflows mid-morph.
+     Wider than Figma's 294: that was drawn around a three-word greeting, and a
+     real paragraph answer reads as a thin column at that width. The min() means
+     it can never outgrow a small screen, so no separate narrow breakpoint. */
+  --chat-w: min(400px, calc(100vw - 32px));
   --chat-h: 335px;
 
   position: fixed;
@@ -473,12 +476,6 @@
 }
 
 /* ── Narrow screens ─────────────────────────────────────────────────────── */
-
-@media (max-width: 340px) {
-  .chat-root {
-    --chat-w: calc(100vw - 32px);
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .chat-msg__typing i {
