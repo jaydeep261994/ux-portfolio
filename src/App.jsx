@@ -6,6 +6,7 @@ import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
 import CaseStudySheet from "./components/CaseStudy/CaseStudySheet";
 import Exploration from "./pages/Exploration";
+import ChatWidget from "./components/chat/ChatWidget";
 
 const CASE_STUDY_PATH = /^\/case-study\/([\w-]+)\/?$/;
 
@@ -44,6 +45,7 @@ export default function App() {
           Skip to Content
         </a>
         <AnimatedRoutes />
+        <ChatWidget />
         <Analytics />
         <SpeedInsights />
       </BrowserRouter>
