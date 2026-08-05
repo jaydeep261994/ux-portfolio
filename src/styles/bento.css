@@ -6,8 +6,10 @@
    Everything inside is fr- or ratio-based, so it scales rather than reflowing. */
 .bento {
   width: 100%;
-  padding-inline: 40px;
-  padding-block: 32px 0;
+  /* Was a flat 40. Fluid so the gutter eases down with the viewport instead of
+     stepping at a breakpoint: 64 from ~1420 up, ~34 at tablet, 20 on phones. */
+  padding-inline: clamp(20px, 4.5vw, 64px);
+  padding-block: 48px 0;
   display: flex;
   flex-direction: column;
   gap: 12px; /* Figma: top section ends 735, first work row starts 747 */
@@ -633,10 +635,8 @@ a.bento-card:focus-visible {
 }
 
 @media (max-width: 767px) {
-  /* 40 a side would take a quarter of a 320px screen. */
   .bento {
-    padding-inline: 20px;
-    padding-block: 20px 0;
+    padding-block: 24px 0;
   }
 
   .bento__top,
