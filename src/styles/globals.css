@@ -57,7 +57,10 @@
   }
 
   body {
-    background-color: var(--color-bg);
+    /* Themed, not the fixed dark --color-bg. It shows through on overscroll
+       bounce, so a light page with a dark body reveals a dark edge when the
+       reader pulls past the top. The legacy dark shell keeps --color-bg below. */
+    background-color: var(--bg-page);
     color: var(--color-text-primary);
     font-family: var(--font-body);
     font-size: clamp(0.875rem, 0.8rem + 0.25vw, 1rem);
@@ -120,8 +123,13 @@
 }
 
 /* Layout */
+/* The exploration and case-study routes still run on the older dark shell, whose
+   text colours are hardcoded light. It now carries its own background instead of
+   inheriting one from body, which is themed. */
 .content-area {
   margin-left: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg);
 }
 
 .content-main {

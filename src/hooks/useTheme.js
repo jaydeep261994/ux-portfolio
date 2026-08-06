@@ -2,12 +2,15 @@ import { useCallback, useEffect, useState } from "react";
 
 const STORAGE_KEY = "theme";
 
-/** Stored choice wins over the OS preference. Mirrors the inline script in index.html. */
+/**
+ * Light unless the visitor has chosen otherwise. The OS preference is not
+ * consulted: the site is designed light first, and a first-time visitor on a
+ * dark-mode machine should see it that way. Mirrors the inline script in
+ * index.html, which has to reach the same answer before first paint.
+ */
 function resolveInitial() {
   if (typeof window === "undefined") return "light";
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark") return stored;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return localStorage.getItem(STORAGE_KEY) === "dark" ? "dark" : "light";
 }
 
 export default function useTheme() {
@@ -20,16 +23,6 @@ export default function useTheme() {
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute("content", theme === "dark" ? "#0f0f0f" : "#f4f4f4");
   }, [theme]);
-
-  // Follow the OS only while the user has made no explicit choice.
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = (e) => {
-      if (!localStorage.getItem(STORAGE_KEY)) setTheme(e.matches ? "dark" : "light");
-    };
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
 
   const toggle = useCallback(() => {
     setTheme((prev) => {

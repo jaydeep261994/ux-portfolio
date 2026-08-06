@@ -549,8 +549,9 @@ a.bento-card:focus-visible {
   overflow: hidden;
 }
 
-/* Product screenshots are light-background artefacts. They are never inverted or
-   filtered in dark mode — the card surface carries the theme, the image does not. */
+/* The card visuals now ship with their plate stripped to transparency, so the
+   card's own themed background shows through instead of a baked-in #EDEDED.
+   The screenshots themselves are still never inverted or filtered. */
 .project-card__well img {
   width: 100%;
   height: 100%;
@@ -663,9 +664,9 @@ a.bento-card:focus-visible {
     aspect-ratio: var(--ar);
     height: auto;
     border-radius: var(--radius-card);
-    /* The exported visuals carry their own rounded corners, which shrink with the
-       image; backing the well in the plate colour fills the corner slivers. */
-    background: #ededed;
+    /* Themed rather than a fixed #ededed: the visuals are transparent now, so a
+       hardcoded light plate would put a white card on a dark page. */
+    background: var(--bg-card);
   }
 
   .project-card__chips {

@@ -43,12 +43,12 @@
     <script>
       // Resolve the theme before first paint so dark mode never flashes light.
       // Mirrors src/hooks/useTheme.js — keep the two in step.
+      // Light is the default: the OS preference is deliberately not consulted, so
+      // a first-time visitor on a dark-mode machine still lands on the light design.
       (function () {
         try {
           var stored = localStorage.getItem("theme");
-          var dark =
-            stored === "dark" ||
-            (!stored && matchMedia("(prefers-color-scheme: dark)").matches);
+          var dark = stored === "dark";
           document.documentElement.dataset.theme = dark ? "dark" : "light";
           document
             .querySelector('meta[name="theme-color"]')
