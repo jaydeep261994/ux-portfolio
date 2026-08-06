@@ -51,7 +51,7 @@ export function PuneCard() {
 
   return (
     <Card className="info-card pune-card">
-      <img src="/images/bento/pune-map.png" alt="" aria-hidden="true" />
+      <img src="/images/bento/pune-map.webp" alt="" aria-hidden="true" />
 
       {/* Location marker from Figma 3627-75452, with an Apple-style accuracy pulse. */}
       <span className="pune-marker" aria-hidden="true">
