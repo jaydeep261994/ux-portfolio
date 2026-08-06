@@ -36,6 +36,11 @@ const cards = {
     title: "General Motors",
     outcome: "Finance360 — variance and performance for GM finance teams",
     image: "/images/bento/mfg-dashboard.webp",
+    // Needs its own dark export (Figma 3750-6893). Its widgets are separated by
+    // plate-coloured rules that run to the panel edge, so stripping the plate cut
+    // transparent channels straight through them. Invisible on light, where the
+    // gap reads as the plate it replaced; on dark it showed as slots of card.
+    imageDark: "/images/bento/mfg-dashboard-dark.webp",
     alt: "GM Finance360 — EBIT variance, MCPU efficiency and total manufacturing spend",
     link: "/case-study/general-motors",
   },
