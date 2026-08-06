@@ -41,7 +41,7 @@
 
 [data-theme="dark"] {
   --bg-page: #0f0f0f;
-  --bg-card: #1a1a1a;
+  --bg-card: #191919; /* Figma 3750-7170, the dark card board */
   --bg-card-alt: #1e1e1e;
   --bg-chip: #2a2a2a;
   --bg-pill: #2e2e2e;
