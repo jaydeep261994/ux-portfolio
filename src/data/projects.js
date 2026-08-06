@@ -4,7 +4,7 @@ const projects = [
     title: "FEDEX",
     description:
       "FedEx MWI (Mobile Work Interface) is a digital solution designed to streamline operational workflows for FedEx drivers and workshop managers. The project focused on optimizing the application to improve task efficiency for delivery, collections, and vehicle service coordination, while enhancing usability and performance across mobile devices.",
-    coverImage: "/images/covers/fedex-bg.png",
+    coverImage: "/images/covers/fedex-bg.webp",
     logo: "/images/logos/fedex-express.svg",
     link: "/case-study/fedex",
     caseStudy: {
@@ -12,7 +12,7 @@ const projects = [
       hero: {
         bg: "#EDEDED",
         height: 507,
-        image: "/images/case-studies/fedex/banner.png",
+        image: "/images/case-studies/fedex/banner.webp",
       },
       summary:
         "FedEx couriers in Italy run their whole day from one handheld app: collections, deliveries, signatures, routes. It ran on Windows hardware built for a stylus. I redesigned it for Android, and it is now on more than 3,000 devices.",
@@ -36,7 +36,7 @@ const projects = [
           size: "lg",
           body: "I led the redesign onto Android. It is live across the Italian field operation.",
         },
-        { type: "image", src: "/images/case-studies/fedex/overview.png", alt: "FedEx MWI overview" },
+        { type: "image", src: "/images/case-studies/fedex/overview.webp", alt: "FedEx MWI overview" },
 
         { type: "heading", text: "The Challenge" },
         {
@@ -61,7 +61,7 @@ const projects = [
             "Driving alignment with product, engineering, and FedEx Italy operations",
           ],
         },
-        { type: "image", src: "/images/case-studies/fedex/my-role.png", alt: "My Role" },
+        { type: "image", src: "/images/case-studies/fedex/my-role.webp", alt: "My Role" },
         { type: "divider" },
 
         { type: "heading", text: "Key Screens" },
@@ -71,42 +71,42 @@ const projects = [
           size: "lg",
           body: "In-Cab Login\n\nDrivers wake the device in the cab and need to know where they are straight away. The new entry point orients them on wake instead of asking them to read a form.",
         },
-        { type: "image", src: "/images/case-studies/fedex/in-cab-1-login.png", alt: "In-Cab Login screen" },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-1-login.webp", alt: "In-Cab Login screen" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Device Registration\n\nSetup used to be its own configuration step, done separately from getting started. I folded it into onboarding so a driver sets the device up once, in the flow they are already in.",
         },
-        { type: "image", src: "/images/case-studies/fedex/device-registration.png", alt: "Device Registration screen" },
+        { type: "image", src: "/images/case-studies/fedex/device-registration.webp", alt: "Device Registration screen" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Menu\n\nThe legacy menu buried everything a level or two down. I replaced it with a dashboard, and moved notifications to where drivers actually look rather than where the old structure had room for them.",
         },
-        { type: "image", src: "/images/case-studies/fedex/in-cab-2-menu.png", alt: "Mobile Worker Menu screen" },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-2-menu.webp", alt: "Mobile Worker Menu screen" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Job Summary\n\nCollections and deliveries were mixed together, so drivers had to work out what was still outstanding. Tabs separate the two, and each shows what is done and what is left.",
         },
-        { type: "image", src: "/images/case-studies/fedex/in-cab-3-job-summary.png", alt: "Job Summary screen" },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-3-job-summary.webp", alt: "Job Summary screen" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Collection Flow\n\nThe actions drivers take most often had the same weight as the ones they rarely touch. I rebuilt the layout so the common action is the obvious one.",
         },
-        { type: "image", src: "/images/case-studies/fedex/in-cab-4-collection.png", alt: "Collection Flow screen" },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-4-collection.webp", alt: "Collection Flow screen" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Delivery Flow\n\nCapturing proof of delivery took more steps than it needed to, with the primary action competing for attention. The restructured flow makes that action obvious and gets there in fewer taps.",
         },
-        { type: "image", src: "/images/case-studies/fedex/in-cab-5-delivery.png", alt: "Delivery Flow screen" },
+        { type: "image", src: "/images/case-studies/fedex/in-cab-5-delivery.webp", alt: "Delivery Flow screen" },
 
         { type: "heading", text: "Outcome" },
         {
@@ -131,7 +131,7 @@ const projects = [
     title: "AUDI",
     description:
       "Audi Genie is a next-generation infotainment system designed to enhance the in-car digital experience for Audi users. The project focused on optimizing interaction flows to reduce cognitive load and improve driver efficiency across navigation, media, and vehicle controls.",
-    coverImage: "/images/covers/audi.png",
+    coverImage: "/images/covers/audi.webp",
     logo: "/images/logos/audi.svg",
     link: "/case-study/audi",
     caseStudy: {
@@ -139,7 +139,7 @@ const projects = [
       hero: {
         bg: "#EDEDED",
         height: 507,
-        image: "/images/case-studies/audi/hero.png",
+        image: "/images/case-studies/audi/hero.webp",
       },
       summary:
         "Most in-car assistants wait to be asked. Audi Genie was briefed the other way round: learn the driver's routes, habits and comfort settings, then handle the small decisions before anyone reaches for a button.",
@@ -162,7 +162,7 @@ const projects = [
           size: "lg",
           body: "The concept is an intelligence layer sitting under the car's existing CID. It watches and learns, and over time it connects the calendar to the usual routes and the comfort settings, then starts making the call itself.",
         },
-        { type: "image", src: "/images/case-studies/audi/overview.png", alt: "Audi Drive Genie overview" },
+        { type: "image", src: "/images/case-studies/audi/overview.webp", alt: "Audi Drive Genie overview" },
         { type: "divider" },
 
         { type: "heading", text: "My Role" },
@@ -185,49 +185,49 @@ const projects = [
           size: "lg",
           body: "Learning Daily Routines\n\nA suggestion is only useful if it has seen enough to be right. The system records route, departure time and destination quietly over several days, and waits for a pattern to hold before it surfaces a routine card. Weekends run on their own logic, so a Saturday habit never leaks into a Tuesday morning.",
         },
-        { type: "video", src: "/videos/case-studies/audi/learning-routines.mp4", poster: "/images/case-studies/audi/cap-1-routines.png", aspectRatio: "2228 / 916" },
+        { type: "video", src: "/videos/case-studies/audi/learning-routines.mp4", poster: "/images/case-studies/audi/cap-1-routines.webp", aspectRatio: "2228 / 916" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Destination Suggestions\n\nNeither the calendar nor the driver's habits are enough on their own, so Genie uses both. A morning meeting produces a navigation card with an ETA. A Thursday evening produces the grocery stop the driver usually makes. A Saturday gym trip needs both signals, and only appears once the pattern has held over several weekends.",
         },
-        { type: "video", src: "/videos/case-studies/audi/destination-suggestions.mp4", poster: "/images/case-studies/audi/cap-2-destinations.png", aspectRatio: "2228 / 916" },
+        { type: "video", src: "/videos/case-studies/audi/destination-suggestions.mp4", poster: "/images/case-studies/audi/cap-2-destinations.webp", aspectRatio: "2228 / 916" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Curated Playlists\n\nMedia habits follow routes. The morning commute, the evening wind-down and weekend errands each have their own listening profile, and finding the right one means digging through the media app while driving. Genie learns the profiles and offers the playlist before the app is opened.",
         },
-        { type: "video", src: "/videos/case-studies/audi/curated-playlists.mp4", poster: "/images/case-studies/audi/cap-3-playlists.png", aspectRatio: "2228 / 916" },
+        { type: "video", src: "/videos/case-studies/audi/curated-playlists.mp4", poster: "/images/case-studies/audi/cap-3-playlists.webp", aspectRatio: "2228 / 916" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "One-Click Comfort Settings\n\nClimate, seat position and massage settings get adjusted at the start of most drives, and the right setting depends on which drive it is. Presets are tied to routine context, so morning differs from evening and the weekend has its own. A comfort button on the home screen covers the times the driver disagrees with the suggestion and does not want to go hunting through settings.",
         },
-        { type: "video", src: "/videos/case-studies/audi/comfort-settings.mp4", poster: "/images/case-studies/audi/cap-4-comfort.png", aspectRatio: "2228 / 916" },
+        { type: "video", src: "/videos/case-studies/audi/comfort-settings.mp4", poster: "/images/case-studies/audi/cap-4-comfort.webp", aspectRatio: "2228 / 916" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Vehicle Data Alerts\n\nA battery warning is worth much less once you have already left. The system checks charge against where the driver is actually going that day, so the low battery alert fires before they leave home, and the charging reminder knows whether the current range covers the next meeting. The weekend version checks the usual Saturday route ahead of time and suggests where to stop.",
         },
-        { type: "video", src: "/videos/case-studies/audi/vehicle-data-alerts.mp4", poster: "/images/case-studies/audi/cap-5-vehicle-data.png", aspectRatio: "2228 / 916" },
+        { type: "video", src: "/videos/case-studies/audi/vehicle-data-alerts.mp4", poster: "/images/case-studies/audi/cap-5-vehicle-data.webp", aspectRatio: "2228 / 916" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Voice Assistant\n\nEverything Genie does has to work without the driver looking at anything. Navigation, playlists, comfort and battery checks all run through natural language. The constraint was strict: no screen tap needed, and no visual confirmation that takes the driver's eyes off the road. Each flow resolves through voice, with minimal feedback on the CID.",
         },
-        { type: "video", src: "/videos/case-studies/audi/voice.mp4", poster: "/images/case-studies/audi/cap-6-voice.png", aspectRatio: "2228 / 916" },
+        { type: "video", src: "/videos/case-studies/audi/voice.mp4", poster: "/images/case-studies/audi/cap-6-voice.webp", aspectRatio: "2228 / 916" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Adaptive UI\n\nThis was the hardest one. A dashboard that suits an empty motorway is too much on a busy interchange, and the driver has no spare attention to simplify it themselves. As traffic gets harder the interface thins out on its own: fewer widgets, bigger navigation, secondary actions moved to voice. When conditions ease it comes back, without asking.",
         },
-        { type: "video", src: "/videos/case-studies/audi/adaptive-ui.mp4", poster: "/images/case-studies/audi/cap-7-adaptive.png", aspectRatio: "2228 / 916" },
+        { type: "video", src: "/videos/case-studies/audi/adaptive-ui.mp4", poster: "/images/case-studies/audi/cap-7-adaptive.webp", aspectRatio: "2228 / 916" },
         { type: "divider" },
 
         { type: "heading", text: "Reflection" },
@@ -245,7 +245,7 @@ const projects = [
     title: "General Motors",
     description:
       "Finance360 is General Motors’ internal financial intelligence platform — the operating system for how GM’s finance teams track performance, surface variances, benchmark plants, and sign off on commentary across every region. The project focused on unifying fragmented reporting tools into a single experience that serves both executives reading a summary and analysts drilling into regional variances.",
-    coverImage: "/images/covers/general-motors.png",
+    coverImage: "/images/covers/general-motors.webp",
     logo: null,
     link: "/case-study/general-motors",
     caseStudy: {
@@ -253,7 +253,7 @@ const projects = [
       hero: {
         bg: "#EDEDED",
         height: 507,
-        image: "/images/case-studies/gm/hero.png",
+        image: "/images/case-studies/gm/hero.webp",
         fit: "cover",
       },
       summary:
@@ -272,7 +272,7 @@ const projects = [
           size: "lg",
           body: "Finance360 is General Motors' internal financial intelligence platform. It is where GM's finance teams track performance, surface variances, benchmark plants and sign off on commentary, across every region the company runs.",
         },
-        { type: "image", src: "/images/case-studies/gm/overview.png", alt: "Finance360 overview" },
+        { type: "image", src: "/images/case-studies/gm/overview.webp", alt: "Finance360 overview" },
         { type: "divider" },
 
         { type: "heading", text: "The Challenge" },
@@ -293,35 +293,35 @@ const projects = [
           size: "lg",
           body: "Homepage\n\nA landing page that is a menu makes every user find their own way to the same few numbers. This one opens as a briefing instead: suggested prompts, the insights worth knowing first, and a KPI dashboard built from the consoles that user already tracks.",
         },
-        { type: "video", src: "/videos/case-studies/gm/homepage.mp4", poster: "/images/case-studies/gm/homepage.png", aspectRatio: "1032 / 514" },
+        { type: "video", src: "/videos/case-studies/gm/homepage.mp4", poster: "/images/case-studies/gm/homepage.webp", aspectRatio: "1032 / 514" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Manufacturing Console\n\nThis is where analysts spend the day, so it had to hold a lot without falling apart: filter bar, modular data cards, waterfall chart, heatmap, competitive losses and commentary sign-off, in one view rather than six.",
         },
-        { type: "image", src: "/images/case-studies/gm/manufacturing-console.png", alt: "Manufacturing Console screen" },
+        { type: "image", src: "/images/case-studies/gm/manufacturing-console.webp", alt: "Manufacturing Console screen" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "L2 Drill-Down\n\nEvery KPI card opens into the same place, so nobody has to learn a new layout per metric. Current forecast against budget and prior year, a full year trend, a regional split across GMNA, GMAP and GMSA, and an AI Insights panel that takes the first pass before the analyst starts reading.",
         },
-        { type: "video", src: "/videos/case-studies/gm/l2-drilldown.mp4", poster: "/images/case-studies/gm/l2-drilldown.png", aspectRatio: "1032 / 514" },
+        { type: "video", src: "/videos/case-studies/gm/l2-drilldown.mp4", poster: "/images/case-studies/gm/l2-drilldown.webp", aspectRatio: "1032 / 514" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Plant Benchmarking\n\nComparing plants means knowing which difference matters. Non-Scheduled Overtime across Arlington, Flint and Fort Wayne is shown against target, with AI Insights naming the outliers rather than leaving them to be spotted. A comment thread underneath lets finance add the dollar context the chart cannot carry.",
         },
-        { type: "video", src: "/videos/case-studies/gm/plant-benchmarking.mp4", poster: "/images/case-studies/gm/plant-benchmarking.png", aspectRatio: "1032 / 514" },
+        { type: "video", src: "/videos/case-studies/gm/plant-benchmarking.mp4", poster: "/images/case-studies/gm/plant-benchmarking.webp", aspectRatio: "1032 / 514" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Report Hub\n\nA library is only useful if the right report is near the top. Views across the Financial, Commercial, Operational and Risk domains are ordered by what the user opened recently, what they saved, and what the system recommends.",
         },
-        { type: "video", src: "/videos/case-studies/gm/report-hub.mp4", poster: "/images/case-studies/gm/report-hub.png", aspectRatio: "1032 / 514" },
+        { type: "video", src: "/videos/case-studies/gm/report-hub.mp4", poster: "/images/case-studies/gm/report-hub.webp", aspectRatio: "1032 / 514" },
         { type: "divider" },
 
         { type: "heading", text: "Reflection" },
@@ -339,7 +339,7 @@ const projects = [
     title: "AM/NS India",
     description:
       "Redesign pitch for AM/NS India, a joint venture between ArcelorMittal and Nippon Steel, focused on modernizing the company\u2019s digital presence using existing design system elements. The objective was to improve content discoverability, strengthen brand storytelling, and create a more engaging experience.",
-    coverImage: "/images/covers/amns.png",
+    coverImage: "/images/covers/amns.webp",
     logo: "/images/logos/amns.svg",
     link: "/case-study/amns",
     caseStudy: {
@@ -348,7 +348,7 @@ const projects = [
         bg: "#EDEDED",
         height: 507,
         video: "/videos/case-studies/amns/banner.mp4",
-        poster: "/images/case-studies/amns/hero.png",
+        poster: "/images/case-studies/amns/hero.webp",
         fit: "cover",
       },
       summary:
@@ -376,7 +376,7 @@ const projects = [
           size: "lg",
           body: "Hero Section\n\nThe homepage opens on \"Smarter Steels, Brighter Futures\" with \"Powering India's growth\" underneath, over a muted full-bleed video loop.\n\nThree highlight cards sit on the hero: Thought Leadership, Innovation and Sustainability. They hold their content until hover, which lets the hero offer three routes onward without three blocks of copy competing with the headline.",
         },
-        { type: "video", src: "/videos/case-studies/amns/hero-section.mp4", poster: "/images/case-studies/amns/hero-section.png", aspectRatio: "1032 / 514" },
+        { type: "video", src: "/videos/case-studies/amns/hero-section.mp4", poster: "/images/case-studies/amns/hero-section.webp", aspectRatio: "1032 / 514" },
         { type: "divider" },
         {
           type: "paragraph",
@@ -384,7 +384,7 @@ const projects = [
           size: "lg",
           body: "Who We Are\n\nThis fold carries the history and the values: Relentless Safety, Endlessly Creative, Consistently Excellent, Always Collaborative, Forever Dynamic.\n\nA values list is the easiest thing on a corporate site to scroll past, so the text highlights progressively as the visitor moves down it, with team photography breaking up the run.",
         },
-        { type: "image", src: "/images/case-studies/amns/who-we-are.png", alt: "Who We Are section mock", aspectRatio: "1032 / 530" },
+        { type: "image", src: "/images/case-studies/amns/who-we-are.webp", alt: "Who We Are section mock", aspectRatio: "1032 / 530" },
         { type: "divider" },
         {
           type: "paragraph",
@@ -392,7 +392,7 @@ const projects = [
           size: "lg",
           body: "Product Discovery\n\nA steel catalogue is unusable if you do not already know what you need. Start Product Discovery asks three questions instead: who you are, what industry, what the material has to do.\n\nEach answer reveals the next question, so a government official picks Infrastructure and then Structural Strength without seeing the options that were never relevant. See Results returns matching products with specs and visuals, and the visitor can run it again.",
         },
-        { type: "image", src: "/images/case-studies/amns/product-discovery.png", alt: "Product Discovery flow", aspectRatio: "1032 / 538" },
+        { type: "image", src: "/images/case-studies/amns/product-discovery.webp", alt: "Product Discovery flow", aspectRatio: "1032 / 538" },
         { type: "divider" },
         {
           type: "paragraph",
@@ -400,7 +400,7 @@ const projects = [
           size: "lg",
           body: "The Impact Trio\n\nInnovation, Sustainability and Safety each get a headline metric and the story behind it.\n\nThe numbers count up as they come into view, paired with imagery, and each one ends with a route to its own page for anyone who wants the detail.",
         },
-        { type: "image", src: "/images/case-studies/amns/impact-trio.png", alt: "The Impact Trio" },
+        { type: "image", src: "/images/case-studies/amns/impact-trio.webp", alt: "The Impact Trio" },
         { type: "divider" },
         {
           type: "paragraph",
@@ -408,7 +408,7 @@ const projects = [
           size: "lg",
           body: "Flagship Products Gallery\n\nTen flagship products in a masonry grid, with renders and short titles. Pre-painted products switch colour in place, so nobody has to open a separate page to see a finish.\n\nOn mobile the grid becomes a swipeable carousel rather than a very long column.",
         },
-        { type: "image", src: "/images/case-studies/amns/flagship.png", alt: "Flagship Products Gallery" },
+        { type: "image", src: "/images/case-studies/amns/flagship.webp", alt: "Flagship Products Gallery" },
         { type: "divider" },
         {
           type: "paragraph",
@@ -416,7 +416,7 @@ const projects = [
           size: "lg",
           body: "CSR Stories & Community Impact\n\nCSR sections tend to read as policy. This one runs on portraits and pull-quotes from the people involved.\n\nEach portrait sits over a blurred background so the person stays the subject, and See Our Initiatives leads to the full CSR section.",
         },
-        { type: "image", src: "/images/case-studies/amns/csr.png", alt: "CSR Stories", aspectRatio: "1032 / 538", bg: "#181818" },
+        { type: "image", src: "/images/case-studies/amns/csr.webp", alt: "CSR Stories", aspectRatio: "1032 / 538", bg: "#181818" },
         { type: "divider" },
         {
           type: "paragraph",
@@ -424,7 +424,7 @@ const projects = [
           size: "lg",
           body: "News & Insights Carousel\n\nA horizontal slider carries the latest blogs, press releases and insights, each with a thumbnail, headline and short excerpt.\n\nArrows or pagination move through it. Showing excerpts rather than full posts keeps a section that grows every week from taking over the page.",
         },
-        { type: "image", src: "/images/case-studies/amns/news.png", alt: "News & Insights Carousel", aspectRatio: "4128 / 2155", bg: "#181818" },
+        { type: "image", src: "/images/case-studies/amns/news.webp", alt: "News & Insights Carousel", aspectRatio: "4128 / 2155", bg: "#181818" },
         { type: "divider" },
         {
           type: "paragraph",
@@ -432,7 +432,7 @@ const projects = [
           size: "lg",
           body: "Culture & Careers\n\nEmployee testimonials with portraits, and the #SheMakesSteelSmarter initiative.\n\nAnyone reading this section is usually one step from applying, so See Open Roles goes straight to the careers section rather than to an about page.",
         },
-        { type: "image", src: "/images/case-studies/amns/culture.png", alt: "Culture & Careers", aspectRatio: "4128 / 2155", bg: "#181818" },
+        { type: "image", src: "/images/case-studies/amns/culture.webp", alt: "Culture & Careers", aspectRatio: "4128 / 2155", bg: "#181818" },
         { type: "divider" },
 
         { type: "heading", text: "Conclusion" },
@@ -450,7 +450,7 @@ const projects = [
     title: "TATA AIG - BOLT",
     description:
       "TATA AIG\u2019s agent portal was redesigned to create a unified digital experience that balances modern design aesthetics with ease of use for its promoters. The project focused on simplifying complex workflows, improving accessibility, and enhancing overall usability across the platform.",
-    coverImage: "/images/covers/tata-bolt.png",
+    coverImage: "/images/covers/tata-bolt.webp",
     logo: "/images/logos/tata-aig.png",
     logoClass: "max-w-[100px] max-h-[36px] sm:max-w-[180px] sm:max-h-[68px] lg:max-w-[280px] lg:max-h-[100px]",
     link: "/case-study/tata-bolt",
@@ -459,7 +459,7 @@ const projects = [
       hero: {
         bg: "#EDEDED",
         height: 507,
-        image: "/images/case-studies/tata-bolt/hero.png",
+        image: "/images/case-studies/tata-bolt/hero.webp",
         fit: "cover",
       },
       summary:
@@ -494,9 +494,9 @@ const projects = [
           aspectRatio: "1542 / 863",
           bg: "#EDEDED",
           images: [
-            { src: "/images/case-studies/tata-bolt/challenge-1.png", alt: "Legacy flow — screen 1" },
-            { src: "/images/case-studies/tata-bolt/challenge-2.png", alt: "Legacy flow — screen 2" },
-            { src: "/images/case-studies/tata-bolt/challenge-3.png", alt: "Legacy flow — screen 3" },
+            { src: "/images/case-studies/tata-bolt/challenge-1.webp", alt: "Legacy flow — screen 1" },
+            { src: "/images/case-studies/tata-bolt/challenge-2.webp", alt: "Legacy flow — screen 2" },
+            { src: "/images/case-studies/tata-bolt/challenge-3.webp", alt: "Legacy flow — screen 3" },
           ],
         },
         { type: "divider" },
@@ -513,28 +513,28 @@ const projects = [
           size: "lg",
           body: "Simplified Form Flow\n\nThe policy generation form was the worst of it: long, dense, and unforgiving if you got something wrong late. We restructured the journey to cut input steps and show only what is needed at each stage.",
         },
-        { type: "video", src: "/videos/case-studies/tata-bolt/simplified-form.mp4", poster: "/images/case-studies/tata-bolt/decision-1-form.png", aspectRatio: "1030 / 538" },
+        { type: "video", src: "/videos/case-studies/tata-bolt/simplified-form.mp4", poster: "/images/case-studies/tata-bolt/decision-1-form.webp", aspectRatio: "1030 / 538" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Stepper to Dropdown\n\nOn mobile the stepper ate the screen and still lost agents mid-flow. A dropdown keeps the current step visible, makes going back one tap, and gives the space to the content instead of the progress indicator.",
         },
-        { type: "image", src: "/images/case-studies/tata-bolt/decision-2-stepper.png", alt: "Stepper to Dropdown", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/tata-bolt/decision-2-stepper.webp", alt: "Stepper to Dropdown", aspectRatio: "1031 / 538" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Service Discovery on Landing\n\nTATA AIG's products were buried, so agents spent time searching for the right policy type in front of the customer. A toggle on the landing banner switches between categories and shows what is available up front.",
         },
-        { type: "image", src: "/images/case-studies/tata-bolt/decision-3-discovery.png", alt: "Service Discovery on Landing" },
+        { type: "image", src: "/images/case-studies/tata-bolt/decision-3-discovery.webp", alt: "Service Discovery on Landing" },
         {
           type: "paragraph",
           weight: "semibold",
           size: "lg",
           body: "Design System\n\nProducts get added to a platform like this constantly, and without a system each addition is a rebuild. Consistent components and a clear visual language mean the next product drops into what already exists.",
         },
-        { type: "image", src: "/images/case-studies/tata-bolt/decision-4-design-system.png", alt: "Design System" },
+        { type: "image", src: "/images/case-studies/tata-bolt/decision-4-design-system.webp", alt: "Design System" },
         { type: "divider" },
 
         { type: "heading", text: "Outcome" },
@@ -552,16 +552,16 @@ const projects = [
     title: "TATA AIG - INSPECTIFY",
     description:
       "Inspectify is a self-inspection platform developed for TATA AIG to simplify motor insurance renewals for vehicles with expired policies. The platform enables users to seamlessly record and submit vehicle condition videos through a guided digital experience.",
-    coverImage: "/images/covers/tata-inspectify.png",
+    coverImage: "/images/covers/tata-inspectify.webp",
     logo: null,
     link: "/case-study/tata-inspectify",
     caseStudy: {
       title: "TATA AIG INSPECTIFY",
-      logo: "/images/case-studies/inspectify/logo-badge.png",
+      logo: "/images/case-studies/inspectify/logo-badge.webp",
       hero: {
         bg: "#CFDEF2",
         height: 507,
-        image: "/images/case-studies/inspectify/hero.png",
+        image: "/images/case-studies/inspectify/hero.webp",
         fit: "cover",
       },
       summary:
@@ -592,7 +592,7 @@ const projects = [
           type: "paragraph",
           body: "The target was to get the error rate under 40% and cut the number of steps it takes to finish. Getting there meant telling people they had made a mistake while they could still fix it, and showing them where a part is rather than naming it, since the hard ones are the parts an owner has never had to find before.",
         },
-        { type: "image", src: "/images/case-studies/inspectify/objective.png", alt: "Objective & Goal", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/inspectify/objective.webp", alt: "Objective & Goal", aspectRatio: "1031 / 538" },
         { type: "divider" },
 
         { type: "heading", text: "What was going wrong" },
@@ -604,7 +604,7 @@ const projects = [
           type: "paragraph",
           body: "Nearly 40% of submissions were put on hold, either because the video missed part of the vehicle or because it was too unclear to validate. Both meant the customer had to do the whole thing again. A large number of people also left before recording started at all, which said the problem began before the camera did.",
         },
-        { type: "image", src: "/images/case-studies/inspectify/business-pains.png", alt: "Business Pains", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/inspectify/business-pains.webp", alt: "Business Pains", aspectRatio: "1031 / 538" },
         { type: "divider" },
 
         { type: "heading", text: "What users told us" },
@@ -616,7 +616,7 @@ const projects = [
           type: "paragraph",
           body: "Two things came up repeatedly. People could not find the details they were asked for, the chassis number most of all, because most owners have never needed to locate it. And in low-signal areas uploads stalled or died part-way, so an inspection someone had completed correctly still failed.",
         },
-        { type: "image", src: "/images/case-studies/inspectify/insights.png", alt: "Insights from Users", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/inspectify/insights.webp", alt: "Insights from Users", aspectRatio: "1031 / 538" },
         { type: "divider" },
 
         { type: "heading", text: "Competitor Analysis" },
@@ -628,7 +628,7 @@ const projects = [
           type: "paragraph",
           body: "That showed where the category was weak and where it had already settled on something that works, which is what the flow below was built from.",
         },
-        { type: "image", src: "/images/case-studies/inspectify/competitor.png", alt: "Competitor Analysis", aspectRatio: "1030 / 538" },
+        { type: "image", src: "/images/case-studies/inspectify/competitor.webp", alt: "Competitor Analysis", aspectRatio: "1030 / 538" },
         { type: "divider" },
 
         { type: "heading", text: "Guiding people while they record" },
@@ -644,7 +644,7 @@ const projects = [
           type: "paragraph",
           body: "Average completion came down to 94 seconds, which is almost exactly the length of the assistance video. People finish when the guide finishes, down from roughly 8 minutes.",
         },
-        { type: "image", src: "/images/case-studies/inspectify/recording-flow.png", alt: "New Recording Flow", aspectRatio: "2820 / 1528" },
+        { type: "image", src: "/images/case-studies/inspectify/recording-flow.webp", alt: "New Recording Flow", aspectRatio: "2820 / 1528" },
         { type: "divider" },
 
         { type: "heading", text: "Making guidance readable at arm\u2019s length" },
@@ -660,7 +660,7 @@ const projects = [
           type: "paragraph",
           body: "The drop-off before recording was the other thing this had to fix. If the first screen looks like a form, people leave, so onboarding was designed to feel guided from the start rather than like paperwork standing between them and the task.",
         },
-        { type: "image", src: "/images/case-studies/inspectify/strategic-ui.png", alt: "Strategic UI Design", aspectRatio: "1030 / 538" },
+        { type: "image", src: "/images/case-studies/inspectify/strategic-ui.webp", alt: "Strategic UI Design", aspectRatio: "1030 / 538" },
         { type: "divider" },
 
         { type: "heading", text: "When the network drops" },
@@ -672,7 +672,7 @@ const projects = [
           type: "paragraph",
           body: "Recordings are cached securely for 24 hours, so someone can drive somewhere with signal and finish the upload instead of starting again. The app also shows connection quality while they work, so a weak signal is visible before it costs them the recording.",
         },
-        { type: "image", src: "/images/case-studies/inspectify/inspection-history.png", alt: "Inspection History", aspectRatio: "1030 / 538" },
+        { type: "image", src: "/images/case-studies/inspectify/inspection-history.webp", alt: "Inspection History", aspectRatio: "1030 / 538" },
         { type: "divider" },
 
         { type: "heading", text: "Conclusion" },
@@ -690,18 +690,18 @@ const projects = [
     title: "The Inspire Institute of Sport - JSW Group",
     description:
       "Inspired by India’s growing Olympic ambitions, this concept pitch for Inspire Institute of Sport explored how a digital platform could reflect the intensity, precision, and aspiration of a world-class athletic ecosystem. The project focused on translating elite sports performance into a modern digital experience through bold visual storytelling, structured content architecture, and performance-driven design systems.",
-    coverImage: "/images/covers/jsw.png",
+    coverImage: "/images/covers/jsw.webp",
     logo: null,
     link: "/case-study/jsw",
     caseStudy: {
       title: "The Inspire Institute of Sport - JSW Group",
-      logo: "/images/case-studies/jsw/logo.png",
+      logo: "/images/case-studies/jsw/logo.webp",
       titleLogoClass: "max-h-[90px] max-w-[340px]",
       hero: {
         bg: "#EDEDED",
         height: 507,
         video: "/videos/case-studies/jsw/banner.mp4",
-        poster: "/images/case-studies/jsw/hero.png",
+        poster: "/images/case-studies/jsw/hero.webp",
         fit: "cover",
       },
       summary:
@@ -741,7 +741,7 @@ const projects = [
     title: "Cartier MyAtlas",
     description:
       "Cartier myAtlas is an internal social media platform built to streamline communication and foster collaboration within the organization. The project focused on optimizing user flows, improving content discoverability, and ensuring a consistent, intuitive interface.",
-    coverImage: "/images/covers/cartier.png",
+    coverImage: "/images/covers/cartier.webp",
     logo: "/images/logos/cartier.svg",
     link: "/case-study/cartier",
     caseStudy: {
@@ -749,7 +749,7 @@ const projects = [
       hero: {
         bg: "#EDEDED",
         height: 507,
-        image: "/images/case-studies/cartier/hero.png",
+        image: "/images/case-studies/cartier/hero.webp",
         fit: "cover",
       },
       summary:
@@ -771,16 +771,16 @@ const projects = [
         { type: "divider" },
 
         { type: "heading", text: "Global Design System" },
-        { type: "image", src: "/images/case-studies/cartier/design-system-1.png", alt: "Global Design System", aspectRatio: "1031 / 538" },
-        { type: "image", src: "/images/case-studies/cartier/design-system-2.png", alt: "Global Design System", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/cartier/design-system-1.webp", alt: "Global Design System", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/cartier/design-system-2.webp", alt: "Global Design System", aspectRatio: "1031 / 538" },
 
         { type: "heading", text: "Card" },
-        { type: "image", src: "/images/case-studies/cartier/card-1.png", alt: "Card design", aspectRatio: "1031 / 538" },
-        { type: "image", src: "/images/case-studies/cartier/card-2.png", alt: "Card design", aspectRatio: "1031 / 538" },
-        { type: "image", src: "/images/case-studies/cartier/card-3.png", alt: "Card design", aspectRatio: "1031 / 531" },
+        { type: "image", src: "/images/case-studies/cartier/card-1.webp", alt: "Card design", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/cartier/card-2.webp", alt: "Card design", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/cartier/card-3.webp", alt: "Card design", aspectRatio: "1031 / 531" },
 
         { type: "heading", text: "User Flow" },
-        { type: "image", src: "/images/case-studies/cartier/user-flow.png", alt: "User Flow", aspectRatio: "1031 / 531" },
+        { type: "image", src: "/images/case-studies/cartier/user-flow.webp", alt: "User Flow", aspectRatio: "1031 / 531" },
       ],
     },
   },
@@ -789,16 +789,16 @@ const projects = [
     title: "Stockmann",
     description:
       "myStockmann a loyalty app concept that evolved into the central idea for the programme\u2019s overall marketing campaign. The app redesign focused on enhancing the onboarding journey and improving the usability of the dashboard experience.",
-    coverImage: "/images/covers/stockmann.png",
+    coverImage: "/images/covers/stockmann.webp",
     logo: "/images/logos/stockmann-text.svg",
     link: "/case-study/stockmann",
     caseStudy: {
       title: "My Stockmann",
-      logo: "/images/case-studies/stockmann/logo.png",
+      logo: "/images/case-studies/stockmann/logo.webp",
       hero: {
         bg: "#EDEDED",
         height: 507,
-        image: "/images/case-studies/stockmann/hero.png",
+        image: "/images/case-studies/stockmann/hero.webp",
         fit: "cover",
       },
       summary:
@@ -812,11 +812,11 @@ const projects = [
       },
       blocks: [
         { type: "heading", text: "Onboarding" },
-        { type: "image", src: "/images/case-studies/stockmann/onboarding.png", alt: "Onboarding screens", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/stockmann/onboarding.webp", alt: "Onboarding screens", aspectRatio: "1031 / 538" },
         { type: "divider" },
 
         { type: "heading", text: "Dashboard" },
-        { type: "image", src: "/images/case-studies/stockmann/dashboard.png", alt: "Dashboard screens", aspectRatio: "1031 / 538" },
+        { type: "image", src: "/images/case-studies/stockmann/dashboard.webp", alt: "Dashboard screens", aspectRatio: "1031 / 538" },
       ],
     },
   },
