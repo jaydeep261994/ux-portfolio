@@ -598,6 +598,15 @@ a.bento-card:focus-visible {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* Project type sits inside the title chip, separated by a hairline rule so it reads
+   as a qualifier of the name rather than a second claim like the outcome chip. */
+.chip__type {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid rgba(17, 17, 17, 0.18);
+  color: rgba(17, 17, 17, 0.55);
+}
+
 /* ── Footer ─────────────────────────────────────────────────────────── */
 
 /* Figma: work ends 3742, footer rule sits at 3824, page ends 3875. */

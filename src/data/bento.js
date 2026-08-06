@@ -14,6 +14,7 @@ const cards = {
     id: "fedex",
     ar: "632 / 583",
     title: "FedEx",
+    type: "Android app",
     outcome: "Windows handheld → Android, live across FedEx Italy",
     // Figma 3750-8004, exported transparent so one asset serves both themes
     // and at higher resolution than the previous flattened PNG.
@@ -25,6 +26,7 @@ const cards = {
     id: "audi",
     ar: "706 / 583",
     title: "Audi",
+    type: "In-car experience",
     outcome: "Genie — an in-car AI companion that learns how you drive",
     image: "/images/bento/genie.webp",
     alt: "Audi Genie — in-car climate, seat position and comfort controls",
@@ -34,6 +36,7 @@ const cards = {
     id: "general-motors",
     ar: "844 / 583",
     title: "General Motors",
+    type: "Enterprise web app",
     outcome: "Finance360 — variance and performance for GM finance teams",
     image: "/images/bento/mfg-dashboard.webp",
     // Needs its own dark export (Figma 3750-6893). Its widgets are separated by
@@ -48,6 +51,7 @@ const cards = {
     id: "tata-bolt",
     ar: "489 / 583",
     title: "TATA AIG",
+    type: "Mobile web app",
     outcome: "Policies, renewals and records in one agent workflow",
     image: "/images/bento/tata-bolt.webp",
     alt: "TATA AIG Bolt — individual selection screen on mobile web",
@@ -57,6 +61,7 @@ const cards = {
     id: "amns",
     ar: "1356 / 583",
     title: "AM/NS India",
+    type: "Website",
     outcome: "Homepage pitch for the ArcelorMittal–Nippon Steel JV",
     image: "/images/bento/amns.webp",
     alt: "AM/NS India homepage — Smarter Steels, Brighter Futures hero",
@@ -66,6 +71,7 @@ const cards = {
     id: "tata-inspectify",
     ar: "632 / 583",
     title: "TATA AIG",
+    type: "Mobile app",
     outcome: "AI-guided self-inspection, built to cut errors below 40%",
     image: "/images/bento/tata-inspectify.webp",
     alt: "TATA AIG Inspectify — guided odometer capture during vehicle self-inspection",
@@ -75,6 +81,7 @@ const cards = {
     id: "cartier",
     ar: "703 / 583",
     title: "Cartier",
+    type: "iOS app",
     outcome: "UI design and testing for the internal employee network",
     image: "/images/bento/cartier.webp",
     alt: "Cartier myAtlas — key messages feed on iOS",
@@ -84,6 +91,7 @@ const cards = {
     id: "jsw",
     ar: "810 / 583",
     title: "Inspire Institute of Sport",
+    type: "Website",
     outcome: "Concept: one site for athletes, partners, donors, media",
     image: "/images/bento/jsw.webp",
     alt: "Inspire Institute of Sport — Fueling India's Next Generation of Champions hero",
@@ -93,6 +101,7 @@ const cards = {
     id: "stockmann",
     ar: "528 / 583", // Figma has this one at 584; normalised so rows stay uniform
     title: "Stockmann",
+    type: "Mobile app",
     outcome: "Onboarding and dashboard redesign for the loyalty app",
     image: "/images/bento/stockmann.webp",
     // The only card that needs a second export. Its visual is a cut-out silhouette

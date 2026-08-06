@@ -7,7 +7,7 @@ import Card from "./Card";
  * readable by screen readers and searchable.
  */
 export default function ProjectCard({ card }) {
-  const { id, title, outcome, image, imageDark, alt, link, ar } = card;
+  const { id, title, type, outcome, image, imageDark, alt, link, ar } = card;
   const linkProps = link ? { as: Link, to: link, "aria-label": `${title} — ${outcome}` } : {};
 
   return (
@@ -40,7 +40,10 @@ export default function ProjectCard({ card }) {
       </div>
 
       <div className="project-card__chips">
-        <span className="chip">{title}</span>
+        <span className="chip">
+          {title}
+          {type && <span className="chip__type">{type}</span>}
+        </span>
         <span className="chip">{outcome}</span>
       </div>
     </Card>
