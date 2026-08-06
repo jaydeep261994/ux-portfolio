@@ -15,7 +15,9 @@ const cards = {
     ar: "632 / 583",
     title: "FedEx",
     outcome: "Windows handheld → Android, live across FedEx Italy",
-    image: "/images/bento/fedex.png",
+    // Figma 3750-8004, exported transparent so one asset serves both themes
+    // and at higher resolution than the previous flattened PNG.
+    image: "/images/bento/fedex.webp",
     alt: "FedEx MWI running on a Zebra handheld — dashboard and consignment screens",
     link: "/case-study/fedex",
   },
