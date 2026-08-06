@@ -7,12 +7,14 @@ import Card from "./Card";
  * readable by screen readers and searchable.
  */
 export default function ProjectCard({ card }) {
-  const { title, outcome, image, alt, link, ar } = card;
+  const { id, title, outcome, image, alt, link, ar } = card;
   const linkProps = link ? { as: Link, to: link, "aria-label": `${title} — ${outcome}` } : {};
 
   return (
     <Card
       {...linkProps}
+      // Lets a single visual opt out of the themed plate; see .project-card in bento.css.
+      data-project={id}
       className={`project-card${link ? " project-card--link" : ""}`}
       style={{ "--ar": ar }}
     >
