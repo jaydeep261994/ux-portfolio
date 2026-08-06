@@ -88,6 +88,11 @@ const cards = {
     title: "Stockmann",
     outcome: "Onboarding and dashboard redesign for the loyalty app",
     image: "/images/bento/stockmann.png",
+    // The only card that needs a second export. Its visual is a cut-out silhouette
+    // with no image boundary, so the light version dissolves into a dark card; the
+    // dark one (Figma 3750-7171) rim-lights the hands so they read. Every other
+    // card is a rectangle or light enough to work on either plate.
+    imageDark: "/images/bento/stockmann-dark.webp",
     alt: "My Stockmann loyalty app — member dashboard held in hand",
     link: "/case-study/stockmann",
   },

@@ -559,14 +559,18 @@ a.bento-card:focus-visible {
   object-position: center;
 }
 
-/* Stockmann is a cut-out silhouette: near-black hands with no image boundary, so
-   on a dark plate it dissolves into the card. Every other visual is either a
-   rectangle with its own edges or light enough to read. This one keeps the light
-   plate in both themes until there is a dark-mode version of the artwork. */
-[data-theme="dark"] .project-card[data-project="stockmann"] {
-  /* Card sets background: var(--bg-card) inline, which would win over a rule
-     here, so the variable is redefined on the element instead. */
-  --bg-card: #ededed;
+/* A card with a dark-mode twin renders both; only one is ever shown. Same
+   approach as the case-study `-ink` logos. */
+.project-card__img--dark {
+  display: none;
+}
+
+[data-theme="dark"] .project-card__img--light {
+  display: none;
+}
+
+[data-theme="dark"] .project-card__img--dark {
+  display: block;
 }
 
 .project-card__chips {
